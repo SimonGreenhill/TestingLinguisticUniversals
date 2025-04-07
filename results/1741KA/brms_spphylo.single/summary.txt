@@ -1,0 +1,30 @@
+ Family: bernoulli 
+  Links: mu = logit 
+Formula: V2 ~ V3 + (1 | gr(V1, cov = phylo_covar_mat)) + (1 | gr(ID2, cov = spatial_covar_mat)) + (1 + V3 | macroarea) 
+   Data: list(datfra) (Number of observations: 1523) 
+  Draws: 4 chains, each with iter = 3000; warmup = 1500; thin = 1;
+         total post-warmup draws = 6000
+
+Group-Level Effects: 
+~ID2 (Number of levels: 1523) 
+              Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)     0.99      0.38     0.15     1.67 1.00      435      533
+
+~macroarea (Number of levels: 6) 
+                  Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)         0.59      0.56     0.02     2.00 1.00     3856     3797
+sd(V3)                1.16      0.73     0.06     2.85 1.00     1456     1539
+cor(Intercept,V3)    -0.07      0.58    -0.97     0.94 1.00     1918     3814
+
+~V1 (Number of levels: 1523) 
+              Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)     6.86      1.48     4.27    10.01 1.00      541     1381
+
+Population-Level Effects: 
+          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept    -4.52      1.91    -8.56    -1.12 1.00     2112     2928
+V3            1.72      0.67     0.55     3.20 1.00     3249     3336
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
