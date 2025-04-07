@@ -1,0 +1,3113 @@
+#NEXUS
+[R-package APE, Tue Oct 18 21:19:14 2022]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 1550;
+	TAXLABELS
+		abad1241
+		abee1242
+		abkh1244
+		abua1245
+		abun1252
+		acha1249
+		acha1250
+		ache1245
+		ache1246
+		achi1256
+		achi1257
+		achu1247
+		achu1248
+		acol1236
+		adan1251
+		adon1237
+		adze1240
+		afad1236
+		afar1241
+		aghe1239
+		aghu1255
+		agob1244
+		agua1253
+		agus1235
+		agut1237
+		aheu1239
+		ahin1234
+		aime1238
+		ainu1240
+		ajab1235
+		ajie1238
+		akei1237
+		akha1245
+		akoo1248
+		akun1241
+		alab1237
+		alab1254
+		alac1244
+		alag1248
+		alba1269
+		aleu1260
+		alor1247
+		aluk1238
+		alya1239
+		amah1246
+		amam1246
+		amap1240
+		amar1272
+		amas1236
+		amdo1237
+		amii1238
+		amis1246
+		amri1238
+		anei1239
+		anfi1235
+		anga1288
+		anga1290
+		ango1257
+		anta1255
+		anuf1239
+		anut1237
+		anuu1241
+		aona1235
+		aoua1234
+		apat1240
+		apin1244
+		apma1240
+		apur1254
+		arak1252
+		arao1248
+		arap1274
+		araw1273
+		arbo1245
+		area1240
+		aree1239
+		argo1244
+		arom1237
+		arop1242
+		arop1243
+		arta1239
+		ashe1272
+		assi1247
+		asur1254
+		asut1235
+		atam1240
+		atay1247
+		athp1241
+		aton1241
+		aulu1238
+		auuu1241
+		auye1238
+		avac1239
+		awad1243
+		awad1244
+		awar1248
+		awar1249
+		awet1244
+		awji1241
+		awtu1239
+		axam1237
+		axiy1235
+		ayac1239
+		ayiw1239
+		azha1235
+		baba1264
+		baba1266
+		baba1268
+		babi1235
+		bada1257
+		bafa1247
+		bafi1243
+		bafu1246
+		baga1272
+		baga1273
+		bahi1252
+		bahn1262
+		baim1244
+		baki1244
+		bala1311
+		bala1315
+		bala1316
+		bali1278
+		balo1261
+		balu1257
+		bamb1270
+		bamu1253
+		band1344
+		bang1369
+		bant1281
+		bant1288
+		bara1357
+		bara1369
+		bara1370
+		bare1276
+		barg1252
+		bari1286
+		baro1253
+		basa1282
+		bash1264
+		basq1248
+		bata1289
+		baur1253
+		bawm1236
+		bayb1234
+		bebe1248
+		beem1239
+		beka1241
+		bekw1241
+		bekw1242
+		bela1254
+		belh1239
+		bell1243
+		belu1239
+		bemb1257
+		bert1248
+		bhoj1244
+		biaf1240
+		bian1252
+		biao1253
+		biao1254
+		biao1256
+		bier1244
+		bign1238
+		biha1246
+		bila1255
+		bilb1241
+		bili1260
+		bimi1240
+		bina1277
+		bini1246
+		binu1244
+		bira1253
+		bisu1244
+		bitt1240
+		blab1237
+		blan1242
+		bodo1269
+		boht1238
+		boka1249
+		bola1250
+		boly1239
+		bomb1262
+		bomk1234
+		bona1250
+		bond1247
+		bong1289
+		bora1263
+		bori1243
+		boro1277
+		boro1282
+		boto1242
+		boun1243
+		boun1245
+		bret1244
+		bube1242
+		budu1265
+		buga1247
+		buga1250
+		bugh1239
+		bugi1244
+		buhu1237
+		bujh1238
+		bull1247
+		bulo1242
+		bulu1251
+		bumt1240
+		buna1276
+		bura1292
+		bure1242
+		burj1242
+		buru1320
+		busa1253
+		bush1247
+		buwa1243
+		bwai1242
+		bwat1240
+		byan1241
+		caac1237
+		cabe1245
+		cacu1241
+		cahu1264
+		cakf1236
+		cald1236
+		caml1239
+		camp1261
+		cane1242
+		caom1238
+		capa1241
+		carn1240
+		caro1242
+		cash1251
+		casi1235
+		cayu1262
+		cemu1238
+		cent1989
+		cent1990
+		cent2004
+		cent2050
+		cent2084
+		cent2087
+		cent2126
+		cent2127
+		cent2131
+		cent2140
+		cent2142
+		cent2292
+		cent2314
+		cent2322
+		chac1251
+		chak1270
+		chak1271
+		cham1312
+		cham1315
+		chan1313
+		char1269
+		chas1234
+		chek1238
+		chen1255
+		chep1245
+		cher1273
+		chey1247
+		chic1270
+		chil1280
+		chim1302
+		chin1286
+		chip1241
+		chip1261
+		chiq1248
+		chir1283
+		choc1275
+		choc1276
+		chon1284
+		chot1239
+		chra1242
+		chug1252
+		chuj1250
+		chuk1273
+		chuu1238
+		chuv1255
+		chuw1238
+		cici1237
+		coat1243
+		coca1259
+		coeu1236
+		cofa1242
+		colu1241
+		coma1245
+		como1259
+		cori1240
+		cors1241
+		cosa1234
+		cota1241
+		cree1270
+		crim1257
+		crow1244
+		cube1242
+		culi1244
+		cusc1236
+		czec1258
+		daai1236
+		daas1238
+		dadi1250
+		dagb1246
+		dagi1241
+		daka1243
+		damp1237
+		dana1252
+		dand1238
+		dani1285
+		dara1250
+		darm1243
+		dawr1236
+		daza1242
+		defa1248
+		dege1246
+		dera1248
+		desa1247
+		dhao1237
+		dhar1247
+		dhim1246
+		dibo1245
+		dier1241
+		diga1241
+		digo1243
+		dima1251
+		diri1252
+		djam1255
+		djee1236
+		djeo1235
+		djin1251
+		djin1253
+		dobu1241
+		doma1260
+		domm1246
+		doro1266
+		drun1238
+		dumb1241
+		dumi1241
+		dusn1237
+		dutc1256
+		dyir1250
+		dyul1238
+		dzao1238
+		dzon1239
+		east1236
+		east2328
+		east2332
+		east2342
+		east2379
+		east2443
+		east2447
+		east2485
+		east2516
+		east2555
+		east2556
+		east2690
+		east2773
+		eipo1242
+		ekar1243
+		elip1238
+		elna1235
+		emae1237
+		emai1241
+		enuu1235
+		ersu1241
+		erzy1239
+		esee1248
+		esim1238
+		esto1258
+		even1259
+		even1260
+		fala1243
+		fare1241
+		faro1244
+		fass1245
+		fasu1242
+		fiji1243
+		fili1244
+		filo1235
+		fina1242
+		finn1318
+		fipa1238
+		fonn1241
+		fore1265
+		fran1266
+		fuln1247
+		furr1244
+		furu1242
+		futu1245
+		fuyu1242
+		gaaa1244
+		gaan1243
+		gada1258
+		gade1242
+		gaga1249
+		gahr1239
+		gala1264
+		gale1259
+		gali1258
+		gali1262
+		galo1242
+		gami1243
+		gamo1243
+		gang1266
+		gant1244
+		gapa1238
+		garo1247
+		gayo1244
+		geba1237
+		gebe1237
+		geda1237
+		gela1263
+		geru1240
+		ghan1242
+		ghar1239
+		gheg1238
+		giiw1236
+		gilb1244
+		gily1242
+		gira1247
+		glav1244
+		gofa1235
+		gogo1265
+		guah1255
+		guam1248
+		guan1266
+		guan1269
+		guat1253
+		gube1234
+		gude1246
+		guer1243
+		gugu1255
+		guhu1244
+		guiq1238
+		guma1254
+		gunw1252
+		guny1241
+		guri1248
+		guru1261
+		guru1271
+		gusi1247
+		gwen1239
+		gyel1242
+		haaa1252
+		hadi1240
+		hadz1240
+		haka1240
+		hakk1236
+		hala1252
+		halh1238
+		hali1244
+		halk1245
+		hame1242
+		hang1263
+		hani1248
+		hano1246
+		haru1245
+		hava1248
+		hawa1245
+		hehe1240
+		hela1238
+		here1253
+		hida1246
+		high1276
+		hind1269
+		hixk1239
+		hoaa1235
+		hoav1238
+		hone1235
+		honi1244
+		hopi1249
+		horp1239
+		hote1245
+		hozo1236
+		hrus1242
+		huaa1248
+		hual1241
+		huam1247
+		huar1255
+		huas1242
+		huba1236
+		huic1243
+		hula1239
+		hula1244
+		huli1244
+		hung1274
+		hung1275
+		hunz1247
+		huuu1240
+		iaai1238
+		iatm1242
+		ibal1244
+		iban1264
+		iban1267
+		ibat1238
+		ibib1240
+		icel1247
+		idii1243
+		idom1241
+		idum1241
+		idun1242
+		ilaa1246
+		iliu1237
+		ilon1239
+		imba1240
+		inga1252
+		ingr1248
+		irar1238
+		iris1253
+		irul1243
+		isco1239
+		isin1239
+		isir1237
+		isna1241
+		isth1240
+		isth1241
+		ital1282
+		iton1250
+		itza1241
+		iumi1238
+		ivat1242
+		iwal1237
+		iyoo1238
+		jahh1242
+		jalk1242
+		jama1261
+		jamb1236
+		japh1234
+		jara1266
+		jede1239
+		jeha1242
+		jehh1245
+		jeru1240
+		jiba1237
+		jina1244
+		juku1254
+		kaba1278
+		kach1280
+		kach1284
+		kada1242
+		kado1242
+		kafa1242
+		kaga1256
+		kagu1239
+		kaik1246
+		kaki1249
+		kala1384
+		kala1388
+		kala1399
+		kali1308
+		kalm1243
+		kama1370
+		kamb1297
+		kamb1299
+		kamm1249
+		kana1286
+		kana1291
+		kani1286
+		kank1243
+		kaqc1270
+		kara1476
+		kara1486
+		kara1487
+		kara1500
+		karb1241
+		kare1335
+		kare1338
+		kari1306
+		kari1311
+		kark1258
+		karn1252
+		karo1304
+		kash1277
+		kask1239
+		katb1237
+		kats1235
+		kava1241
+		kaya1315
+		keap1239
+		keig1242
+		kele1258
+		kemb1249
+		keme1240
+		kens1248
+		kenu1236
+		keoo1238
+		kera1255
+		kesa1244
+		kett1243
+		kgal1244
+		khak1248
+		khal1275
+		kham1282
+		khan1274
+		khan1277
+		khan1278
+		khas1269
+		khez1235
+		khmu1256
+		khum1248
+		kich1262
+		kiku1240
+		kile1243
+		kima1246
+		kimm1245
+		kina1250
+		kinn1249
+		kiow1266
+		koda1255
+		koho1244
+		koir1240
+		koit1244
+		koka1244
+		koko1269
+		kola1285
+		kolb1240
+		kolc1235
+		kolu1245
+		komb1274
+		komc1235
+		komi1268
+		komi1269
+		komi1270
+		komo1260
+		kona1242
+		konk1267
+		kony1248
+		konz1239
+		koon1245
+		koor1239
+		kore1280
+		kore1283
+		koro1298
+		koro1313
+		korr1238
+		kosa1249
+		kosr1238
+		kota1263
+		koti1238
+		kova1243
+		kove1237
+		koya1251
+		kren1239
+		kuan1247
+		kuan1248
+		kuik1246
+		kuku1273
+		kulo1237
+		kulu1253
+		kuma1276
+		kumb1268
+		kunb1251
+		kuni1267
+		kunj1245
+		kuot1243
+		kurr1243
+		kusa1251
+		kusu1250
+		kuyy1240
+		kwai1243
+		kwam1249
+		kwar1239
+		kweg1241
+		kwin1241
+		kwom1262
+		kxoe1243
+		kyer1238
+		laal1242
+		labo1244
+		labu1248
+		lach1248
+		lafo1243
+		lagw1237
+		lahu1252
+		lahu1253
+		laiy1246
+		lala1268
+		lama1277
+		lamb1269
+		lamb1272
+		lame1260
+		lamk1238
+		lamo1244
+		land1256
+		lang1320
+		lara1258
+		lash1243
+		latv1249
+		lave1248
+		lave1249
+		lavu1241
+		lega1250
+		lele1267
+		lele1270
+		lele1276
+		lemb1266
+		leme1238
+		lena1238
+		lend1245
+		leng1259
+		lepc1244
+		leti1246
+		lewo1242
+		lewo1244
+		lezg1247
+		lian1251
+		lihi1237
+		liji1238
+		lill1248
+		limb1266
+		limo1248
+		ling1265
+		lipo1242
+		lish1245
+		lisu1250
+		lith1251
+		litz1237
+		livv1243
+		logo1259
+		loka1252
+		lolo1259
+		lomb1257
+		long1395
+		loni1238
+		lote1237
+		loth1237
+		louu1245
+		lowl1260
+		lowl1265
+		lozi1239
+		luan1263
+		lubu1243
+		ludi1246
+		lugb1240
+		lugu1238
+		lule1254
+		lumb1249
+		lumu1239
+		lund1271
+		luok1236
+		lush1249
+		lush1252
+		lusi1240
+		luva1239
+		luya1241
+		maan1238
+		mace1250
+		macu1260
+		mada1285
+		madi1260
+		madn1237
+		maee1241
+		mafe1237
+		maga1260
+		maga1263
+		magd1235
+		maib1239
+		mais1250
+		mait1250
+		maja1242
+		makc1235
+		makh1264
+		makh1266
+		mako1251
+		maku1277
+		mala1463
+		mala1464
+		mala1479
+		mala1534
+		male1284
+		male1289
+		male1297
+		malg1251
+		mali1285
+		malo1243
+		malu1245
+		mama1275
+		mamb1294
+		mamb1296
+		mamb1306
+		mamm1241
+		mana1288
+		mana1295
+		mana1298
+		mand1415
+		mand1440
+		mang1378
+		mang1381
+		mang1394
+		mang1401
+		mang1403
+		mang1404
+		mang1405
+		mani1235
+		manm1238
+		mans1260
+		mans1262
+		manu1258
+		maor1246
+		mapo1242
+		mapu1245
+		maqu1238
+		mara1378
+		mara1379
+		mara1382
+		mara1386
+		mara1399
+		mara1404
+		marg1265
+		mari1414
+		mari1416
+		mari1424
+		mari1426
+		mari1428
+		mari1440
+		mars1254
+		mart1255
+		maru1249
+		maru1252
+		masa1322
+		masb1238
+		mask1242
+		matb1237
+		mati1250
+		mato1252
+		mats1244
+		matu1259
+		matu1261
+		maun1240
+		maxa1247
+		mayo1261
+		mayo1264
+		maza1304
+		mbaa1245
+		mbal1255
+		mban1263
+		mbar1260
+		mboc1235
+		mbol1247
+		mbul1263
+		meen1242
+		mehe1243
+		meke1243
+		mele1250
+		melo1242
+		melp1238
+		mere1242
+		meru1245
+		meta1238
+		mezo1235
+		mezq1235
+		midd1327
+		miga1249
+		miju1243
+		mikm1235
+		mila1245
+		mina1276
+		mini1251
+		mini1256
+		minn1241
+		misi1243
+		mixt1426
+		miya1259
+		miya1266
+		mlab1235
+		moba1244
+		moch1257
+		moco1246
+		mode1248
+		moha1258
+		moii1235
+		moke1242
+		moki1238
+		mokl1243
+		mokp1239
+		moks1248
+		molo1266
+		moni1237
+		mono1270
+		mono1273
+		mono1275
+		mopa1243
+		morm1235
+		mose1249
+		motl1237
+		motu1246
+		mouk1239
+		moun1252
+		movi1243
+		moyo1238
+		mpad1242
+		mpii1239
+		mpot1240
+		mpur1239
+		mual1241
+		mudu1239
+		mudu1242
+		mull1237
+		munc1235
+		mund1325
+		mund1326
+		mund1328
+		mund1330
+		murl1244
+		muru1266
+		muru1274
+		musa1266
+		musg1254
+		muso1238
+		muyu1244
+		mwag1236
+		mwan1247
+		mwer1248
+		nade1244
+		naka1262
+		nali1244
+		nama1268
+		namb1293
+		namu1246
+		nana1257
+		nang1262
+		naru1238
+		nati1244
+		natu1246
+		naue1237
+		naur1243
+		nava1243
+		nawu1242
+		naxi1245
+		ncan1245
+		ndam1239
+		ndog1248
+		ndom1245
+		nege1240
+		negi1245
+		neha1247
+		nend1239
+		nene1249
+		neng1238
+		nenn1238
+		nepa1254
+		nese1235
+		newa1246
+		nezp1238
+		ngaa1240
+		ngal1292
+		ngan1291
+		ngar1284
+		ngas1240
+		ngba1284
+		ngba1285
+		ngeq1245
+		ngit1239
+		nhan1238
+		nhen1239
+		nila1242
+		nina1238
+		nisg1240
+		niua1240
+		niue1239
+		niva1238
+		njan1240
+		nkon1248
+		noct1238
+		noku1237
+		noon1242
+		nopa1235
+		nort2684
+		nort2690
+		nort2697
+		nort2702
+		nort2722
+		nort2723
+		nort2724
+		nort2732
+		nort2745
+		nort2747
+		nort2836
+		nort2839
+		nort2845
+		nort2847
+		nort2864
+		nort2877
+		nort2885
+		nort2930
+		nort2938
+		nort2942
+		nort2951
+		nort2954
+		nort2957
+		nort2959
+		nort2961
+		nort2994
+		nort3047
+		nots1237
+		nsen1242
+		nucl1235
+		nucl1240
+		nucl1301
+		nucl1302
+		nucl1305
+		nucl1310
+		nucl1327
+		nucl1417
+		nucl1452
+		nucl1458
+		nucl1593
+		nucl1595
+		nucl1622
+		nucl1630
+		nucl1632
+		nucl1633
+		nucl1643
+		nuer1246
+		nukn1238
+		nuku1260
+		nung1282
+		nupe1254
+		nusu1239
+		nuuc1236
+		nyah1250
+		nyak1260
+		nyal1254
+		nyan1307
+		nyat1246
+		nyaw1247
+		nyis1236
+		nyor1246
+		obok1239
+		occi1239
+		ocot1244
+		ofay1240
+		okan1243
+		okin1246
+		oksa1245
+		okuu1243
+		oloo1241
+		olut1240
+		omah1247
+		omie1241
+		onto1237
+		oriy1255
+		oroc1248
+		orok1265
+		orok1266
+		orok1267
+		orok1269
+		orow1242
+		osam1235
+		otta1242
+		owaa1237
+		paam1238
+		paas1238
+		paco1243
+		paez1247
+		pagi1243
+		pagu1249
+		pahn1237
+		pait1244
+		pala1344
+		pali1279
+		pamo1252
+		pana1307
+		pang1287
+		pang1290
+		pang1291
+		panj1256
+		pano1254
+		pany1241
+		papa1238
+		papa1265
+		para1301
+		para1302
+		pate1247
+		patp1243
+		patt1248
+		paul1238
+		pawa1255
+		payn1244
+		pela1242
+		pemo1248
+		pend1242
+		peng1244
+		penr1237
+		phai1238
+		phom1236
+		pila1245
+		pile1238
+		pima1248
+		pina1252
+		ping1243
+		pite1240
+		pnar1238
+		pohn1238
+		poli1260
+		popt1235
+		port1283
+		port1285
+		psik1239
+		puin1248
+		pulu1242
+		puma1239
+		puoc1238
+		pura1257
+		pure1242
+		puri1258
+		qawa1238
+		qima1242
+		quer1236
+		quio1240
+		rabh1238
+		rade1240
+		raji1240
+		rapa1244
+		rapa1245
+		rapo1238
+		raro1241
+		rata1244
+		raut1239
+		reja1241
+		reng1252
+		rere1240
+		reye1240
+		rian1263
+		rikb1245
+		roma1326
+		romb1245
+		rong1264
+		rong1266
+		ronn1241
+		roto1249
+		rotu1241
+		rovi1238
+		ruch1235
+		ruka1240
+		ruma1248
+		rung1258
+		rung1259
+		russ1263
+		russ1264
+		saaa1240
+		saaa1241
+		saam1283
+		saar1237
+		saba1268
+		sabu1255
+		sais1237
+		saka1289
+		saka1291
+		saki1247
+		saki1248
+		samb1305
+		samb1311
+		samo1305
+		sanb1241
+		sand1278
+		sang1321
+		sang1330
+		sang1331
+		sani1269
+		sanj1284
+		sanm1289
+		sanm1295
+		sanm1301
+		sant1436
+		sant1451
+		sapo1253
+		sapu1248
+		sars1236
+		sata1237
+		sauk1252
+		saur1249
+		savo1255
+		saya1246
+		seda1262
+		seim1238
+		seke1241
+		sela1259
+		sela1260
+		selk1253
+		sema1265
+		sema1266
+		seme1247
+		seng1281
+		seri1257
+		sgaw1245
+		shab1252
+		sham1280
+		shan1283
+		shaw1249
+		shil1265
+		ship1254
+		shix1238
+		shol1240
+		shon1251
+		shor1247
+		shos1248
+		shua1257
+		siaw1243
+		sich1238
+		sici1248
+		sici1249
+		siee1239
+		sier1250
+		sika1261
+		siks1238
+		sile1255
+		simb1256
+		sina1266
+		sing1264
+		sion1247
+		sioo1240
+		situ1238
+		siyi1240
+		skol1241
+		slov1268
+		sobe1238
+		soch1239
+		soga1242
+		sons1242
+		sooo1254
+		sout1528
+		sout2649
+		sout2674
+		sout2679
+		sout2715
+		sout2728
+		sout2729
+		sout2730
+		sout2782
+		sout2807
+		sout2826
+		sout2856
+		sout2857
+		sout2859
+		sout2869
+		sout2896
+		sout2918
+		sout2954
+		sout2956
+		sout2959
+		sout2976
+		sout2985
+		sout2994
+		sout2996
+		stan1289
+		stan1290
+		stan1293
+		stan1306
+		suba1238
+		sude1239
+		sumi1235
+		sunw1242
+		supy1237
+		surg1248
+		surs1246
+		swah1253
+		swed1254
+		taba1263
+		taga1272
+		tagi1241
+		tago1246
+		taha1241
+		tahi1242
+		taia1239
+		taji1246
+		taku1257
+		tali1259
+		tama1331
+		tama1365
+		tamb1254
+		tami1289
+		tane1237
+		tang1336
+		tang1347
+		tang1373
+		tang1377
+		tani1257
+		tara1313
+		tata1255
+		tata1257
+		tata1258
+		taul1251
+		taus1251
+		taus1253
+		tawa1286
+		tbol1240
+		tean1237
+		teda1241
+		tedi1235
+		tega1236
+		tehu1242
+		teke1275
+		tekt1235
+		telu1262
+		temi1246
+		temp1235
+		teng1272
+		tenn1246
+		teop1238
+		tera1251
+		term1237
+		tern1247
+		tete1251
+		tezo1238
+		thad1238
+		thak1245
+		than1259
+		thao1240
+		thar1283
+		thul1246
+		tibe1272
+		tibe1274
+		ticu1245
+		tief1242
+		tief1244
+		tien1242
+		tiga1245
+		tika1246
+		tiko1237
+		tilu1238
+		timn1235
+		timu1262
+		tina1248
+		tiri1258
+		tiru1241
+		tita1241
+		toab1237
+		toar1246
+		toba1268
+		tobe1252
+		toda1252
+		toho1245
+		tojo1241
+		toke1240
+		tong1308
+		tong1318
+		tong1325
+		toor1238
+		tora1259
+		tosk1239
+		tote1238
+		toto1302
+		touo1238
+		trin1274
+		trio1238
+		trum1247
+		tsam1247
+		tsat1238
+		tsha1245
+		tsis1238
+		tsix1234
+		tsog1243
+		tson1249
+		tswa1253
+		tswa1255
+		tuba1278
+		tuca1252
+		tugu1245
+		tuka1248
+		tuki1240
+		tula1252
+		tulu1258
+		tuml1238
+		tune1261
+		tung1290
+		tunn1238
+		turk1303
+		turk1304
+		tusc1257
+		tutu1241
+		tuva1244
+		tuvi1240
+		tuwa1243
+		tuwu1238
+		ubir1237
+		udih1248
+		ughe1237
+		ugon1239
+		ulch1241
+		ulit1238
+		umaa1242
+		umbu1257
+		umbu1258
+		umes1235
+		unua1237
+		uppe1275
+		uppe1427
+		urak1238
+		urar1246
+		urav1235
+		urim1252
+		urip1239
+		urni1239
+		utes1238
+		uuuu1243
+		vano1237
+		veps1250
+		vera1241
+		viem1243
+		viet1252
+		vinm1237
+		vunj1238
+		vure1239
+		vwan1235
+		wadj1254
+		waga1260
+		wage1238
+		waig1244
+		waim1251
+		waim1252
+		waim1253
+		waiw1244
+		waja1257
+		waja1259
+		waka1274
+		wala1266
+		wall1257
+		wamb1257
+		wand1267
+		wand1278
+		wanm1242
+		wara1294
+		wara1300
+		wara1303
+		ward1246
+		ware1253
+		ware1255
+		wari1268
+		warj1242
+		waro1242
+		waru1265
+		wash1253
+		wawa1246
+		waya1269
+		wayu1241
+		wayu1243
+		wels1247
+		weri1253
+		west2354
+		west2369
+		west2386
+		west2392
+		west2396
+		west2397
+		west2415
+		west2418
+		west2430
+		west2441
+		west2466
+		west2516
+		west2519
+		west2548
+		west2555
+		west2557
+		west2560
+		west2594
+		west2600
+		west2615
+		west2618
+		west2632
+		west2635
+		west2644
+		west2650
+		west2763
+		whit1269
+		wiru1244
+		woii1237
+		wola1242
+		wole1240
+		woli1241
+		wotu1240
+		wuch1236
+		wudi1238
+		wusa1235
+		wutu1241
+		wuvu1239
+		wyan1247
+		xamt1239
+		xara1244
+		xava1240
+		xhos1239
+		xish1235
+		xokl1240
+		yaak1241
+		yaey1239
+		yagu1244
+		yaka1269
+		yaka1277
+		yaki1237
+		yako1252
+		yaku1245
+		yale1246
+		yama1264
+		yami1254
+		yami1256
+		yamp1242
+		yane1238
+		yank1247
+		yano1261
+		yano1262
+		yaoo1241
+		yape1248
+		yapu1240
+		yaqu1251
+		yare1248
+		yasa1242
+		yatz1235
+		yaul1241
+		yaum1237
+		yawa1261
+		yawu1244
+		yecu1235
+		yele1255
+		yems1235
+		yinc1238
+		yind1247
+		yoga1237
+		yoku1256
+		yona1241
+		yong1280
+		yora1241
+		youl1235
+		youn1235
+		yuca1254
+		yuch1247
+		yuec1235
+		yukp1241
+		yulp1239
+		yuqu1240
+		yura1255
+		zaba1237
+		zaca1241
+		zaca1242
+		zaiw1241
+		zakh1243
+		zamb1245
+		zani1235
+		zapa1253
+		zarm1239
+		zaye1235
+		zays1235
+		zeme1240
+		zenz1235
+		zhab1238
+		zigu1244
+		zinz1238
+		zoog1238
+		zulg1242
+		zuni1245
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	abad1241,
+		2	abee1242,
+		3	abkh1244,
+		4	abua1245,
+		5	abun1252,
+		6	acha1249,
+		7	acha1250,
+		8	ache1245,
+		9	ache1246,
+		10	achi1256,
+		11	achi1257,
+		12	achu1247,
+		13	achu1248,
+		14	acol1236,
+		15	adan1251,
+		16	adon1237,
+		17	adze1240,
+		18	afad1236,
+		19	afar1241,
+		20	aghe1239,
+		21	aghu1255,
+		22	agob1244,
+		23	agua1253,
+		24	agus1235,
+		25	agut1237,
+		26	aheu1239,
+		27	ahin1234,
+		28	aime1238,
+		29	ainu1240,
+		30	ajab1235,
+		31	ajie1238,
+		32	akei1237,
+		33	akha1245,
+		34	akoo1248,
+		35	akun1241,
+		36	alab1237,
+		37	alab1254,
+		38	alac1244,
+		39	alag1248,
+		40	alba1269,
+		41	aleu1260,
+		42	alor1247,
+		43	aluk1238,
+		44	alya1239,
+		45	amah1246,
+		46	amam1246,
+		47	amap1240,
+		48	amar1272,
+		49	amas1236,
+		50	amdo1237,
+		51	amii1238,
+		52	amis1246,
+		53	amri1238,
+		54	anei1239,
+		55	anfi1235,
+		56	anga1288,
+		57	anga1290,
+		58	ango1257,
+		59	anta1255,
+		60	anuf1239,
+		61	anut1237,
+		62	anuu1241,
+		63	aona1235,
+		64	aoua1234,
+		65	apat1240,
+		66	apin1244,
+		67	apma1240,
+		68	apur1254,
+		69	arak1252,
+		70	arao1248,
+		71	arap1274,
+		72	araw1273,
+		73	arbo1245,
+		74	area1240,
+		75	aree1239,
+		76	argo1244,
+		77	arom1237,
+		78	arop1242,
+		79	arop1243,
+		80	arta1239,
+		81	ashe1272,
+		82	assi1247,
+		83	asur1254,
+		84	asut1235,
+		85	atam1240,
+		86	atay1247,
+		87	athp1241,
+		88	aton1241,
+		89	aulu1238,
+		90	auuu1241,
+		91	auye1238,
+		92	avac1239,
+		93	awad1243,
+		94	awad1244,
+		95	awar1248,
+		96	awar1249,
+		97	awet1244,
+		98	awji1241,
+		99	awtu1239,
+		100	axam1237,
+		101	axiy1235,
+		102	ayac1239,
+		103	ayiw1239,
+		104	azha1235,
+		105	baba1264,
+		106	baba1266,
+		107	baba1268,
+		108	babi1235,
+		109	bada1257,
+		110	bafa1247,
+		111	bafi1243,
+		112	bafu1246,
+		113	baga1272,
+		114	baga1273,
+		115	bahi1252,
+		116	bahn1262,
+		117	baim1244,
+		118	baki1244,
+		119	bala1311,
+		120	bala1315,
+		121	bala1316,
+		122	bali1278,
+		123	balo1261,
+		124	balu1257,
+		125	bamb1270,
+		126	bamu1253,
+		127	band1344,
+		128	bang1369,
+		129	bant1281,
+		130	bant1288,
+		131	bara1357,
+		132	bara1369,
+		133	bara1370,
+		134	bare1276,
+		135	barg1252,
+		136	bari1286,
+		137	baro1253,
+		138	basa1282,
+		139	bash1264,
+		140	basq1248,
+		141	bata1289,
+		142	baur1253,
+		143	bawm1236,
+		144	bayb1234,
+		145	bebe1248,
+		146	beem1239,
+		147	beka1241,
+		148	bekw1241,
+		149	bekw1242,
+		150	bela1254,
+		151	belh1239,
+		152	bell1243,
+		153	belu1239,
+		154	bemb1257,
+		155	bert1248,
+		156	bhoj1244,
+		157	biaf1240,
+		158	bian1252,
+		159	biao1253,
+		160	biao1254,
+		161	biao1256,
+		162	bier1244,
+		163	bign1238,
+		164	biha1246,
+		165	bila1255,
+		166	bilb1241,
+		167	bili1260,
+		168	bimi1240,
+		169	bina1277,
+		170	bini1246,
+		171	binu1244,
+		172	bira1253,
+		173	bisu1244,
+		174	bitt1240,
+		175	blab1237,
+		176	blan1242,
+		177	bodo1269,
+		178	boht1238,
+		179	boka1249,
+		180	bola1250,
+		181	boly1239,
+		182	bomb1262,
+		183	bomk1234,
+		184	bona1250,
+		185	bond1247,
+		186	bong1289,
+		187	bora1263,
+		188	bori1243,
+		189	boro1277,
+		190	boro1282,
+		191	boto1242,
+		192	boun1243,
+		193	boun1245,
+		194	bret1244,
+		195	bube1242,
+		196	budu1265,
+		197	buga1247,
+		198	buga1250,
+		199	bugh1239,
+		200	bugi1244,
+		201	buhu1237,
+		202	bujh1238,
+		203	bull1247,
+		204	bulo1242,
+		205	bulu1251,
+		206	bumt1240,
+		207	buna1276,
+		208	bura1292,
+		209	bure1242,
+		210	burj1242,
+		211	buru1320,
+		212	busa1253,
+		213	bush1247,
+		214	buwa1243,
+		215	bwai1242,
+		216	bwat1240,
+		217	byan1241,
+		218	caac1237,
+		219	cabe1245,
+		220	cacu1241,
+		221	cahu1264,
+		222	cakf1236,
+		223	cald1236,
+		224	caml1239,
+		225	camp1261,
+		226	cane1242,
+		227	caom1238,
+		228	capa1241,
+		229	carn1240,
+		230	caro1242,
+		231	cash1251,
+		232	casi1235,
+		233	cayu1262,
+		234	cemu1238,
+		235	cent1989,
+		236	cent1990,
+		237	cent2004,
+		238	cent2050,
+		239	cent2084,
+		240	cent2087,
+		241	cent2126,
+		242	cent2127,
+		243	cent2131,
+		244	cent2140,
+		245	cent2142,
+		246	cent2292,
+		247	cent2314,
+		248	cent2322,
+		249	chac1251,
+		250	chak1270,
+		251	chak1271,
+		252	cham1312,
+		253	cham1315,
+		254	chan1313,
+		255	char1269,
+		256	chas1234,
+		257	chek1238,
+		258	chen1255,
+		259	chep1245,
+		260	cher1273,
+		261	chey1247,
+		262	chic1270,
+		263	chil1280,
+		264	chim1302,
+		265	chin1286,
+		266	chip1241,
+		267	chip1261,
+		268	chiq1248,
+		269	chir1283,
+		270	choc1275,
+		271	choc1276,
+		272	chon1284,
+		273	chot1239,
+		274	chra1242,
+		275	chug1252,
+		276	chuj1250,
+		277	chuk1273,
+		278	chuu1238,
+		279	chuv1255,
+		280	chuw1238,
+		281	cici1237,
+		282	coat1243,
+		283	coca1259,
+		284	coeu1236,
+		285	cofa1242,
+		286	colu1241,
+		287	coma1245,
+		288	como1259,
+		289	cori1240,
+		290	cors1241,
+		291	cosa1234,
+		292	cota1241,
+		293	cree1270,
+		294	crim1257,
+		295	crow1244,
+		296	cube1242,
+		297	culi1244,
+		298	cusc1236,
+		299	czec1258,
+		300	daai1236,
+		301	daas1238,
+		302	dadi1250,
+		303	dagb1246,
+		304	dagi1241,
+		305	daka1243,
+		306	damp1237,
+		307	dana1252,
+		308	dand1238,
+		309	dani1285,
+		310	dara1250,
+		311	darm1243,
+		312	dawr1236,
+		313	daza1242,
+		314	defa1248,
+		315	dege1246,
+		316	dera1248,
+		317	desa1247,
+		318	dhao1237,
+		319	dhar1247,
+		320	dhim1246,
+		321	dibo1245,
+		322	dier1241,
+		323	diga1241,
+		324	digo1243,
+		325	dima1251,
+		326	diri1252,
+		327	djam1255,
+		328	djee1236,
+		329	djeo1235,
+		330	djin1251,
+		331	djin1253,
+		332	dobu1241,
+		333	doma1260,
+		334	domm1246,
+		335	doro1266,
+		336	drun1238,
+		337	dumb1241,
+		338	dumi1241,
+		339	dusn1237,
+		340	dutc1256,
+		341	dyir1250,
+		342	dyul1238,
+		343	dzao1238,
+		344	dzon1239,
+		345	east1236,
+		346	east2328,
+		347	east2332,
+		348	east2342,
+		349	east2379,
+		350	east2443,
+		351	east2447,
+		352	east2485,
+		353	east2516,
+		354	east2555,
+		355	east2556,
+		356	east2690,
+		357	east2773,
+		358	eipo1242,
+		359	ekar1243,
+		360	elip1238,
+		361	elna1235,
+		362	emae1237,
+		363	emai1241,
+		364	enuu1235,
+		365	ersu1241,
+		366	erzy1239,
+		367	esee1248,
+		368	esim1238,
+		369	esto1258,
+		370	even1259,
+		371	even1260,
+		372	fala1243,
+		373	fare1241,
+		374	faro1244,
+		375	fass1245,
+		376	fasu1242,
+		377	fiji1243,
+		378	fili1244,
+		379	filo1235,
+		380	fina1242,
+		381	finn1318,
+		382	fipa1238,
+		383	fonn1241,
+		384	fore1265,
+		385	fran1266,
+		386	fuln1247,
+		387	furr1244,
+		388	furu1242,
+		389	futu1245,
+		390	fuyu1242,
+		391	gaaa1244,
+		392	gaan1243,
+		393	gada1258,
+		394	gade1242,
+		395	gaga1249,
+		396	gahr1239,
+		397	gala1264,
+		398	gale1259,
+		399	gali1258,
+		400	gali1262,
+		401	galo1242,
+		402	gami1243,
+		403	gamo1243,
+		404	gang1266,
+		405	gant1244,
+		406	gapa1238,
+		407	garo1247,
+		408	gayo1244,
+		409	geba1237,
+		410	gebe1237,
+		411	geda1237,
+		412	gela1263,
+		413	geru1240,
+		414	ghan1242,
+		415	ghar1239,
+		416	gheg1238,
+		417	giiw1236,
+		418	gilb1244,
+		419	gily1242,
+		420	gira1247,
+		421	glav1244,
+		422	gofa1235,
+		423	gogo1265,
+		424	guah1255,
+		425	guam1248,
+		426	guan1266,
+		427	guan1269,
+		428	guat1253,
+		429	gube1234,
+		430	gude1246,
+		431	guer1243,
+		432	gugu1255,
+		433	guhu1244,
+		434	guiq1238,
+		435	guma1254,
+		436	gunw1252,
+		437	guny1241,
+		438	guri1248,
+		439	guru1261,
+		440	guru1271,
+		441	gusi1247,
+		442	gwen1239,
+		443	gyel1242,
+		444	haaa1252,
+		445	hadi1240,
+		446	hadz1240,
+		447	haka1240,
+		448	hakk1236,
+		449	hala1252,
+		450	halh1238,
+		451	hali1244,
+		452	halk1245,
+		453	hame1242,
+		454	hang1263,
+		455	hani1248,
+		456	hano1246,
+		457	haru1245,
+		458	hava1248,
+		459	hawa1245,
+		460	hehe1240,
+		461	hela1238,
+		462	here1253,
+		463	hida1246,
+		464	high1276,
+		465	hind1269,
+		466	hixk1239,
+		467	hoaa1235,
+		468	hoav1238,
+		469	hone1235,
+		470	honi1244,
+		471	hopi1249,
+		472	horp1239,
+		473	hote1245,
+		474	hozo1236,
+		475	hrus1242,
+		476	huaa1248,
+		477	hual1241,
+		478	huam1247,
+		479	huar1255,
+		480	huas1242,
+		481	huba1236,
+		482	huic1243,
+		483	hula1239,
+		484	hula1244,
+		485	huli1244,
+		486	hung1274,
+		487	hung1275,
+		488	hunz1247,
+		489	huuu1240,
+		490	iaai1238,
+		491	iatm1242,
+		492	ibal1244,
+		493	iban1264,
+		494	iban1267,
+		495	ibat1238,
+		496	ibib1240,
+		497	icel1247,
+		498	idii1243,
+		499	idom1241,
+		500	idum1241,
+		501	idun1242,
+		502	ilaa1246,
+		503	iliu1237,
+		504	ilon1239,
+		505	imba1240,
+		506	inga1252,
+		507	ingr1248,
+		508	irar1238,
+		509	iris1253,
+		510	irul1243,
+		511	isco1239,
+		512	isin1239,
+		513	isir1237,
+		514	isna1241,
+		515	isth1240,
+		516	isth1241,
+		517	ital1282,
+		518	iton1250,
+		519	itza1241,
+		520	iumi1238,
+		521	ivat1242,
+		522	iwal1237,
+		523	iyoo1238,
+		524	jahh1242,
+		525	jalk1242,
+		526	jama1261,
+		527	jamb1236,
+		528	japh1234,
+		529	jara1266,
+		530	jede1239,
+		531	jeha1242,
+		532	jehh1245,
+		533	jeru1240,
+		534	jiba1237,
+		535	jina1244,
+		536	juku1254,
+		537	kaba1278,
+		538	kach1280,
+		539	kach1284,
+		540	kada1242,
+		541	kado1242,
+		542	kafa1242,
+		543	kaga1256,
+		544	kagu1239,
+		545	kaik1246,
+		546	kaki1249,
+		547	kala1384,
+		548	kala1388,
+		549	kala1399,
+		550	kali1308,
+		551	kalm1243,
+		552	kama1370,
+		553	kamb1297,
+		554	kamb1299,
+		555	kamm1249,
+		556	kana1286,
+		557	kana1291,
+		558	kani1286,
+		559	kank1243,
+		560	kaqc1270,
+		561	kara1476,
+		562	kara1486,
+		563	kara1487,
+		564	kara1500,
+		565	karb1241,
+		566	kare1335,
+		567	kare1338,
+		568	kari1306,
+		569	kari1311,
+		570	kark1258,
+		571	karn1252,
+		572	karo1304,
+		573	kash1277,
+		574	kask1239,
+		575	katb1237,
+		576	kats1235,
+		577	kava1241,
+		578	kaya1315,
+		579	keap1239,
+		580	keig1242,
+		581	kele1258,
+		582	kemb1249,
+		583	keme1240,
+		584	kens1248,
+		585	kenu1236,
+		586	keoo1238,
+		587	kera1255,
+		588	kesa1244,
+		589	kett1243,
+		590	kgal1244,
+		591	khak1248,
+		592	khal1275,
+		593	kham1282,
+		594	khan1274,
+		595	khan1277,
+		596	khan1278,
+		597	khas1269,
+		598	khez1235,
+		599	khmu1256,
+		600	khum1248,
+		601	kich1262,
+		602	kiku1240,
+		603	kile1243,
+		604	kima1246,
+		605	kimm1245,
+		606	kina1250,
+		607	kinn1249,
+		608	kiow1266,
+		609	koda1255,
+		610	koho1244,
+		611	koir1240,
+		612	koit1244,
+		613	koka1244,
+		614	koko1269,
+		615	kola1285,
+		616	kolb1240,
+		617	kolc1235,
+		618	kolu1245,
+		619	komb1274,
+		620	komc1235,
+		621	komi1268,
+		622	komi1269,
+		623	komi1270,
+		624	komo1260,
+		625	kona1242,
+		626	konk1267,
+		627	kony1248,
+		628	konz1239,
+		629	koon1245,
+		630	koor1239,
+		631	kore1280,
+		632	kore1283,
+		633	koro1298,
+		634	koro1313,
+		635	korr1238,
+		636	kosa1249,
+		637	kosr1238,
+		638	kota1263,
+		639	koti1238,
+		640	kova1243,
+		641	kove1237,
+		642	koya1251,
+		643	kren1239,
+		644	kuan1247,
+		645	kuan1248,
+		646	kuik1246,
+		647	kuku1273,
+		648	kulo1237,
+		649	kulu1253,
+		650	kuma1276,
+		651	kumb1268,
+		652	kunb1251,
+		653	kuni1267,
+		654	kunj1245,
+		655	kuot1243,
+		656	kurr1243,
+		657	kusa1251,
+		658	kusu1250,
+		659	kuyy1240,
+		660	kwai1243,
+		661	kwam1249,
+		662	kwar1239,
+		663	kweg1241,
+		664	kwin1241,
+		665	kwom1262,
+		666	kxoe1243,
+		667	kyer1238,
+		668	laal1242,
+		669	labo1244,
+		670	labu1248,
+		671	lach1248,
+		672	lafo1243,
+		673	lagw1237,
+		674	lahu1252,
+		675	lahu1253,
+		676	laiy1246,
+		677	lala1268,
+		678	lama1277,
+		679	lamb1269,
+		680	lamb1272,
+		681	lame1260,
+		682	lamk1238,
+		683	lamo1244,
+		684	land1256,
+		685	lang1320,
+		686	lara1258,
+		687	lash1243,
+		688	latv1249,
+		689	lave1248,
+		690	lave1249,
+		691	lavu1241,
+		692	lega1250,
+		693	lele1267,
+		694	lele1270,
+		695	lele1276,
+		696	lemb1266,
+		697	leme1238,
+		698	lena1238,
+		699	lend1245,
+		700	leng1259,
+		701	lepc1244,
+		702	leti1246,
+		703	lewo1242,
+		704	lewo1244,
+		705	lezg1247,
+		706	lian1251,
+		707	lihi1237,
+		708	liji1238,
+		709	lill1248,
+		710	limb1266,
+		711	limo1248,
+		712	ling1265,
+		713	lipo1242,
+		714	lish1245,
+		715	lisu1250,
+		716	lith1251,
+		717	litz1237,
+		718	livv1243,
+		719	logo1259,
+		720	loka1252,
+		721	lolo1259,
+		722	lomb1257,
+		723	long1395,
+		724	loni1238,
+		725	lote1237,
+		726	loth1237,
+		727	louu1245,
+		728	lowl1260,
+		729	lowl1265,
+		730	lozi1239,
+		731	luan1263,
+		732	lubu1243,
+		733	ludi1246,
+		734	lugb1240,
+		735	lugu1238,
+		736	lule1254,
+		737	lumb1249,
+		738	lumu1239,
+		739	lund1271,
+		740	luok1236,
+		741	lush1249,
+		742	lush1252,
+		743	lusi1240,
+		744	luva1239,
+		745	luya1241,
+		746	maan1238,
+		747	mace1250,
+		748	macu1260,
+		749	mada1285,
+		750	madi1260,
+		751	madn1237,
+		752	maee1241,
+		753	mafe1237,
+		754	maga1260,
+		755	maga1263,
+		756	magd1235,
+		757	maib1239,
+		758	mais1250,
+		759	mait1250,
+		760	maja1242,
+		761	makc1235,
+		762	makh1264,
+		763	makh1266,
+		764	mako1251,
+		765	maku1277,
+		766	mala1463,
+		767	mala1464,
+		768	mala1479,
+		769	mala1534,
+		770	male1284,
+		771	male1289,
+		772	male1297,
+		773	malg1251,
+		774	mali1285,
+		775	malo1243,
+		776	malu1245,
+		777	mama1275,
+		778	mamb1294,
+		779	mamb1296,
+		780	mamb1306,
+		781	mamm1241,
+		782	mana1288,
+		783	mana1295,
+		784	mana1298,
+		785	mand1415,
+		786	mand1440,
+		787	mang1378,
+		788	mang1381,
+		789	mang1394,
+		790	mang1401,
+		791	mang1403,
+		792	mang1404,
+		793	mang1405,
+		794	mani1235,
+		795	manm1238,
+		796	mans1260,
+		797	mans1262,
+		798	manu1258,
+		799	maor1246,
+		800	mapo1242,
+		801	mapu1245,
+		802	maqu1238,
+		803	mara1378,
+		804	mara1379,
+		805	mara1382,
+		806	mara1386,
+		807	mara1399,
+		808	mara1404,
+		809	marg1265,
+		810	mari1414,
+		811	mari1416,
+		812	mari1424,
+		813	mari1426,
+		814	mari1428,
+		815	mari1440,
+		816	mars1254,
+		817	mart1255,
+		818	maru1249,
+		819	maru1252,
+		820	masa1322,
+		821	masb1238,
+		822	mask1242,
+		823	matb1237,
+		824	mati1250,
+		825	mato1252,
+		826	mats1244,
+		827	matu1259,
+		828	matu1261,
+		829	maun1240,
+		830	maxa1247,
+		831	mayo1261,
+		832	mayo1264,
+		833	maza1304,
+		834	mbaa1245,
+		835	mbal1255,
+		836	mban1263,
+		837	mbar1260,
+		838	mboc1235,
+		839	mbol1247,
+		840	mbul1263,
+		841	meen1242,
+		842	mehe1243,
+		843	meke1243,
+		844	mele1250,
+		845	melo1242,
+		846	melp1238,
+		847	mere1242,
+		848	meru1245,
+		849	meta1238,
+		850	mezo1235,
+		851	mezq1235,
+		852	midd1327,
+		853	miga1249,
+		854	miju1243,
+		855	mikm1235,
+		856	mila1245,
+		857	mina1276,
+		858	mini1251,
+		859	mini1256,
+		860	minn1241,
+		861	misi1243,
+		862	mixt1426,
+		863	miya1259,
+		864	miya1266,
+		865	mlab1235,
+		866	moba1244,
+		867	moch1257,
+		868	moco1246,
+		869	mode1248,
+		870	moha1258,
+		871	moii1235,
+		872	moke1242,
+		873	moki1238,
+		874	mokl1243,
+		875	mokp1239,
+		876	moks1248,
+		877	molo1266,
+		878	moni1237,
+		879	mono1270,
+		880	mono1273,
+		881	mono1275,
+		882	mopa1243,
+		883	morm1235,
+		884	mose1249,
+		885	motl1237,
+		886	motu1246,
+		887	mouk1239,
+		888	moun1252,
+		889	movi1243,
+		890	moyo1238,
+		891	mpad1242,
+		892	mpii1239,
+		893	mpot1240,
+		894	mpur1239,
+		895	mual1241,
+		896	mudu1239,
+		897	mudu1242,
+		898	mull1237,
+		899	munc1235,
+		900	mund1325,
+		901	mund1326,
+		902	mund1328,
+		903	mund1330,
+		904	murl1244,
+		905	muru1266,
+		906	muru1274,
+		907	musa1266,
+		908	musg1254,
+		909	muso1238,
+		910	muyu1244,
+		911	mwag1236,
+		912	mwan1247,
+		913	mwer1248,
+		914	nade1244,
+		915	naka1262,
+		916	nali1244,
+		917	nama1268,
+		918	namb1293,
+		919	namu1246,
+		920	nana1257,
+		921	nang1262,
+		922	naru1238,
+		923	nati1244,
+		924	natu1246,
+		925	naue1237,
+		926	naur1243,
+		927	nava1243,
+		928	nawu1242,
+		929	naxi1245,
+		930	ncan1245,
+		931	ndam1239,
+		932	ndog1248,
+		933	ndom1245,
+		934	nege1240,
+		935	negi1245,
+		936	neha1247,
+		937	nend1239,
+		938	nene1249,
+		939	neng1238,
+		940	nenn1238,
+		941	nepa1254,
+		942	nese1235,
+		943	newa1246,
+		944	nezp1238,
+		945	ngaa1240,
+		946	ngal1292,
+		947	ngan1291,
+		948	ngar1284,
+		949	ngas1240,
+		950	ngba1284,
+		951	ngba1285,
+		952	ngeq1245,
+		953	ngit1239,
+		954	nhan1238,
+		955	nhen1239,
+		956	nila1242,
+		957	nina1238,
+		958	nisg1240,
+		959	niua1240,
+		960	niue1239,
+		961	niva1238,
+		962	njan1240,
+		963	nkon1248,
+		964	noct1238,
+		965	noku1237,
+		966	noon1242,
+		967	nopa1235,
+		968	nort2684,
+		969	nort2690,
+		970	nort2697,
+		971	nort2702,
+		972	nort2722,
+		973	nort2723,
+		974	nort2724,
+		975	nort2732,
+		976	nort2745,
+		977	nort2747,
+		978	nort2836,
+		979	nort2839,
+		980	nort2845,
+		981	nort2847,
+		982	nort2864,
+		983	nort2877,
+		984	nort2885,
+		985	nort2930,
+		986	nort2938,
+		987	nort2942,
+		988	nort2951,
+		989	nort2954,
+		990	nort2957,
+		991	nort2959,
+		992	nort2961,
+		993	nort2994,
+		994	nort3047,
+		995	nots1237,
+		996	nsen1242,
+		997	nucl1235,
+		998	nucl1240,
+		999	nucl1301,
+		1000	nucl1302,
+		1001	nucl1305,
+		1002	nucl1310,
+		1003	nucl1327,
+		1004	nucl1417,
+		1005	nucl1452,
+		1006	nucl1458,
+		1007	nucl1593,
+		1008	nucl1595,
+		1009	nucl1622,
+		1010	nucl1630,
+		1011	nucl1632,
+		1012	nucl1633,
+		1013	nucl1643,
+		1014	nuer1246,
+		1015	nukn1238,
+		1016	nuku1260,
+		1017	nung1282,
+		1018	nupe1254,
+		1019	nusu1239,
+		1020	nuuc1236,
+		1021	nyah1250,
+		1022	nyak1260,
+		1023	nyal1254,
+		1024	nyan1307,
+		1025	nyat1246,
+		1026	nyaw1247,
+		1027	nyis1236,
+		1028	nyor1246,
+		1029	obok1239,
+		1030	occi1239,
+		1031	ocot1244,
+		1032	ofay1240,
+		1033	okan1243,
+		1034	okin1246,
+		1035	oksa1245,
+		1036	okuu1243,
+		1037	oloo1241,
+		1038	olut1240,
+		1039	omah1247,
+		1040	omie1241,
+		1041	onto1237,
+		1042	oriy1255,
+		1043	oroc1248,
+		1044	orok1265,
+		1045	orok1266,
+		1046	orok1267,
+		1047	orok1269,
+		1048	orow1242,
+		1049	osam1235,
+		1050	otta1242,
+		1051	owaa1237,
+		1052	paam1238,
+		1053	paas1238,
+		1054	paco1243,
+		1055	paez1247,
+		1056	pagi1243,
+		1057	pagu1249,
+		1058	pahn1237,
+		1059	pait1244,
+		1060	pala1344,
+		1061	pali1279,
+		1062	pamo1252,
+		1063	pana1307,
+		1064	pang1287,
+		1065	pang1290,
+		1066	pang1291,
+		1067	panj1256,
+		1068	pano1254,
+		1069	pany1241,
+		1070	papa1238,
+		1071	papa1265,
+		1072	para1301,
+		1073	para1302,
+		1074	pate1247,
+		1075	patp1243,
+		1076	patt1248,
+		1077	paul1238,
+		1078	pawa1255,
+		1079	payn1244,
+		1080	pela1242,
+		1081	pemo1248,
+		1082	pend1242,
+		1083	peng1244,
+		1084	penr1237,
+		1085	phai1238,
+		1086	phom1236,
+		1087	pila1245,
+		1088	pile1238,
+		1089	pima1248,
+		1090	pina1252,
+		1091	ping1243,
+		1092	pite1240,
+		1093	pnar1238,
+		1094	pohn1238,
+		1095	poli1260,
+		1096	popt1235,
+		1097	port1283,
+		1098	port1285,
+		1099	psik1239,
+		1100	puin1248,
+		1101	pulu1242,
+		1102	puma1239,
+		1103	puoc1238,
+		1104	pura1257,
+		1105	pure1242,
+		1106	puri1258,
+		1107	qawa1238,
+		1108	qima1242,
+		1109	quer1236,
+		1110	quio1240,
+		1111	rabh1238,
+		1112	rade1240,
+		1113	raji1240,
+		1114	rapa1244,
+		1115	rapa1245,
+		1116	rapo1238,
+		1117	raro1241,
+		1118	rata1244,
+		1119	raut1239,
+		1120	reja1241,
+		1121	reng1252,
+		1122	rere1240,
+		1123	reye1240,
+		1124	rian1263,
+		1125	rikb1245,
+		1126	roma1326,
+		1127	romb1245,
+		1128	rong1264,
+		1129	rong1266,
+		1130	ronn1241,
+		1131	roto1249,
+		1132	rotu1241,
+		1133	rovi1238,
+		1134	ruch1235,
+		1135	ruka1240,
+		1136	ruma1248,
+		1137	rung1258,
+		1138	rung1259,
+		1139	russ1263,
+		1140	russ1264,
+		1141	saaa1240,
+		1142	saaa1241,
+		1143	saam1283,
+		1144	saar1237,
+		1145	saba1268,
+		1146	sabu1255,
+		1147	sais1237,
+		1148	saka1289,
+		1149	saka1291,
+		1150	saki1247,
+		1151	saki1248,
+		1152	samb1305,
+		1153	samb1311,
+		1154	samo1305,
+		1155	sanb1241,
+		1156	sand1278,
+		1157	sang1321,
+		1158	sang1330,
+		1159	sang1331,
+		1160	sani1269,
+		1161	sanj1284,
+		1162	sanm1289,
+		1163	sanm1295,
+		1164	sanm1301,
+		1165	sant1436,
+		1166	sant1451,
+		1167	sapo1253,
+		1168	sapu1248,
+		1169	sars1236,
+		1170	sata1237,
+		1171	sauk1252,
+		1172	saur1249,
+		1173	savo1255,
+		1174	saya1246,
+		1175	seda1262,
+		1176	seim1238,
+		1177	seke1241,
+		1178	sela1259,
+		1179	sela1260,
+		1180	selk1253,
+		1181	sema1265,
+		1182	sema1266,
+		1183	seme1247,
+		1184	seng1281,
+		1185	seri1257,
+		1186	sgaw1245,
+		1187	shab1252,
+		1188	sham1280,
+		1189	shan1283,
+		1190	shaw1249,
+		1191	shil1265,
+		1192	ship1254,
+		1193	shix1238,
+		1194	shol1240,
+		1195	shon1251,
+		1196	shor1247,
+		1197	shos1248,
+		1198	shua1257,
+		1199	siaw1243,
+		1200	sich1238,
+		1201	sici1248,
+		1202	sici1249,
+		1203	siee1239,
+		1204	sier1250,
+		1205	sika1261,
+		1206	siks1238,
+		1207	sile1255,
+		1208	simb1256,
+		1209	sina1266,
+		1210	sing1264,
+		1211	sion1247,
+		1212	sioo1240,
+		1213	situ1238,
+		1214	siyi1240,
+		1215	skol1241,
+		1216	slov1268,
+		1217	sobe1238,
+		1218	soch1239,
+		1219	soga1242,
+		1220	sons1242,
+		1221	sooo1254,
+		1222	sout1528,
+		1223	sout2649,
+		1224	sout2674,
+		1225	sout2679,
+		1226	sout2715,
+		1227	sout2728,
+		1228	sout2729,
+		1229	sout2730,
+		1230	sout2782,
+		1231	sout2807,
+		1232	sout2826,
+		1233	sout2856,
+		1234	sout2857,
+		1235	sout2859,
+		1236	sout2869,
+		1237	sout2896,
+		1238	sout2918,
+		1239	sout2954,
+		1240	sout2956,
+		1241	sout2959,
+		1242	sout2976,
+		1243	sout2985,
+		1244	sout2994,
+		1245	sout2996,
+		1246	stan1289,
+		1247	stan1290,
+		1248	stan1293,
+		1249	stan1306,
+		1250	suba1238,
+		1251	sude1239,
+		1252	sumi1235,
+		1253	sunw1242,
+		1254	supy1237,
+		1255	surg1248,
+		1256	surs1246,
+		1257	swah1253,
+		1258	swed1254,
+		1259	taba1263,
+		1260	taga1272,
+		1261	tagi1241,
+		1262	tago1246,
+		1263	taha1241,
+		1264	tahi1242,
+		1265	taia1239,
+		1266	taji1246,
+		1267	taku1257,
+		1268	tali1259,
+		1269	tama1331,
+		1270	tama1365,
+		1271	tamb1254,
+		1272	tami1289,
+		1273	tane1237,
+		1274	tang1336,
+		1275	tang1347,
+		1276	tang1373,
+		1277	tang1377,
+		1278	tani1257,
+		1279	tara1313,
+		1280	tata1255,
+		1281	tata1257,
+		1282	tata1258,
+		1283	taul1251,
+		1284	taus1251,
+		1285	taus1253,
+		1286	tawa1286,
+		1287	tbol1240,
+		1288	tean1237,
+		1289	teda1241,
+		1290	tedi1235,
+		1291	tega1236,
+		1292	tehu1242,
+		1293	teke1275,
+		1294	tekt1235,
+		1295	telu1262,
+		1296	temi1246,
+		1297	temp1235,
+		1298	teng1272,
+		1299	tenn1246,
+		1300	teop1238,
+		1301	tera1251,
+		1302	term1237,
+		1303	tern1247,
+		1304	tete1251,
+		1305	tezo1238,
+		1306	thad1238,
+		1307	thak1245,
+		1308	than1259,
+		1309	thao1240,
+		1310	thar1283,
+		1311	thul1246,
+		1312	tibe1272,
+		1313	tibe1274,
+		1314	ticu1245,
+		1315	tief1242,
+		1316	tief1244,
+		1317	tien1242,
+		1318	tiga1245,
+		1319	tika1246,
+		1320	tiko1237,
+		1321	tilu1238,
+		1322	timn1235,
+		1323	timu1262,
+		1324	tina1248,
+		1325	tiri1258,
+		1326	tiru1241,
+		1327	tita1241,
+		1328	toab1237,
+		1329	toar1246,
+		1330	toba1268,
+		1331	tobe1252,
+		1332	toda1252,
+		1333	toho1245,
+		1334	tojo1241,
+		1335	toke1240,
+		1336	tong1308,
+		1337	tong1318,
+		1338	tong1325,
+		1339	toor1238,
+		1340	tora1259,
+		1341	tosk1239,
+		1342	tote1238,
+		1343	toto1302,
+		1344	touo1238,
+		1345	trin1274,
+		1346	trio1238,
+		1347	trum1247,
+		1348	tsam1247,
+		1349	tsat1238,
+		1350	tsha1245,
+		1351	tsis1238,
+		1352	tsix1234,
+		1353	tsog1243,
+		1354	tson1249,
+		1355	tswa1253,
+		1356	tswa1255,
+		1357	tuba1278,
+		1358	tuca1252,
+		1359	tugu1245,
+		1360	tuka1248,
+		1361	tuki1240,
+		1362	tula1252,
+		1363	tulu1258,
+		1364	tuml1238,
+		1365	tune1261,
+		1366	tung1290,
+		1367	tunn1238,
+		1368	turk1303,
+		1369	turk1304,
+		1370	tusc1257,
+		1371	tutu1241,
+		1372	tuva1244,
+		1373	tuvi1240,
+		1374	tuwa1243,
+		1375	tuwu1238,
+		1376	ubir1237,
+		1377	udih1248,
+		1378	ughe1237,
+		1379	ugon1239,
+		1380	ulch1241,
+		1381	ulit1238,
+		1382	umaa1242,
+		1383	umbu1257,
+		1384	umbu1258,
+		1385	umes1235,
+		1386	unua1237,
+		1387	uppe1275,
+		1388	uppe1427,
+		1389	urak1238,
+		1390	urar1246,
+		1391	urav1235,
+		1392	urim1252,
+		1393	urip1239,
+		1394	urni1239,
+		1395	utes1238,
+		1396	uuuu1243,
+		1397	vano1237,
+		1398	veps1250,
+		1399	vera1241,
+		1400	viem1243,
+		1401	viet1252,
+		1402	vinm1237,
+		1403	vunj1238,
+		1404	vure1239,
+		1405	vwan1235,
+		1406	wadj1254,
+		1407	waga1260,
+		1408	wage1238,
+		1409	waig1244,
+		1410	waim1251,
+		1411	waim1252,
+		1412	waim1253,
+		1413	waiw1244,
+		1414	waja1257,
+		1415	waja1259,
+		1416	waka1274,
+		1417	wala1266,
+		1418	wall1257,
+		1419	wamb1257,
+		1420	wand1267,
+		1421	wand1278,
+		1422	wanm1242,
+		1423	wara1294,
+		1424	wara1300,
+		1425	wara1303,
+		1426	ward1246,
+		1427	ware1253,
+		1428	ware1255,
+		1429	wari1268,
+		1430	warj1242,
+		1431	waro1242,
+		1432	waru1265,
+		1433	wash1253,
+		1434	wawa1246,
+		1435	waya1269,
+		1436	wayu1241,
+		1437	wayu1243,
+		1438	wels1247,
+		1439	weri1253,
+		1440	west2354,
+		1441	west2369,
+		1442	west2386,
+		1443	west2392,
+		1444	west2396,
+		1445	west2397,
+		1446	west2415,
+		1447	west2418,
+		1448	west2430,
+		1449	west2441,
+		1450	west2466,
+		1451	west2516,
+		1452	west2519,
+		1453	west2548,
+		1454	west2555,
+		1455	west2557,
+		1456	west2560,
+		1457	west2594,
+		1458	west2600,
+		1459	west2615,
+		1460	west2618,
+		1461	west2632,
+		1462	west2635,
+		1463	west2644,
+		1464	west2650,
+		1465	west2763,
+		1466	whit1269,
+		1467	wiru1244,
+		1468	woii1237,
+		1469	wola1242,
+		1470	wole1240,
+		1471	woli1241,
+		1472	wotu1240,
+		1473	wuch1236,
+		1474	wudi1238,
+		1475	wusa1235,
+		1476	wutu1241,
+		1477	wuvu1239,
+		1478	wyan1247,
+		1479	xamt1239,
+		1480	xara1244,
+		1481	xava1240,
+		1482	xhos1239,
+		1483	xish1235,
+		1484	xokl1240,
+		1485	yaak1241,
+		1486	yaey1239,
+		1487	yagu1244,
+		1488	yaka1269,
+		1489	yaka1277,
+		1490	yaki1237,
+		1491	yako1252,
+		1492	yaku1245,
+		1493	yale1246,
+		1494	yama1264,
+		1495	yami1254,
+		1496	yami1256,
+		1497	yamp1242,
+		1498	yane1238,
+		1499	yank1247,
+		1500	yano1261,
+		1501	yano1262,
+		1502	yaoo1241,
+		1503	yape1248,
+		1504	yapu1240,
+		1505	yaqu1251,
+		1506	yare1248,
+		1507	yasa1242,
+		1508	yatz1235,
+		1509	yaul1241,
+		1510	yaum1237,
+		1511	yawa1261,
+		1512	yawu1244,
+		1513	yecu1235,
+		1514	yele1255,
+		1515	yems1235,
+		1516	yinc1238,
+		1517	yind1247,
+		1518	yoga1237,
+		1519	yoku1256,
+		1520	yona1241,
+		1521	yong1280,
+		1522	yora1241,
+		1523	youl1235,
+		1524	youn1235,
+		1525	yuca1254,
+		1526	yuch1247,
+		1527	yuec1235,
+		1528	yukp1241,
+		1529	yulp1239,
+		1530	yuqu1240,
+		1531	yura1255,
+		1532	zaba1237,
+		1533	zaca1241,
+		1534	zaca1242,
+		1535	zaiw1241,
+		1536	zakh1243,
+		1537	zamb1245,
+		1538	zani1235,
+		1539	zapa1253,
+		1540	zarm1239,
+		1541	zaye1235,
+		1542	zays1235,
+		1543	zeme1240,
+		1544	zenz1235,
+		1545	zhab1238,
+		1546	zigu1244,
+		1547	zinz1238,
+		1548	zoog1238,
+		1549	zulg1242,
+		1550	zuni1245
+	;
+	TREE * UNTITLED = [&R] ((((453:85.21624312,467:85.21624312):6.298719705,49:91.51496282):15.71468101,(((((((((((((((((((((1:0.554539852,886:0.554539852):0.353180593,(677:0.6250074057,(843:0.5031731439,1410:0.5031731439):0.1218342618):0.2827130392):0.42807187,((483:0.2616521883,579:0.2616521883):0.3177037722,1209:0.5793559605):0.7564363545):0.4439871169,(910:0.8722464049,861:0.8722464049):0.907533027):0.2809709038,1251:2.060750336):0.8920650676,((((((215:0.3052613764,501:0.3052613764):0.738143129,618:1.043404505):1.100516396,(207:1.241665288,332:1.241665288):0.9022556133):0.04930074811,435:2.193221649):0.1406930332,((75:1.570618782,1376:1.570618782):0.08271498945,406:1.653333771):0.6805809114):0.2881245803,(201:2.143277145,758:2.143277145):0.4787621173):0.3307761406):0.4707439241,(((((((107:2.499670495,((414:0.6094588852,1208:0.6094588852):1.315784853,(((468:0.2497316119,657:0.2497316119):0.3575859553,1133:0.6073175672):0.7206207774,1378:1.327938345):0.5973053933):0.5744267575):0.2584356552,(((175:0.5395435167,614:0.5395435167):0.4497812007,257:0.9893247174):0.2894029116,((880:0.3613399977,1340:0.3613399977):0.3178065626,1532:0.6791465603):0.5995810687):1.479378522):0.1436263722,(((1300:1.675858679,1167:1.675858679):0.2632871493,451:1.939145828):0.3252565754,(936:0.5089629571,1071:0.5089629571):1.755439446):0.6373301197):0.1385621379,(1256:2.818809171,((645:1.217612134,858:1.217612134):0.5858635765,1075:1.80347571):1.01533346):0.2214854902):0.09706989233,(137:0.9942078657,749:0.9942078657):2.143156687):0.02973301406,(((562:1.940175692,916:1.940175692):0.3870013036,(1318:1.830003606,1366:1.830003606):0.4971733893):0.4892039072,((707:0.5450247233,995:0.5450247233):0.1367912442,786:0.6818159675):2.134564935):0.3507166643):0.1234056448,((180:1.168666194,915:1.168666194):1.188314273,897:2.356980466):0.9335227455):0.1330561154):0.07435611746,(((((((17:1.559122523,(909:0.9777593533,670:0.9777593533):0.5813631695):0.0758912001,852:1.635013723):0.6151789751,198:2.250192698):0.1278505134,((((1074:1.099485914,792:1.099485914):0.1232419917,800:1.222727906):0.3341092766,473:1.556837182):0.03667837027,522:1.593515552):0.784527659):0.3947812853,1217:2.772824497):0.3173908716,((((1184:1.562814721,791:1.562814721):0.7048735932,(48:1.3516882,(683:0.4871404707,887:0.4871404707):0.8645477296):0.9160001142):0.2783361552,(((79:0.8788335674,571:0.8788335674):1.069374146,((725:1.468182999,(771:1.293803548,840:1.293803548):0.1743794513):0.1501110026,1212:1.618294002):0.3299137121):0.4163811002,((94:1.685210495,((166:1.278068393,(814:1.149537921,828:1.149537921):0.1285304725):0.1820259248,411:1.460094318):0.2251161772):0.2538499256,825:1.939060421):0.4255283934):0.1814356555):0.2432717236,(136:0.8346909931,(641:0.3692479525,743:0.3692479525):0.4654430406):1.9546052):0.3009191752):0.163343765,((78:1.273668889,1364:1.273668889):1.535331536,783:2.809000425):0.4445587086):0.2443563114):0.1186146408,(((((581:0.6699510671,(1327:0.4192302309,694:0.4192302309):0.2507208361):0.08504685334,724:0.7549979204):0.9708450035,(124:0.3749984475,727:0.3749984475):1.350844476):0.9558835524,(1176:2.09259993,1477:2.09259993):0.5891265461):0.5981534355,1503:3.279879912):0.3366501738):0.03899814238,(((((((((31:1.195777069,1480:1.195777069):0.1975290725,(1048:1.087472628,1325:1.087472628):0.3058335131):0.5123043515,337:1.905610493):0.6818588591,(((121:0.5422174231,1023:0.5422174231):0.6253864167,(218:0.6160394258,650:0.6160394258):0.551564414):0.4031839919,(216:0.9046730903,234:0.9046730903):0.6661147413):1.01668152):0.2919600074,(939:2.634739265,490:2.634739265):0.2446900945):0.1033887602,((54:1.699466976,(1236:0.6702404983,(698:0.3998241062,(981:0.1843529613,1466:0.1843529613):0.2154711448):0.2704163921):1.029226478):0.4049564558,(1203:0.5681276903,1391:0.5681276903):1.536295742):0.8783946874):0.2476420155,((((((32:1.751275242,(1275:1.048245664,69:1.048245664):0.7030295774):0.1514599285,965:1.90273517):0.03816693355,(((775:1.20331168,1148:1.20331168):0.04256618821,(753:0.2832415177,1371:0.2832415177):0.9626363508):0.4207961972,847:1.666674066):0.274228038):0.4088416758,((813:2.062442982,(((697:0.2632205981,1399:0.2632205981):1.004228041,885:1.267448639):0.06644440718,1404:1.333893046):0.7285499354):0.109871224,(350:1.482765395,456:1.482765395):0.6895488104):0.1774295739):0.3196647423,((((((67:0.5782972,1177:0.5782972):0.1497905997,1142:0.7280877997):1.153486348,917:1.881574148):0.1312376511,(((118:0.3021984972,162:0.3021984972):0.5776337681,(681:0.2996228343,703:0.2996228343):0.580209431):0.341810034,(1233:0.6999801084,(693:0.2973004277,978:0.2973004277):0.4026796807):0.5216621909):0.7911694996):0.3184801894,((((89:1.188849587,(((1098:0.3665549927,100:0.3665549927):0.4606621733,822:0.827217166):0.3479983166,(1122:0.3188071795,1386:0.3188071795):0.856408303):0.013634104):0.2515608573,1393:1.440410444):0.3776039482,(776:1.042854039,942:1.042854039):0.7751603528):0.08698162169,((((163:0.4641307608,752:0.4641307608):0.1028371599,807:0.5669679207):0.7004334575,((575:0.9653876863,1234:0.9653876863):0.2530829408,(669:0.4083374862,923:0.4083374862):0.810133141):0.04893075105):0.1778986001,(712:0.9128782299,(717:0.7068987621,1402:0.7068987621):0.2059794678):0.5324217484):0.4596960354):0.4262959746):0.02778027014,((305:1.126290734,(1235:0.9058889076,979:0.9058889076):0.220401826):0.4886759119,1052:1.614966646):0.7441056129):0.3103362633):0.3714246753,(((((((61:0.9201258186,1320:0.9201258186):0.5708637794,((351:1.048685773,1088:1.048685773):0.2878575114,((362:1.033804031,1451:1.033804031):0.10569804,(389:0.3682627967,844:0.3682627967):0.7712392746):0.1970412128):0.1544463139):0.07506914894,((959:0.2822028919,1418:0.2822028919):1.030957942,((1154:0.3283622428,1335:0.3283622428):0.4098936521,1372:0.7382558948):0.5749049387):0.2528979134):0.07450110275,(((((((((1264:0.675835616,799:0.675835616):0.1586523859,459:0.8344880019):0.003002944192,1084:0.8374909461):0.07149179037,(1115:0.5732821764,1117:0.5732821764):0.3357005601):0.1571874836,(790:0.6782138134,980:0.6782138134):0.3879564067):0.0652396335,1114:1.131409854):0.3783434653,(1267:0.7660506031,1041:0.7660506031):0.7437027157):0.04934762327,1205:1.559100942):0.03994603468,1016:1.599046977):0.04151287284):0.02744179014,(960:0.5758300024,1338:0.5758300024):1.092171637):0.2028435926,377:1.870845232):0.3440921527,(1452:1.285726603,1132:1.285726603):0.9292107821):0.825895812):0.1896269379):0.3564324026,((((((74:1.202353859,((1328:0.9130020844,(662:0.6870039023,1417:0.6870039023):0.225998182):0.05894478521,660:0.9719468696):0.2304069891):0.2926862187,1141:1.495040077):0.07194711328,1051:1.566987191):0.2552626211,723:1.822249812):0.4994197959,(1268:1.637809338,((199:1.162105472,412:1.162105472):0.2227888027,(415:0.7309709072,700:0.7309709072):0.6539233677):0.2529150629):0.6838602698):1.12538169,(((((((((230:0.3948176245,1170:0.3948176245):0.08113129633,(278:0.3292589172,1101:0.3292589172):0.1466900037):0.06898096426,1470:0.5449298851):0.0899501052,(1220:0.4061286033,1381:0.4061286033):0.228751387):0.6028316143,(873:0.9242857589,(1091:0.3132314637,1094:0.3132314637):0.6110542952):0.3134258458):0.1969235,816:1.434635105):0.3594892575,418:1.794124362):0.4006987958,637:2.194823158):0.2508764432,926:2.445699601):1.001351696):0.1398412401):0.01832732385,(((1273:1.03618064,1397:1.03618064):0.2707927279,1288:1.306973368):2.037387648,(103:2.999365307,(924:1.560892568,921:1.560892568):1.438472739):0.344995709):0.2608588451):0.05030836645):0.1577624784,((((((1420:0.9867512751,1468:0.9867512751):1.369790723,339:2.356541998):0.5927116361,1431:2.949253635):0.3124043001,(883:3.101645019,1427:3.101645019):0.1600129155):0.1569868209,((1409:2.722247176,410:2.722247176):0.1116113455,823:2.833858521):0.5847862345):0.2069036187,508:3.625548374):0.1877423319):0.04921293707,(((((16:0.9268940506,(42:0.7370000965,(678:0.351449733,704:0.351449733):0.3855503635):0.1898939541):0.4076473167,1237:1.334541367):1.630921525,((554:2.241178352,(318:0.8013311931,1146:0.8013311931):1.439847158):0.2935620709,(586:2.333063372,793:2.333063372):0.2016770505):0.43072247):0.5360165515,((982:1.686914055,798:1.686914055):0.09479283696,1077:1.781706892):1.719772552):0.1265598872,(((1302:2.32086294,((1411:0.726683382,925:0.726683382):1.114116869,((702:0.9932832885,731:0.9932832885):0.7568480332,765:1.750131322):0.09066892964):0.4800626889):0.2060391997,(1359:0.6547828175,503:0.6547828175):1.872119323):1.065711184,(615:3.333465126,((1453:2.803942708,780:2.803942708):0.3998329553,1178:3.203775663):0.1296894624):0.2591481982):0.0354260072):0.2344643121):0.2638368689,((((((((((1388:1.840622439,((1297:0.9505068782,1271:0.9505068782):0.5480217752,1138:1.498528653):0.3420937852):0.3313427627,(1323:1.695245439,1281:1.695245439):0.4767197618):0.4075943654,186:2.579559567):0.214335991,((133:0.6529521546,1120:0.6529521546):1.699062902,(739:1.993143975,352:1.993143975):0.358871082):0.4418805007):0.8442071571,((11:2.079398673,((((164:0.6814568337,529:0.6814568337):0.1947789217,1112:0.8762357554):0.7638211869,(993:0.9819304614,1349:0.9819304614):0.6581264809):0.1770160442,1464:1.817072987):0.2623256868):0.597704138,(122:2.400542533,((((1249:0.3610378212,527:0.3610378212):0.06435247573,(768:0.3525840186,1389:0.3525840186):0.0728062783):0.3474976513,934:0.7728879482):0.6668736517,(493:0.4237897946,895:0.4237897946):1.015971805):0.9607809328):0.2765602787):0.9609999033):0.1945311633,((141:1.27575083,408:1.27575083):2.071760061,((582:1.932759063,147:1.932759063):1.22737281,(872:0.5521160282,874:0.5521160282):2.608015845):0.1873790185):0.4851229865):0.1482945519,(1118:3.93311363,((125:2.389600095,200:2.389600095):0.1002025077,1179:2.489802603):1.443311028):0.0478147994):0.02862139878,(((((59:0.5250185209,132:0.5250185209):0.08221575121,1149:0.6072342721):0.9652881664,746:1.572522439):1.392776402,((((119:0.427446098,1238:0.427446098):0.7718535535,1456:1.199299652):0.09334624306,1066:1.292645895):0.3620310614,1489:1.654676956):1.310621885):0.8408692189,((120:2.162137164,1360:2.162137164):0.6537732325,(((1382:1.595624964,1062:1.595624964):0.3932568039,(676:1.193023641,(1471:0.6956762695,1472:0.6956762695):0.4973473713):0.7958581274):0.5904546756,(306:0.9473577854,(1082:0.638948765,1266:0.638948765):0.3084090203):1.631978658):0.2365739527):0.990257663):0.2033817691):0.07623976605,((((((191:1.279084374,(1324:1.226883478,755:1.226883478):0.05220089591):0.9628877828,((((((((239:0.5064878285,1518:0.5064878285):0.3718958236,393:0.8783836521):0.1590830225,(494:0.5883114235,769:0.5883114235):0.4491552512):0.186690901,514:1.224157576):0.2663483154,232:1.490505891):0.2270140647,80:1.717519956):0.1571941329,(((((27:1.289997885,563:1.289997885):0.1071136258,492:1.397111511):0.08864770637,1065:1.485759217):0.07349791547,504:1.559257132):0.08514984778,(((1374:1.082491707,((246:0.3308753366,380:0.3308753366):0.4072970516,(559:0.4371902721,983:0.4371902721):0.3009821161):0.3443193186):0.1766466303,(711:0.7114458608,732:0.7114458608):0.5476924763):0.1756209523,512:1.434759289):0.2096476908):0.2303071084):0.2276822616,(495:0.578709878,(521:0.4018548948,1495:0.4018548948):0.1768549832):1.523686472):0.1395758071):0.4833339479,(1326:1.215277723,1287:1.215277723):1.510028382):0.6099800337,25:3.335286139):0.09223778524,(((((((24:0.6623177824,(85:0.2918287083,824:0.2918287083):0.3704890741):0.2113518586,1454:0.873669641):0.178481538,(292:0.8806466529,1260:0.8806466529):0.1715045261):0.1414872391,(171:0.7898933183,543:0.7898933183):0.4037450998):0.5331924578,(984:0.66977019,1455:0.66977019):1.057060686):0.7387080829,808:2.465538959):0.06899794221,((((606:1.092563069,((130:1.025117723,(821:0.7457392701,((144:0.23598284,1424:0.23598284):0.3989110337,1127:0.6348938737):0.1108453964):0.2793784525):0.04675896668,1284:1.071876689):0.0206863799):0.1315270959,((548:0.6342324675,797:0.6342324675):0.3118906017,777:0.9461230693):0.2779670958):0.1400095137,(40:1.010753706,240:1.010753706):0.3533459729):0.1668909882,378:1.530990667):1.003546234):0.8929870231):0.502129526,(252:3.240740468,1060:3.240740468):0.6889129818):0.1561361445):0.001227855245,1298:4.08701745):0.03932306235):1.081592458,((52:0.4130511438,1150:0.4130511438):0.7032121468,577:1.116263291):4.09166968):0.2377970931,((86:2.956829583,1309:2.956829583):1.342694235,(648:3.559930375,1147:3.559930375):0.7395934435):1.146206245):0.07967596254,((556:2.02027712,1144:2.02027712):1.972711573,1135:3.992988693):1.532417333):28.77001674,(((241:1.305762491,(1239:0.640230936,1034:0.640230936):0.6655315552):0.4450175386,(863:1.037855319,(1486:0.3776446565,1520:0.3776446565):0.6602106629):0.7129247105):0.7025053231,1013:2.453285353):31.84213741):33.2007151,(((((((((((((6:0.8226355498,1535:0.8226355498):0.03315588041,(256:0.2827243723,687:0.2827243723):0.5730670579):0.4330460353,(818:0.2786202573,1080:0.2786202573):1.010217208):0.5962126653,1002:1.885050131):0.9274791035,1379:2.812529234):0.2869361485,(((((1483:1.129403799,715:1.129403799):0.4334704245,(713:0.915844651,721:0.915844651):0.6470295721):0.3462665589,576:1.909140782):0.2264228362,(((1474:0.5682972411,1475:0.5682972411):0.240825178,1200:0.8091224191):0.7779019434,((101:0.4305774266,1160:0.4305774266):0.3139180417,104:0.7444954683):0.8425288942):0.5485392557):0.3662919583,(((((33:0.5457737382,455:0.5457737382):0.456658173,((892:0.6702431419,364:0.6702431419):0.2653200824,470:0.9355632243):0.0668686869):0.4545752652,(173:1.265837194,291:1.265837194):0.1911699825):0.2574114912,1523:1.714418668):0.471142084,((675:0.507883636,674:0.507883636):0.7755618712,1019:1.283445507):0.9021152444):0.316294825):0.5976098064):0.6862810168,((((972:0.4377790803,1227:0.4377790803):2.091661197,((426:1.552093451,472:1.552093451):0.5964331706,(528:1.354395491,1213:1.354395491):0.7941311302):0.3809136559):0.006529234222,(1545:1.48823102,(973:0.3722723689,1228:0.3722723689):1.115958651):1.047738492):0.4938970278,((365:1.758286743,434:1.758286743):0.5750795005,(929:0.9158081315,(919:0.4324626482,1193:0.4324626482):0.4833454833):1.417558112):0.6965002959):0.7558798603):2.211131864,(((((((((273:1.638190565,269:1.638190565):0.1015056856,(611:1.509460269,682:1.509460269):0.2302359813):0.02908798064,((623:1.465837904,1279:1.465837904):0.09299256255,890:1.558830467):0.2099537644):0.8468500924,((((143:0.3189176358,372:0.3189176358):0.3018790591,447:0.6207966949):0.7926534145,741:1.413450109):0.4579155715,805:1.871365681):0.7442686426):0.2634582584,(((300:0.1758990295,899:0.1758990295):1.534116961,((404:0.7080048805,1214:0.7080048805):0.4175707012,((1059:0.7521242408,1290:0.7521242408):0.01855949461,1306:0.7706837354):0.3548918462):0.5844404089):0.1829158834,600:1.892931874):0.986160708):0.9636213499,((((53:0.3246858394,565:0.3246858394):1.851266906,((706:0.4499796947,1543:0.4499796947):0.6898958182,(804:0.9467548632,1129:0.9467548632):0.1931206497):1.036077233):0.4654858677,(((56:0.7546073488,598:0.7546073488):0.5649879161,1252:1.319595265):0.5012310198,((63:0.7912750409,726:0.7912750409):0.4886770845,(1073:1.180701636,1157:1.180701636):0.09925048925):0.5408741594):0.8206123286):0.05655199524,((595:0.6888381514,1274:0.6888381514):0.3879469384,811:1.07678509):1.621205519):1.144723323):1.479977597,(((((((87:0.2499996355,151:0.2499996355):1.199619826,1497:1.449619462):0.8919076637,((((((115:0.4207237087,1436:0.4207237087):0.09804756574,1253:0.5187712745):0.6728352306,1311:1.191606505):0.179085317,(533:0.3106405656,1419:0.3106405656):1.060051257):0.06193040604,1321:1.432622228):0.07737252859,(338:0.5271475264,592:0.5271475264):0.9828472303):0.831532369):0.1364394014,710:2.477966527):0.120898073,((129:0.8624702588,(224:0.6133514032,1102:0.6133514032):0.2491188557):0.6259070939,649:1.488377353):1.110487247):0.3261930974,(((131:0.3895221808,1308:0.3895221808):0.6300896604,(357:0.3988022837,943:0.3988022837):0.6208095576):1.139133372,((202:0.3412449584,259:0.3412449584):0.722679467,1447:1.063924425):1.094820788):0.7663124843):0.4012153723,701:3.32627307):1.996418459):0.6049501622,((((((50:0.9012855476,(((117:0.7693998137,(270:0.4055948715,344:0.4055948715):0.3638049422):0.02531554121,593:0.7947153549):0.02866207233,((461:0.3067911799,667:0.3067911799):0.3764422729,1312:0.6832334528):0.1401439744):0.07790812035):0.4781526894,1106:1.379438237):0.7600678649,(206:1.470682338,1350:1.470682338):0.6688237634):0.6327934732,(((((1307:0.4636387754,439:0.4636387754):0.07335006766,782:0.536988843):0.3645037495,1446:0.9014925925):0.3562055519,1226:1.257698144):0.4324526112,545:1.690150756):1.082148819):0.4205603488,(((217:0.4300388075,311:0.4300388075):1.729014294,(396:0.8251998262,1128:0.8251998262):1.333853275):0.295019909,(607:1.480126488,1076:1.480126488):0.973946522):0.7387869137):2.48714769,(((62:3.107808237,128:3.107808237):1.921738837,(320:0.6577021133,1343:0.6577021133):4.371844961):0.4161410083,((336:0.2676239167,1017:0.2676239167):4.006081402,(1113:0.8601751065,1119:0.8601751065):3.413530212):1.171982764):0.2343195318):0.2476340771):0.01029579668,(((((((65:0.2997295075,179:0.2997295075):0.3087634379,(401:0.3860298252,(1261:0.357374924,1027:0.357374924):0.02865490124):0.2224631201):0.2391926855,1277:0.8476856309):0.2414028068,188:1.089088438):0.4817212644,856:1.570809702):2.40229872,((348:0.9944330236,409:0.9944330236):0.8901338158,((578:0.7039209626,1541:0.7039209626):0.8951666808,1186:1.599087643):0.2854791959):2.088541583):0.1965512297,(323:0.9990651954,500:0.9990651954):3.170594456):1.768277836):0.05894077619):0.05515612583,((((((88:0.9091798847,1111:0.9091798847):0.9243165087,(177:0.8577574717,325:0.8577574717):0.9757389217):0.1927347788,407:2.026231172):1.334318331,((250:0.758267274,541:0.758267274):0.6031515782,(538:0.3361299931,1210:0.3361299931):1.025288859):1.999130651):0.01291396145,(((254:0.7629485799,1086:0.7629485799):0.4839402977,627:1.246888878):0.5269637204,964:1.773852598):1.599610867):2.236799814,((275:4.894900502,((((1476:1.168818469,785:1.168818469):0.1274024316,1276:1.2962209):0.577457893,(1527:1.425238114,(448:1.199087977,1473:1.199087977):0.2261501372):0.4484406794):0.2444551296,860:2.118133923):2.776766579):0.68990893,(((237:0.2217893845,1229:0.2217893845):0.4502982104,974:0.6720875948):4.212011109,((854:0.6118699315,1536:0.6118699315):3.275482461,975:3.887352392):0.9967463116):0.7007107284):0.02545384612):0.4417711114):46.5491451,475:52.60117949):9.610132672,589:62.21131216):4.481920034,((((((((((26:1.008721012,487:1.008721012):0.1024361242,1401:1.111157136):1.910552169,((181:0.2509613475,197:0.2509613475):0.3132846561,787:0.5642460036):2.457463302):0.3909484372,(247:0.4657057488,272:0.4657057488):2.946951993):0.6180684241,(((((((531:0.3385803856,530:0.3385803856):0.1808751272,(584:0.2707563306,1336:0.2707563306):0.2486991822):0.3582974132,524:0.877752926):0.09065773008,(1296:0.4892307921,1182:0.4892307921):0.479179864):0.4361076475,(1181:0.3605803636,1183:0.3605803636):1.04393794):1.665904313,(235:0.3625171203,968:0.3625171203):2.707905497):0.5810542831,((229:0.7931216451,236:0.7931216451):1.949709035,1021:2.74283068):0.9086462194):0.3792492665):0.2850843597,(((((((1072:0.3662270904,1444:0.3662270904):0.1601193547,176:0.5263464451):0.4066401365,((174:0.2599001226,594:0.2599001226):0.6198110922,((489:0.2328109157,795:0.2328109157):0.1782474412,1396:0.4110583569):0.4686528579):0.05327536675):0.2587056988,((1516:0.5308128121,1136:0.5308128121):0.08229553934,1134:0.6131083514):0.5785839289):0.1101315184,307:1.301823799):0.3264041012,((597:0.2166667668,1093:0.2166667668):0.7432588792,1430:0.9599256461):0.6683022539):2.132444073,((((345:0.9520381966,((347:0.3440190217,(1221:0.1777697189,1445:0.1777697189):0.1662493027):0.1973085543,659:0.541327576):0.4107106206):0.1289203155,1054:1.080958512):0.1597583199,952:1.240716832):1.809371118,(599:0.9817478019,((1085:0.459776755,1103:0.459776755):0.4416163606,865:0.9013931156):0.08035468629):2.068340148):0.7105840229):0.5551385535):0.1679242212,((((204:0.617292286,274:0.617292286):0.2502975642,610:0.8675898501):0.7581190101,(690:0.6796599079,(689:0.6428052652,1168:0.6428052652):0.03685464275):0.9460489523):0.2022056396,((116:0.6681173353,(1121:0.3040220389,1175:0.3040220389):0.3640952964):0.4675392896,(449:0.1687122274,532:0.1687122274):0.9669443975):0.6922578749):2.655820248):0.3369099595,83:4.820644707):57.94333189,((((((((((767:1.06418621,(540:0.7556776398,766:0.7556776398):0.3085085701):0.200404822,1272:1.264591032):0.1861347753,609:1.450725807):0.193971485,(896:1.049162086,510:1.049162086):0.595535206):0.1455843205,1332:1.790281613):0.2031504645,638:1.993432077):0.2647116499,((43:1.378660051,(1001:1.022054105,1194:1.022054105):0.3566059465):0.367727895,109:1.746387946):0.5117557809):0.4062918648,(1363:1.655652509,635:1.655652509):1.008783083):0.5338738282,(((258:1.092236204,1295:1.092236204):1.045353114,(((308:0.2739877834,642:0.2739877834):0.5659693585,810:0.8399571419):0.383323385,971:1.223280527):0.9143087909):0.1010714461,1083:2.238660764):0.9596486562):1.178152511,1172:4.376461931):58.38751467):3.208842251,(29:57.86010177,(((184:0.7714470184,((1140:0.5787212017,450:0.5787212017):0.1002519467,551:0.6789731485):0.09247386986):25.56808126,(((370:1.029406434,935:1.029406434):0.3056736416,371:1.335080076):0.351654147,((603:0.5364407918,(1043:0.4351698599,1377:0.4351698599):0.1012709319):0.4528306892,(920:0.5880209369,(1044:0.2822464517,1380:0.2822464517):0.3057744853):0.4012505441):0.697462742):24.65279406):24.37887323,631:50.71840151):7.141700266):8.112717078):0.7204133465):0.7178398307,(((705:4.483253718,488:4.483253718):22.45346788,1000:26.9367216):34.5795892,(((((((591:0.4854071031,1196:0.4854071031):0.6447869511,1373:1.130194054):0.3782566045,1492:1.508450659):0.6562567113,((((395:0.4204416419,999:0.4204416419):1.027646968,(1369:1.193483432,970:1.193483432):0.254605178):0.6156483405,(969:1.584982424,1368:1.584982424):0.4787545265):0.05071030466,((139:0.4229646856,1280:0.4229646856):1.403546972,294:1.826511658):0.2879355974):0.05026011513):0.165958032,279:2.330665402):35.74089274,((((248:1.646904673,1255:1.646904673):2.278742301,(486:3.500733383,(621:0.5912104874,622:0.5912104874):2.909522896):0.4249135909):0.3522170107,((346:1.029622807,1443:1.029622807):2.149120541,((366:0.733477988,876:0.733477988):2.070230956,(((369:1.181687271,(381:0.9257834016,((507:0.5201114125,((718:0.148021558,733:0.148021558):0.09987359493,1398:0.2478951529):0.2722162596):0.07896713504,566:0.5990785475):0.3267048541):0.2559038695):0.5164963857,1225:1.698183657):0.6730615991,(1215:0.9982981128,((736:0.2987475309,1092:0.2987475309):0.2543904851,(1224:0.2665317491,1385:0.2665317491):0.286606267):0.4451600968):1.372947143):0.432463688):0.3750344044):1.099120636):1.036001998,(((384:1.202423309,938:1.202423309):0.8875780125,1180:2.090001321):0.2662452878,947:2.356246609):2.957619374):32.75769216):20.71918234,658:58.79074048):2.725570315):5.894761231):0.08506583438):0.7499883146,(((((((((((((((((((558:0.8592246776,552:0.8592246776):5.022449543,(((353:1.726717063,485:1.726717063):0.8330136187,696:2.559730682):2.543428589,1457:5.103159271):0.7785149496):0.663611596,((((1047:1.289889559,169:1.289889559):1.222246676,433:2.512136235):2.024389972,(358:2.406161347,636:2.406161347):2.13036486):1.206821734,((91:2.08541454,359:2.08541454):2.71488768,(((193:0.4492185192,846:0.4492185192):0.6796149629,1384:1.128833482):1.636822742,334:2.765656225):2.034645996):0.9430457212):0.8019378746):0.4436579155,(((21:1.93010156,619:1.93010156):0.880267312,((168:2.013453621,1521:2.013453621):0.2805170359,1035:2.293970657):0.5163982154):2.897184268,(((1171:3.006598904,(1015:0.9634344781,1510:0.9634344781):2.043164426):0.4404128557,(95:2.929329299,523:2.929329299):0.517682461):0.6564316667,640:4.103443427):1.604109713):1.281390592):1.659774108,((135:3.743975223,420:3.743975223):1.278479592,((((1079:0.8983856999,1207:0.8983856999):0.6443610776,937:1.542746777):0.1755113291,(907:0.8928850724,405:0.8928850724):0.8253730342):2.795282442,588:4.513540549):0.5089142669):3.626263024):10.99017207,(1131:3.008511716,1116:3.008511716):16.63037819):6.862757905,(((((99:3.695499414,842:3.695499414):0.8996594381,665:4.595158852):19.66159882,1173:24.25675767):0.5432715965,438:24.80002927):1.302049489,(((22:2.016622872,498:2.016622872):17.59007421,1394:19.60669708):3.785173649,(1509:19.27523085,898:19.27523085):4.116639886):2.710208025):0.3995690549):0.2723255757,((1008:4.194579954,513:4.194579954):14.40648669,((888:1.700140974,612:1.700140974):1.214177629,(1010:1.697857141,1040:1.697857141):1.216461462):15.68674804):8.172906745):0.167213404,47:26.94118679):3.898899405,(((((4:4.792138253,(1504:4.285833183,1392:4.285833183):0.5063050704):0.5305516875,(90:1.081988325,1037:1.081988325):4.240701616):20.15297455,((328:19.31867184,(((((398:1.463723438,1259:1.463723438):0.2376618857,1331:1.701385324):0.1526044216,1057:1.853989746):0.7676498922,1303:2.621639638):0.7135623681,1458:3.335202006):15.98346984):3.000407049,1007:22.31907889):3.156585596):1.576907042,((1423:3.992922089,(918:1.69999673,940:1.69999673):2.292925359):18.9320539,1512:22.92497599):4.127595541):2.065762815,(423:25.69926736,1011:25.69926736):3.419066988):1.721751854):0.2031990626,((454:3.533104863,491:3.533104863):0.1787426557,784:3.711847519):27.33143774):0.1726020911,(1408:24.38816912,1344:24.38816912):6.827718233):0.7869463664,57:32.00283372):5.819496164,((((((1009:23.83233481,28:23.83233481):1.273939555,(((((((922:3.166599985,((44:0.7428411005,349:0.7428411005):0.3788438626,1449:1.121684963):2.044915022):1.228007804,(((613:2.814308408,((945:0.7887758732,1499:0.7887758732):1.691954356,(1422:1.444250571,1529:1.444250571):1.036479658):0.3335781786):0.4992075203,(1432:2.891653448,561:2.891653448):0.4218624799):0.4503712637,((319:2.382784356,(((656:0.643127201,1517:0.643127201):0.4080813444,1069:1.051208545):0.4193509494,817:1.470559495):0.9122248611):0.7480455445,(954:2.056875368,1414:2.056875368):1.073954532):0.6330572913):0.6307205968):0.4589555508,322:4.853563339):0.9729241844,(654:4.940956069,1407:4.940956069):0.8855314543):0.09385976267,((437:3.212839066,(341:1.830925268,1026:1.830925268):1.381913797):2.370666344,(331:5.025794185,(432:1.432626227,647:1.432626227):3.593167958):0.5577112256):0.336841876):0.03185279899,((402:2.837936847,905:2.837936847):0.9229779766,(651:3.30839119,1416:3.30839119):0.4525236336):2.191285261):13.2306228,(1046:4.654300498,1329:4.654300498):14.52852238):5.923451483):1.648152058,1283:26.75442642):0.5561077467,((327:1.772877118,330:1.772877118):20.54884718,302:22.3217243):4.988809873):0.893868884,1467:28.20440305):3.886409648,((((5:20.21123511,(457:2.990549411,1090:2.990549411):17.2206857):2.201421762,1493:22.41265687):5.073011574,(1199:24.74911014,(751:23.45954912,1006:23.45954912):1.289561012):2.73655831):0.7950487928,((829:18.88387315,1012:18.88387315):4.851794118,(((436:0.387005758,946:0.387005758):0.848211029,652:1.235216787):17.66926717,985:18.90448395):4.831183315):4.545049968):3.810095464):5.73151718):5.848926334,((((((15:20.90914072,1003:20.90914072):4.909853224,((604:1.128305876,1124:1.128305876):1.754111152,933:2.882417028):22.93657691):0.6519928693,686:26.47098681):0.9851668567,894:27.45615367):1.121848479,335:28.57800215):3.922613357,(((((788:22.43870806,871:22.43870806):4.866332508,570:27.30504057):0.4616377021,((((51:2.187772298,806:2.187772298):2.539028026,812:4.726800324):14.5565915,1029:19.28339182):4.403818052,(625:21.15657392,546:21.15657392):2.53063596):4.079468395):0.9664183303,((375:22.70528598,691:22.70528598):1.150393151,1406:23.85567913):4.877417471):0.181068399,655:28.914165):3.586450503):11.17064071):5.219854309,(((634:28.38565174,((96:18.90840796,1265:18.90840796):9.119466969,(796:27.47155356,(376:21.7855108,1078:21.7855108):5.68604276):0.556321377):0.3577768025):1.80415702,(1506:23.72877618,794:23.72877618):6.461032571):1.177165694,(1005:23.05970387,(664:2.187403375,948:2.187403375):20.8723005):8.307270577):17.52413607):1.220031529,((((((46:0.9738683598,1439:0.9738683598):2.221527782,653:3.195396142):1.066736046,(158:3.668613225,390:3.668613225):0.5935189631):15.3198895,1426:19.58202168):5.021430856,1104:24.60345254):0.5414090245,1514:25.14486156):24.96628049):2.376046048,757:52.4871881):13.19078377,((((((((((((((774:2.056712648,878:2.056712648):1.316102883,((355:0.8185273633,(851:0.2355292067,1109:0.2355292067):0.5829981566):1.688056798,(1218:2.003788614,1110:2.003788614):0.5027955467):0.8662313701):2.560370285,(((((38:2.409412617,(756:1.465185904,1163:1.465185904):0.9442267129):0.05983318916,1165:2.469245806):0.04335837046,1305:2.512604176):1.110879471,431:3.623483647):0.9926037782,((((((1548:1.69226429,(1204:1.327591879,1508:1.327591879):0.3646724111):0.7009598676,862:2.393224158):0.1358129319,(1031:1.942899686,(1161:1.676573242,1166:1.676573242):0.2663264438):0.5861374039):0.3562863909,((282:0.3447984541,1155:0.3447984541):1.61087137,1538:1.955669824):0.9296536569):0.3583884708,((((1534:0.6804469303,967:0.6804469303):0.06435800246,1463:0.7448049328):0.4157922606,1282:1.160597193):0.7094702197,1544:1.870067413):1.373644538):0.5084375053,(850:1.167430532,1164:1.167430532):2.584718925):0.8639379685):1.317098391):7.236758815,(((1070:0.9011326602,379:0.9011326602):0.1371300717,1387:1.038262732):0.2475742845,1513:1.285837016):11.88410762):1.545177825,608:14.71512246):0.794086276,728:15.50920873):0.7040835435,(((464:1.075960589,385:1.075960589):0.5720672766,1038:1.648027865):13.39036153,((458:1.598323855,815:1.598323855):11.26943103,1185:12.86775488):2.170634519):1.174902876):0.03400408713,(244:3.541779429,1243:3.541779429):12.70551693):0.08547927775,((((((266:1.112105242,992:1.112105242):0.3549703881,1050:1.46707563):0.6696139163,1190:2.136689546):0.6876969664,(((71:1.23721141,1206:1.23721141):0.2162155416,261:1.453426952):1.328915894,855:2.782342846):0.04204366692):10.08781952,(((1478:2.505039669,870:2.505039669):0.150500762,1370:2.655540431):1.568012962,260:4.223553393):8.688652637):1.474779365,1526:14.38698539):1.945790246):0.08679077435,(((((((10:0.4502145644,601:0.4502145644):1.034330893,560:1.484545457):1.435642798,(781:0.8140277699,1294:0.8140277699):2.106160486):1.406218721,(((276:0.8849606692,1334:0.8849606692):1.411732552,(867:1.460112725,(1096:0.7076096548,1462:0.7076096548):0.7525030701):0.8365804963):1.740446419,((519:0.7177439202,882:0.7177439202):0.9856142047,1525:1.703358125):2.333781515):0.2892673371):1.299104626,480:5.625511603):7.924795972,1105:13.55030757):0.9981571519,((36:1.692422476,293:1.692422476):0.1823245594,(262:0.5144583737,271:0.5144583737):1.360288661):12.67371769):1.871101688):0.09147588517,(((12:13.41802695,1550:13.41802695):2.151050074,((((((((574:2.413357956,((108:2.113076471,(263:1.562011253,1169:1.562011253):0.5510652181):0.1508602273,(267:2.0030072,(987:0.3416128492,1241:0.3416128492):1.661394351):0.2609294989):0.1494212572):0.2791579341,(1459:0.3884267467,927:0.3884267467):2.304089143):11.6118612,(((82:2.476420026,1039:2.476420026):0.755781876,(295:1.091658037,463:1.091658037):2.140543865):10.01537376,958:13.24757566):1.056801429):0.438389209,265:14.7427663):0.2863785837,((152:3.471242489,((((284:0.5398297703,1033:0.5398297703):0.5587018094,(286:0.794055235,550:0.794055235):0.3044763447):0.5932313668,709:1.691762947):1.508848491,((288:1.348287127,742:1.348287127):0.177849387,452:1.526136514):1.674474924):0.2706310514):9.137540269,(986:2.462663327,1240:2.462663327):10.14611943):2.420362123):0.1758934586,((41:4.314307512,(242:3.276750827,(549:0.9413096561,1460:0.9413096561):2.335441171):1.037556685):9.574229838,(1020:12.63620686,(944:2.583684787,1490:2.583684787):10.05252207):1.25233049):1.316500991):0.1037040107,1433:15.30874235):0.2210887252,((((((221:0.4195312222,1357:0.4195312222):0.7457250332,471:1.165256255):1.223300395,((287:1.215251915,1197:1.215251915):0.5501475573,(1395:1.344768179,(881:0.4587068334,989:0.4587068334):0.8860613457):0.4206312936):0.6231571778):2.114091424,(((((243:0.7140329516,729:0.7140329516):0.887835847,479:1.601868799):1.354287104,(((990:0.8280229569,1304:0.8280229569):1.221505496,(1533:1.766726484,(515:0.4779475042,516:0.4779475042):1.28877898):0.2828019685):0.2758146529,(361:1.185024523,482:1.185024523):1.140318583):0.6308127976):0.3829911011,((991:0.7116072295,1242:0.7116072295):0.6892095613,(1089:0.5336101831,1333:0.5336101831):0.8672066077):1.938330213):0.1204385813,(832:0.6557233013,1505:0.6557233013):2.803862284):1.043062489):10.25946037,1519:14.76210844):0.4022261149,988:15.16433456):0.3654965166):0.0392459433):0.04343424671,(1461:13.61613606,572:13.61613606):1.996375206):0.8985310342):0.4754821478,(((((((((((((7:0.8386403276,1428:0.8386403276):0.8080078586,134:1.646648186):1.122808877,1437:2.769457063):1.591481572,(((((81:2.291345872,68:2.291345872):0.1698756086,(142:1.355463866,1345:1.355463866):1.105757615):1.077551498,1498:3.538772979):0.4076976111,1511:3.94647059):0.1717518329,1061:4.118222423):0.2427162118):7.290701235,(297:0.8558149655,526:0.8558149655):10.7958249):1.344045382,(((13:0.3557334591,1198:0.3557334591):0.03396718196,478:0.389700641):0.3286295804,23:0.7183302214):12.27735503):3.027521763,((((58:2.468611269,772:2.468611269):0.3456290574,219:2.814240326):12.90269205,1156:15.71693237):0.2129790868,1390:15.92991146):0.09329555561):0.03821498293,(((((((((45:0.7805693068,((1189:0.3476279563,1496:0.3476279563):0.1626049436,1522:0.5102328999):0.2703364068):0.5508000425,249:1.331369349):0.1700571409,(511:1.107076339,(819:0.2999676332,1068:0.2999676332):0.8071087063):0.3943501508):0.06074987593,(228:0.5531965759,1192:0.5531965759):1.00897979):0.5466393789,231:2.108815745):0.5624044034,826:2.671220149):0.8234689198,((70:0.2774668201,1123:0.2774668201):0.4870828253,367:0.7645496454):2.730139423):8.760635553,285:12.25532462):1.247510575,((477:1.584713138,((102:0.9840803564,298:0.9840803564):0.4350621476,((((223:0.2303313247,264:0.2303313247):0.2379824887,506:0.4683138134):0.1439171716,505:0.612230985):0.232572027,1162:0.844803012):0.574339492):0.1655706338):11.51776663,(220:12.26569373,1314:12.26569373):0.8367860316):0.4003554317):2.558586802):0.008122555828,(268:12.26168392,1347:12.26168392):3.807860633):0.03287682737,((1330:13.33360488,253:13.33360488):0.2968628515,1100:13.63046774):2.471953647):0.4150676728,(((1285:12.30831029,1487:12.30831029):2.945464226,((425:15.10121982,(557:12.36837172,1055:12.36837172):2.732848104):0.1040394976,(428:12.69258544,1425:12.69258544):2.51267388):0.04851519824):0.07271024573,(957:0.7953923449,(1500:0.1842092274,1501:0.1842092274):0.6111831174):14.53109242):1.191004291):0.0111820824,801:16.52867114):0.1624233731,((((((((((((9:1.198572523,354:1.198572523):0.5914221095,((283:0.7383817726,955:0.7383817726):0.8550418781,1530:1.593423651):0.1965709814):1.090516438,92:2.88051107):0.002028559344,72:2.882539629):0.3433322334,97:3.225871863):1.673766822,(((35:0.2064450334,1151:0.2064450334):2.743534792,569:2.949979826):0.2420173464,903:3.191997172):1.707641513):8.096101607,(914:12.06947989,(1244:2.803793802,1145:2.803793802):9.265686087):0.9262604033):0.3176551766,((((66:1.603358699,226:1.603358699):0.5352068734,1063:2.138565572):0.8912505127,(1484:2.410559786,1481:2.410559786):0.6192562992):2.412885063,((329:4.58646229,(564:3.484263413,1125:3.484263413):1.102198877):0.6686005098,((643:1.328018408,830:1.328018408):2.69130315,1032:4.019321557):1.235741242):0.1876383477):7.870694321):0.1281334484,190:13.44152892):1.883231316,(((((((1081:2.91510647,(1528:2.762363105,646:2.762363105):0.1527433648):0.1654475807,(((466:0.2461917178,1413:0.2461917178):2.540057383,(1346:1.692712013,((400:0.8065504197,1435:0.8065504197):0.5490753471,802:1.355625767):0.3370862463):1.093537088):0.197252172,1412:2.983501273):0.09705277744):9.304106297,1531:12.38466035):1.373575376,((((245:0.5872873486,1245:0.5872873486):12.78546148,(961:12.26378932,889:12.26378932):1.108959504):0.2186341471,424:13.59138297):0.1265996643,(884:13.10827026,(859:0.7734069392,906:0.7734069392):12.33486332):0.6097123754):0.04025308854):0.1149918009,((386:12.4250458,1429:12.4250458):1.04695695,(868:1.389467881,1087:1.389467881):12.08253487):0.4012247768):0.1490909178,(233:13.61292246,1107:13.61292246):0.4093959841):1.293274899,((((748:1.1508017,(296:0.684624785,317:0.684624785):0.4661769149):0.9152164171,((427:1.433724335,1358:1.433724335):0.4563974595,1278:1.890121795):0.1758963223):0.492070341,(632:0.7512413353,1211:0.7512413353):1.806847123):12.56093522,(187:13.08123671,1494:13.08123671):2.03778697):0.1965696609):0.009166891274):0.005779237234,518:15.33053947):0.05663969592,(1539:13.08528107,1292:13.08528107):2.301898095):1.303915344):0.2954299378):19.06122979,(277:15.18375598,976:15.18375598):20.86399826):26.97134857,(((((761:1.321966973,227:1.321966973):0.7108335756,159:2.032800549):1.863179856,(64:0.7963896995,671:0.7963896995):3.099590706):25.52015277,(((160:1.299283505,((161:0.695263237,605:0.695263237):0.121172127,520:0.816435364):0.4828481409):0.1976430422,343:1.496926547):1.002374904,((1448:1.409862298,977:1.409862298):0.5859431798,(1058:1.010671224,1524:1.010671224):0.9851342544):0.5034959735):26.91683173):28.64640335,419:58.06253653):4.956566275):2.658869064):2.568154309):0.3528151611,(((3:3.345076737,537:3.345076737):31.1196856,((((((((1042:2.351758849,((759:0.7434894149,754:0.7434894149):0.6990657672,(156:1.129816153,310:1.129816153):0.3127390293):0.9092036672):0.4031813382,941:2.754940188):0.1203007018,(803:1.219140349,626:1.219140349):1.65610054):0.3141389374,((1442:1.019548502,1067:1.019548502):1.381510576,573:2.401059079):0.7883207481):0.26434,(((93:2.50784717,679:2.50784717):0.01227153291,465:2.520118703):0.4161875244,333:2.936306227):0.5174135992):1.005883481,(1441:3.094447463,1223:3.094447463):1.365155844):1.844028419,((((((((((399:0.348476986,1097:0.348476986):0.5347328425,1246:0.8832098285):0.2188189739,1030:1.102028802):0.15868985,(722:1.091722762,(1247:0.7382941275,1126:0.7382941275):0.353428634):0.1689958909):0.2013010959,(517:0.4679032452,1201:0.4679032452):0.9941165031):0.1363297074,(225:1.108819025,290:1.108819025):0.4895304306):0.2528048847,77:1.85115434):2.451360273,((194:1.546641559,1438:1.546641559):1.265081388,509:2.811722947):1.490791666):0.5132086713,((340:1.560651851,(1440:0.9051103572,1248:0.9051103572):0.6555414936):0.2931251686,(1258:1.336405092,(309:1.188552618,(374:0.3970068451,497:0.3970068451):0.7915457726):0.1478524747):0.5173719269):2.961946265):0.5906473948,((((150:0.8709818082,1139:0.8709818082):0.3043725639,(299:0.8034083926,1095:0.8034083926):0.3719459795):0.3904080323,(747:1.366479208,(1222:0.7768304851,1216:0.7768304851):0.5896487231):0.1992831962):1.411762213,(688:1.346631255,716:1.346631255):1.630893363):2.428846062):0.897261047):0.3946682614,((869:5.017855402,997:5.017855402):0.6124706475,(1341:0.9346725064,416:0.9346725064):4.695653544):1.067973938):27.76646235):22.77672334,((((((((((18:0.9305765469,891:0.9305765469):0.8315525978,((196:1.049488639,535:1.049488639):0.4062635371,673:1.455752176):0.3063769688):1.109156853,((994:2.602551187,1099:2.602551187):0.1019443718,(837:0.5494517183,908:0.5494517183):2.155043841):0.1667904381):0.1620370904,(((208:1.524131687,(481:0.8086643725,809:0.8086643725):0.715467314):0.6900591718,(1549:1.626249245,877:1.626249245):0.5879416133):0.1292285234,(421:0.7303794981,(773:0.3203642825,1421:0.3203642825):0.4100152156):1.613039884):0.689903706):0.5430158223,((430:2.0879076,(392:1.072960696,1301:1.072960696):1.014946904):0.2132157592,((214:1.269625093,833:1.269625093):0.04292413698,857:1.31254923):0.9885741289):1.275215551):0.7611928606,(853:3.217915191,(695:2.312244141,587:2.312244141):0.9056710507):1.119616579):0.4880548401,(((864:2.841997608,(440:2.189750819,1174:2.189750819):0.6522467884):0.6836351999,((((((417:0.693847035,397:0.693847035):0.4018512457,413:1.095698281):0.5120167193,209:1.607715):0.4593904812,316:2.067105481):0.3470491419,((949:1.634690143,911:1.634690143):0.3286821348,222:1.963372278):0.4507823453):0.552710792,1130:2.966865415):0.5587673927):0.6247045057,820:4.150337313):0.6752492973):2.501880554,(98:4.622336749,(1263:1.730864351,(1270:0.9946565665,1286:0.9946565665):0.7362077843):2.891472399):2.705130416):3.77766296,((((19:2.279560744,(((73:0.569889822,301:0.569889822):0.758379693,1367:1.328269515):0.4800806484,(1348:0.9902866558,1485:0.9902866558):0.8180635076):0.4712105802):0.4733454682,((37:0.6510445938,445:0.6510445938):0.6234691509,210:1.274513745):1.478392467):1.330020352,((39:1.291935566,211:1.291935566):2.007707879,((167:0.2617034459,1479:0.2617034459):0.2392533263,1108:0.5009567722):2.798686673):0.7832831188):3.196742553,((356:4.212390007,(((484:1.054843342,714:1.054843342):0.6598927525,178:1.714736094):0.9988507385,1465:2.713586833):1.498803175):1.14001884,76:5.352408847):1.92726027):3.825461008):18.16663095,140:29.27176107):27.9697246):11.35745566):27.95320586,668:96.5521472):10.67749663):6.010613072,(((((((((((((902:6.394011598,(((((((((34:0.6988881356,838:0.6988881356):0.3591432581,110:1.058031394):1.477550598,(1507:2.080178534,(875:1.501897229,1045:1.501897229):0.5782813044):0.4554034576):1.197743556,((111:1.585165382,1313:1.585165382):2.024795208,(((145:0.5084422597,205:0.5084422597):3.026647562,(((149:1.048094086,629:1.048094086):0.2368993086,617:1.284993395):0.5927668247,443:1.87776022):1.657329602):0.02301281476,1049:3.558102636):0.05185795438):0.1233649568):0.9106862365,1353:4.644011784):0.267495279,(((((165:0.5809721063,624:0.5809721063):1.66746652,1056:2.248438626):0.09491277495,568:2.343351401):1.659714585,195:4.003065985):0.1174713758,153:4.120537361):0.7909697017):0.01314546698,(((((((745:3.876503815,321:3.876503815):0.1132985646,1159:3.989802379):0.1287223725,(((737:2.443328222,146:2.443328222):0.1432312022,1488:2.586559424):1.437950714,((744:2.392928363,((326:1.833060264,(462:1.3882732,(644:0.5597168021,835:0.5597168021):0.8285563979):0.4447870644):0.03605880817,1383:1.869119073):0.5238092902):1.425583293,1317:3.818511656):0.2059984822):0.09401461397):0.03895649093,(((123:1.521224145,1537:1.521224145):0.5881291535,182:2.109353298):0.4761539048,213:2.585507203):1.57197404):0.01168326708,839:4.16916451):0.002856783601,1293:4.172021293):0.4664304102,(360:2.280729238,(1361:2.101617408,1365:2.101617408):0.1791118297):2.357722465):0.2862008262):0.02130502799,(((((84:2.112694963,((1257:0.9483455174,912:0.9483455174):0.6611079679,324:1.609453485):0.503241478):0.05247450456,((((185:0.258555728,1188:0.258555728):0.2733075709,1546:0.5318632989):1.050637661,735:1.58250096):0.0532662991,544:1.635767259):0.5294022091):0.72022916,(((848:0.5623814965,1310:0.5623814965):0.9448646899,(553:1.064541488,602:1.064541488):0.4427046986):0.3078402437,(442:1.294775021,1403:1.294775021):0.5203114089):1.070312198):0.1818059108,(((460:0.9044216049,(1158:0.5239334762,1405:0.5239334762):0.3804881287):0.1431090686,1064:1.047530674):1.993860125,(((1143:1.823122872,(((1024:0.540916727,(1028:0.3087801985,1339:0.3087801985):0.2321365285):0.5013571044,1547:1.042273831):0.3666740964,1219:1.408947928):0.414174944):0.1809406697,(441:0.7714328218,1250:0.7714328218):1.23263072):0.2123306165,(444:1.867642452,628:1.867642452):0.3487517057):0.8249966401):0.02581374068):0.8416367206,(((((154:1.635819152,996:1.635819152):1.809072679,(956:0.845083211,1025:0.845083211):2.599808621):0.2945237881,(692:3.514066268,(((913:0.5026037813,1502:0.5026037813):0.6688074174,764:1.171411199):0.7069927573,(893:1.099238507,827:1.099238507):0.7791654486):1.635662312):0.2253493514):0.061142822,(((((730:0.6137679497,1231:0.6137679497):0.412916391,(590:0.5137222231,1355:0.5137222231):0.5129621175):0.6417820393,((280:1.112400928,(763:0.724132162,762:0.724132162):0.3882687661):0.2011004522,639:1.31350138):0.3549649996):0.499554846,(1482:0.9423216993,(1354:0.3454989606,1356:0.3454989606):0.5968227387):1.225699527):1.2361808,((547:1.413112568,1195:1.413112568):1.600805004,931:3.013917571):0.3902844542):0.3963564161):0.0475493049,(((((382:0.7907168309,779:0.7907168309):1.04695093,680:1.837667761):0.1552519469,1022:1.992919708):1.541927505,685:3.534847212):0.1886533737,((502:0.3120672694,1337:0.3120672694):1.077098815,1342:1.389166084):2.334334502):0.1246071605):0.06073351267):1.037116299):1.090338566,(583:1.651300535,930:1.651300535):4.384995589):0.3577154741):0.05964860383,148:6.453660202):0.269338862,(368:5.760458543,((20:1.658163463,(106:0.8288846671,(620:0.7871294884,1036:0.7871294884):0.0417551787):0.8292787961):1.063827297,((112:1.128183549,(105:0.6961944995,126:0.6961944995):0.4319890497):1.113078601,849:2.241262151):0.4807286099):3.038467782):0.9625405214):0.1671486467,(((1434:1.27090417,962:1.27090417):1.048533258,1153:2.319437428):0.06650503195,1319:2.38594246):4.504205251):0.2448303281,((((720:3.092194557,(496:2.928587144,596:2.928587144):0.1636074132):1.841007742,((499:4.184971529,(138:1.993001441,(1351:1.113546319,281:1.113546319):0.8794551217):2.191970089):0.3459367979,(315:2.034579778,(170:0.6104265046,363:0.6104265046):1.424153274):2.496328549):0.4022939724):0.1213259665,394:5.054528266):0.2052400264,((708:3.110940099,289:3.110940099):1.737987542,((1018:3.242367547,1004:3.242367547):0.6396793146,((469:0.7031616625,536:0.7031616625):0.0435812697,534:0.7467429322):3.13530393):0.966880779):0.4108406515):1.875209747):0.4238711118,((((((2:2.177626686,(60:1.53570987,(928:1.039233223,963:1.039233223):0.4964766477):0.6419168154):0.9548947746,((30:2.382810027,383:2.382810027):0.7108007162,1375:3.093610743):0.03891071738):0.05553903511,391:3.188060495):1.085478845,1230:4.273539341):0.1336776811,1232:4.407217022):1.778124929,((((((((((866:1.144882123,(373:0.8822907083,303:0.8822907083):0.2625914146):0.9426834021,633:2.087565525):0.7552789911,(1362:1.314240139,1415:1.314240139):1.528604377):0.0415479634,(251:0.7557855881,1053:0.7557855881):2.128606891):0.6078857855,1400:3.492278265):0.09501174622,(1315:0.850551673,1316:0.850551673):2.736738338):0.02823921613,192:3.615529227):1.419377967,((1202:0.2401612167,1254:0.2401612167):1.627302424,1450:1.86746364):3.167443554):0.05927432781,(951:3.093218345,555:3.093218345):2.000963177):0.1053542697,(((((932:2.097220539,((950:1.474211395,(831:0.5498731162,901:0.5498731162):0.9243382788):0.30100931,834:1.775220705):0.3219998343):0.4398958853,1491:2.537116425):0.1122882071,((127:0.9004303096,879:0.9004303096):0.8384687121,836:1.738899022):0.9105056099):0.7341537653,(998:2.491420109,(616:0.5548351948,1152:0.5548351948):1.936584914):0.8921382882):0.1021694027,((778:0.7685143476,900:0.7685143476):1.267544364,567:2.036058712):1.449669088):1.713807992):0.9858061594):1.3735072):0.5772869761,(((157:2.944239667,429:2.944239667):0.447087171,966:3.391326838):0.8029805039,(((114:0.7565372622,684:0.7565372622):0.0598476562,(113:0.5224808559,1322:0.5224808559):0.2939040625):0.4738209684,(183:0.2524378223,203:0.2524378223):1.037768065):2.904101455):3.941828785):48.66537693,((342:1.727571926,525:1.727571926):2.368107021,212:4.095678948):52.70583411):51.30022713,(((((8:3.65096185,304:3.65096185):1.639907557,738:5.290869407):86.91605216,((((14:0.7331552556,740:0.7331552556):1.149120421,1191:1.882275677):0.6002374145,1014:2.482513092):71.65969118,(666:0.9929104168,1352:0.9929104168):73.14929385):18.06471729):12.11844976,(172:95.56975736,(((904:0.3778033721,1299:0.3778033721):1.491844763,(663:1.165218051,841:1.165218051):0.7044300847):1.097023952,760:2.966672087):92.60308527):8.75561397):2.715681928,1540:107.0410533):1.060686935):2.868399843,((((1269:67.03368564,314:67.03368564):21.45751881,580:88.49120445):10.50028005,1137:98.99148449):6.43441782,((474:70.11723731,476:70.11723731):18.0730689,1187:88.19030622):17.2355961):5.544237716):0.5942994564,((387:90.34985605,(1262:3.30349362,1291:3.30349362):87.04636243):7.52883755,((((719:0.7671645593,734:0.7671645593):0.6855655865,750:1.452730146):2.664627345,((789:2.798110826,(699:0.9023907937,953:0.9023907937):1.895720032):0.54640792,388:3.344518746):0.7728387449):62.45232843,672:66.56968592):31.30900768):13.68574589):0.9347941018,(((((((55:0.5913435846,189:0.5913435846):0.3753930612,542:0.9667366458):2.802062071,(((((312:0.4915290808,403:0.4915290808):0.09633402456,422:0.5878631054):0.8199226602,(845:1.193206655,1469:1.193206655):0.2145791102):0.4913675088,770:1.899153274):0.729421563,(255:1.649343126,(539:0.9888899446,(630:0.8260413946,1542:0.8260413946):0.16284855):0.6604531817):0.9792317111):1.140223879):0.05852915938,1515:3.827327876):80.65446206,661:84.48178994):6.663029913,585:91.14481985):8.528677065,155:99.67349692):12.82573667):0.1800313931,((238:2.402786774,(313:0.5963053268,1289:0.5963053268):1.806481448):83.74430741,446:86.14709418):26.5321708):0.5609919157):0;
+END;
