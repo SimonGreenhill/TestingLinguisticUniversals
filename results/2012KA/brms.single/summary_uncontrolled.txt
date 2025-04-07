@@ -1,0 +1,15 @@
+ Family: bernoulli 
+  Links: mu = logit 
+Formula: V2 ~ V3 
+   Data: list(datfra) (Number of observations: 1223) 
+  Draws: 4 chains, each with iter = 3000; warmup = 1500; thin = 1;
+         total post-warmup draws = 6000
+
+Population-Level Effects: 
+          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept    -1.94      0.12    -2.17    -1.71 1.00     2439     2837
+V3            0.51      0.16     0.21     0.83 1.00     3114     2977
+
+Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
