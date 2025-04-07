@@ -1,0 +1,47 @@
+ Family: bernoulli 
+  Links: mu = logit 
+Formula: V2 ~ V3 + (1 | gr(V1, cov = phylo_covar_mat)) + (1 | gr(ID2, cov = spatial_covar_mat)) + (1 + V3 | macroarea) 
+   Data: list(datfra) (Number of observations: 1786) 
+  Draws: 4 chains, each with iter = 1000; warmup = 500; thin = 1;
+         total post-warmup draws = 2000
+
+Multilevel Hyperparameters:
+~ID2 (Number of levels: 1786) 
+              Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)     1.71      0.48     0.87     2.74 1.01      404      737
+
+~macroarea (Number of levels: 6) 
+                  Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)         1.27      0.98     0.04     3.88 1.00      733     1094
+sd(V3)                0.77      0.62     0.03     2.31 1.00     1008     1248
+cor(Intercept,V3)    -0.01      0.56    -0.96     0.95 1.00     1389     1287
+
+~V1 (Number of levels: 1786) 
+              Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+sd(Intercept)     6.49      1.50     4.01     9.85 1.01      374      576
+
+Regression Coefficients:
+          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept    -5.67      2.94   -11.96    -0.55 1.00     1123     1382
+V3            1.05      0.65    -0.09     2.45 1.00     1539     1275
+
+Draws were sampled using sample(hmc). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+
+#--------------------------------------------#
+Gelman Diagnostics:
+
+Potential scale reduction factors:
+
+                        Point est. Upper C.I.
+b_Intercept                   1.00       1.01
+b_V3                          1.00       1.01
+sd_ID2__Intercept             1.01       1.02
+sd_macroarea__Intercept       1.00       1.00
+sd_macroarea__V3              1.00       1.00
+
+Multivariate psrf
+
+1
+[1] 1.004903
