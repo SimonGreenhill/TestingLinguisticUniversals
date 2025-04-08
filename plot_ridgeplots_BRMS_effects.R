@@ -56,7 +56,7 @@ joyplot <-   df %>%
         strip.background = element_rect(color = "black",fill = "white"),
         strip.text = element_text(color = "black"),
         axis.title = element_blank()) +
-  scale_color_manual(values = c("red", "darkgrey"))  +
+  scale_color_manual(values = c("darkgrey", "steeleblue"))  +
   suppressWarnings(scale_alpha_discrete(range = c(0.3, 1)) ) + #use supress warnings to silence "Using alpha for a discrete variable is not advised.". In this case, it makes sense.
   facet_grid(Domain_general~., scales="free", space="free_y")
 
