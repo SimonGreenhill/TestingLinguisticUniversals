@@ -10,12 +10,23 @@ if (!suppressPackageStartupMessages(require("pacman"))) {
 
 pacman::p_load(
   ape,
-  bayestraitr,
+#  bayestraitr,
   brms,
   ggplot2,
   ggpubr,
+  ggridges, 
+  ggdist,
+  gridExtra,
   stringr,
   tidyr,
-  tidyverse
+data.table, #faster reading in of files
+  tidyverse,
+devtools
 )
 
+#the package bayestraitr needs to be installed via GitHub. Specific commit ref is given for version control
+if(! "bayestraitr" %in% rownames(installed.packages())){
+  devtools::install_github(repo = "SamPassmore/bayestraitr", 
+                           ref = "5a84d6a946e23b0e78d7b12b53299f514fcca0a7")
+}
+library(bayestraitr)
