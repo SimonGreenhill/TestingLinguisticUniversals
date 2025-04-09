@@ -28,14 +28,13 @@ df_prop <- df %>%
   pivot_wider(names_from = straddle_zero_95, values_from = n, id_cols = `Universal.shorter`) %>% 
   mutate(yes = ifelse(is.na(yes), 0, yes)) %>% 
   mutate(no = ifelse(is.na(no), 0, no)) %>% 
-  mutate(prop = no / (yes + no)) %>% 
+  mutate(prop = no / (yes + no)) %>%  
 #  dplyr::select(universal_code, prop) %>% 
   mutate(support = ifelse(prop >= 0.9, "yes (supported)", "no (not supported)")) %>% 
   mutate(label = paste0(Universal.shorter, " (", prop * 100, "%)"))
 
 df <- df %>% 
   full_join(df_prop, by = "Universal.shorter") 
-
 
 df$label <- fct_reorder(df$label,  df$mean_Estimate)
 
@@ -56,11 +55,9 @@ joyplot <-   df %>%
         strip.background = element_rect(color = "black",fill = "white"),
         strip.text = element_text(color = "black"),
         axis.title = element_blank()) +
-  scale_color_manual(values = c("darkgrey", "steeleblue"))  +
+  scale_color_manual(values = c("darkgrey", "steelblue"))  +
   suppressWarnings(scale_alpha_discrete(range = c(0.3, 1)) ) + #use supress warnings to silence "Using alpha for a discrete variable is not advised.". In this case, it makes sense.
   facet_grid(Domain_general~., scales="free", space="free_y")
-
-joyplot
 
 #barplot <- df %>% 
 #  distinct(universal_code,Universal.shorter, label, straddle_zero_95, n, Domain_general) %>% 
@@ -78,5 +75,5 @@ joyplot
 
 #p <- grid.arrange(joyplot, barplot, ncol = 2, widths = c(2, 0.8))
   
-ggsave(plot = joyplot, filename = "joyplots_barplot_universals.png", width = 10, height = 25, units = "cm", dpi = 300)
+ggsave(plot = joyplot, filename = "output/plots/joyplots_barplot_universals.png", width = 10, height = 25, units = "cm", dpi = 300)
 
