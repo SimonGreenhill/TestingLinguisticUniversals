@@ -26,7 +26,8 @@ df <- df_all %>%
 
 df$Universal.shorter <- fct_reorder(df$Universal.shorter,  df$median_Estimate)
 
-joyplot <-   df %>%
+pn <-   df %>%
+  filter(Domain_general == "narrow word order") %>% 
   ggplot(mapping = aes(x = Estimate, y =Universal.shorter, fill = desc(median_Estimate), 
                        alpha = support, linetype = as.factor(desc(support))
                        )) +
@@ -40,30 +41,86 @@ joyplot <-   df %>%
   theme_light() +
   theme(legend.position = "None",
         axis.text = element_text(size = 4),
+        title = element_text(size = 8),
         strip.background = element_rect(color = "black",fill = "white"),
         strip.text = element_text(color = "black"),
         axis.title = element_blank()) +
   scale_color_manual(values = c("darkgrey", "steelblue"))  +
   suppressWarnings(scale_alpha_discrete(range = c(0.3, 1)) ) + #use supress warnings to silence "Using alpha for a discrete variable is not advised.". In this case, it makes sense.
-  facet_grid(Domain_general~., scales="free", space="free_y")
+  ggtitle("Narrow Word Order")
+ 
 
-joyplot
+pw <- df %>%
+  filter(Domain_general == "broad word order") %>% 
+  ggplot(mapping = aes(x = Estimate, y =Universal.shorter, fill = desc(median_Estimate), 
+                       alpha = support, linetype = as.factor(desc(support))
+  )) +
+  geom_errorbar(aes(xmax = `l-95% CI`,
+                    xmin = `u-95% CI`,
+                    color = support
+  ), width = 0.2, alpha = 0.3, linewidth = 0.09) +
+  ggridges::geom_density_ridges(bandwidth = 0.03, rel_min_height = 0.01, linewidth = 0.09) +
+  ggdist::stat_dots(color = "black", linewidth = 0.09) +
+  geom_vline(aes(xintercept = 0), linetype="dashed", color = "darkgray", alpha = 1) + 
+  theme_light() +
+  theme(legend.position = "None",
+        axis.text = element_text(size = 4),
+        title = element_text(size = 8),
+        strip.background = element_rect(color = "black",fill = "white"),
+        strip.text = element_text(color = "black"),
+        axis.title = element_blank()) +
+  scale_color_manual(values = c("darkgrey", "steelblue"))  +
+  suppressWarnings(scale_alpha_discrete(range = c(0.3, 1)) )  +#use supress warnings to silence "Using alpha for a discrete variable is not advised.". In this case, it makes sense.
+  ggtitle("Broad Word Order")
 
-#barplot <- df %>% 
-#  distinct(universal_code,Universal.shorter, label, straddle_zero_95, n, Domain_general) %>% 
-#    ggplot(aes(y = label, x = n/100, fill = straddle_zero_95)) +
-#    geom_bar( color = "black", stat = "identity") +
-#  scale_fill_manual(values = c("#2A5880", "whitesmoke"))  +
-#  theme_light() +
-#  theme(legend.position = "none", 
-#        axis.text.y = element_blank(),
-#        strip.background = element_rect(color = "black",fill = "white"),
-#        strip.text = element_text(color = "black"),
-#        axis.title = element_blank()) +
-#  scale_x_continuous(labels = scales::percent) +
-#  facet_grid(Domain_general~., scales="free", space="free_y")
+ph <- df %>%
+  filter(Domain_general == "hierarchy") %>% 
+  ggplot(mapping = aes(x = Estimate, y =Universal.shorter, fill = desc(median_Estimate), 
+                       alpha = support, linetype = as.factor(desc(support))
+  )) +
+  geom_errorbar(aes(xmax = `l-95% CI`,
+                    xmin = `u-95% CI`,
+                    color = support
+  ), width = 0.2, alpha = 0.3, linewidth = 0.09) +
+  ggridges::geom_density_ridges(bandwidth = 0.03, rel_min_height = 0.01, linewidth = 0.09) +
+  ggdist::stat_dots(color = "black", linewidth = 0.09) +
+  geom_vline(aes(xintercept = 0), linetype="dashed", color = "darkgray", alpha = 1) + 
+  theme_light() +
+  theme(legend.position = "None",
+        title = element_text(size = 8),
+        axis.text = element_text(size = 4),
+        strip.background = element_rect(color = "black",fill = "white"),
+        strip.text = element_text(color = "black"),
+        axis.title = element_blank()) +
+  scale_color_manual(values = c("darkgrey", "steelblue"))  +
+  suppressWarnings(scale_alpha_discrete(range = c(0.3, 1)) )  +#use supress warnings to silence "Using alpha for a discrete variable is not advised.". In this case, it makes sense.
+  ggtitle("Hierarchy")
 
-#p <- grid.arrange(joyplot, barplot, ncol = 2, widths = c(2, 0.8))
+po <- df %>%
+  filter(Domain_general == "other") %>% 
+  ggplot(mapping = aes(x = Estimate, y =Universal.shorter, fill = desc(median_Estimate), 
+                       alpha = support, linetype = as.factor(desc(support))
+  )) +
+  geom_errorbar(aes(xmax = `l-95% CI`,
+                    xmin = `u-95% CI`,
+                    color = support
+  ), width = 0.2, alpha = 0.3, linewidth = 0.09) +
+  ggridges::geom_density_ridges(bandwidth = 0.03, rel_min_height = 0.01, linewidth = 0.09) +
+  ggdist::stat_dots(color = "black", linewidth = 0.09) +
+  geom_vline(aes(xintercept = 0), linetype="dashed", color = "darkgray", alpha = 1) + 
+  theme_light() +
+  theme(legend.position = "None",
+        title = element_text(size = 8),
+        axis.text = element_text(size = 4),
+        strip.background = element_rect(color = "black",fill = "white"),
+        strip.text = element_text(color = "black"),
+        axis.title = element_blank()) +
+  scale_color_manual(values = c("darkgrey", "steelblue"))  +
+  suppressWarnings(scale_alpha_discrete(range = c(0.3, 1)) ) + #use supress warnings to silence "Using alpha for a discrete variable is not advised.". In this case, it makes sense.
+  ggtitle("Other")
+
+
+p <- ((pn + pw) / (ph + po)) + plot_layout(heights = c(2.5, 1))
   
-ggsave(plot = joyplot, filename = "joyplots_barplot_universals.png", width = 10, height = 25, units = "cm", dpi = 300)
+ggsave(plot = p, filename = "joyplots_barplot_universals.png", width = 17, height = 17, units = "cm", dpi = 300)
 
