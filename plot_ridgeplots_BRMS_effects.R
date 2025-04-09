@@ -15,32 +15,19 @@ df_all$universal_code <- stringr::str_match(df_all$filename, "results/(.*?)/brms
 
 df <- df_all %>% 
   filter(term == "fixed_V3") %>% 
-  mutate(straddle_zero_95 = ifelse(`l-95% CI` < 0 & `u-95% CI` < 0|
-                                     `l-95% CI`  > 0 & `u-95% CI`  > 0  , "no", "yes")) %>% 
   group_by(universal_code) %>% 
-  mutate(mean_Estimate = mean(Estimate)) %>% 
-  group_by(universal_code, straddle_zero_95) %>% 
-  mutate(n = n()) %>% 
+  mutate(median_Estimate = median(Estimate), 
+            median_l_95_CI = median(`l-95% CI`), 
+            median_u_95_CI = median(`u-95% CI`)) %>%
+  ungroup() %>% 
+  mutate(support = ifelse(`median_l_95_CI` < 0 & `median_u_95_CI` < 0|
+                                     `median_l_95_CI`  > 0 & `median_u_95_CI`  > 0  , "yes (supported)", "no (not supported)")) %>% 
   left_join(universals_type, by = "universal_code")
 
-df_prop <- df %>% 
-  distinct(Universal.shorter, straddle_zero_95, n) %>% 
-  pivot_wider(names_from = straddle_zero_95, values_from = n, id_cols = `Universal.shorter`) %>% 
-  mutate(yes = ifelse(is.na(yes), 0, yes)) %>% 
-  mutate(no = ifelse(is.na(no), 0, no)) %>% 
-  mutate(prop = no / (yes + no)) %>% 
-#  dplyr::select(universal_code, prop) %>% 
-  mutate(support = ifelse(prop >= 0.9, "yes (supported)", "no (not supported)")) %>% 
-  mutate(label = paste0(Universal.shorter, " (", prop * 100, "%)"))
-
-df <- df %>% 
-  full_join(df_prop, by = "Universal.shorter") 
-
-
-df$label <- fct_reorder(df$label,  df$mean_Estimate)
+df$Universal.shorter <- fct_reorder(df$Universal.shorter,  df$median_Estimate)
 
 joyplot <-   df %>%
-  ggplot(mapping = aes(x = Estimate, y =label, fill = desc(mean_Estimate), 
+  ggplot(mapping = aes(x = Estimate, y =Universal.shorter, fill = desc(median_Estimate), 
                        alpha = support, linetype = as.factor(desc(support))
                        )) +
   geom_errorbar(aes(xmax = `l-95% CI`,
@@ -56,7 +43,7 @@ joyplot <-   df %>%
         strip.background = element_rect(color = "black",fill = "white"),
         strip.text = element_text(color = "black"),
         axis.title = element_blank()) +
-  scale_color_manual(values = c("darkgrey", "steeleblue"))  +
+  scale_color_manual(values = c("darkgrey", "steelblue"))  +
   suppressWarnings(scale_alpha_discrete(range = c(0.3, 1)) ) + #use supress warnings to silence "Using alpha for a discrete variable is not advised.". In this case, it makes sense.
   facet_grid(Domain_general~., scales="free", space="free_y")
 
