@@ -1,16 +1,12 @@
-library(dplyr)
-library(readr)
-library(stringr)
+source("requirements.R")
 
 BAYES_FACTOR_THRESHOLD <- 10
 
-df <- readr::read_tsv('results_2024-07-22.txt', show_col_types=FALSE)
+df <- readr::read_tsv('results/BT_results_summary/results.txt', show_col_types=FALSE)
 df$Diff <- df$uncon_Fixed_V3_Estimate - df$brmsQ_Fixed_V3_Estimate
 
 # replace > with =>
 df$Universal.shorter <- stringr::str_replace_all(df$Universal.shorter, ">", "⇒")
-
-
 
 read.bayestraits <- function(file.name, ...) {
     if (!file.exists(file.name)) stop(sprintf("file %s does not exist", file.name))
