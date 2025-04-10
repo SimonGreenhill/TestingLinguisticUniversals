@@ -1,7 +1,4 @@
-library(ggplot2)
-library(ggrepel)
-library(patchwork)
-library(Cairo)
+source("requirements.R")
 
 source('common.R')
 
