@@ -36,6 +36,8 @@ stack_summary_clean_tables <- function(fns = NULL, col_names = NULL, nrows = "al
 df_all_posteriors <- stack_summary_clean_tables(fns = list.files(path = "results", pattern = "summary_clean\\.\\d+", full.names = T, recursive = T), col_names = c("term", "Estimate" , "Est.Error", "l-95% CI",  "u-95% CI" , "Rhat" ,     "Bulk_ESS" , "Tail_ESS",  "Tree" ), sep = "\t")
 
 df_all_posteriors %>% 
+  mutate(brms_support = ifelse(`l-95% CI` < 0 & `u-95% CI` < 0|
+                                 `l-95% CI`  > 0 & `u-95% CI`  > 0  , "yes (supported, 95% CI excludes zero)", "no (not supported, 95% CI does not excludes zero)")) %>% 
   left_join(universals_type, by = join_by(universal_code)) %>% 
   write_tsv("output/proccessed_data/df_brms_sp_posterior.tsv", quote = "all", na = "") 
 
@@ -52,6 +54,8 @@ odd_one_out_df <- stack_summary_clean_tables(fns = odd_ones_out, nrows = 2, col_
 df_all_naive <- full_join(df_all_naive, odd_one_out_df, by = join_by(term, Estimate, Est.Error, `l-95% CI`, `u-95% CI`, Rhat, filename, universal_code))
 
 df_all_naive %>% 
+  mutate(brms_support = ifelse(`l-95% CI` < 0 & `u-95% CI` < 0|
+                                 `l-95% CI`  > 0 & `u-95% CI`  > 0  , "yes (supported, 95% CI excludes zero)", "no (not supported, 95% CI does not excludes zero)")) %>% 
   left_join(universals_type, by = join_by(universal_code)) %>% 
   write_tsv("output/proccessed_data/df_brms_naive.tsv", quote = "all", na = "") 
 
@@ -81,5 +85,10 @@ df_all_family <- full_join(df_all_family, df_all_family_odd_ones, by = join_by(t
 df_all_family$universal_code <- stringr::str_match(df_all_family$filename, "results/sensitivity_no_tree_fam_control//batch\\d+/(.*?)/summary_clean\\.txt")[, 2]
 
 df_all_family %>% 
+  mutate(brms_support = ifelse(`l-95% CI` < 0 & `u-95% CI` < 0|
+                            `l-95% CI`  > 0 & `u-95% CI`  > 0  , "yes (supported, 95% CI excludes zero)", "no (not supported, 95% CI does not excludes zero)")) %>% 
   left_join(universals_type, by = join_by(universal_code)) %>% 
   write_tsv("output/proccessed_data/df_brms_family_macroarea.tsv", quote = "all", na = "") 
+
+
+
