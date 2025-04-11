@@ -21,6 +21,7 @@ pacman::p_load(
   gridExtra,
   stringr,
   tidyr,
+patchwork,
 data.table, #faster reading in of files
   tidyverse,
 devtools
