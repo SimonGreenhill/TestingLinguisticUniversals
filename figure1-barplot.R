@@ -23,15 +23,15 @@ df.brms <- df_sp %>%
   full_join(df_naive, by = join_by(universal_code)) %>% 
   reshape2::melt(id.vars = "universal_code") %>% 
   left_join(universals_meta_data, by = "universal_code") %>% 
-  rename(model = variable)
+  rename(model = variable, support = value)
   
 ## Construct Figure 1
 plot_bar <- function(df, title="xx", label_legend=FALSE, label_axis=FALSE, label_model=TRUE) {
     # do this reordering in here so we don't mess up the other plots
     df$model <- factor(df$model, levels=c("space+phylogeny", "uncontrolled"))
-    df$value <- factor(df$value, levels=c("yes (supported, 95% CI excludes zero)",
+    df$support <- factor(df$support, levels=c("yes (supported, 95% CI excludes zero)",
                                           "no (not supported, 95% CI does not excludes zero)"))
-    ggplot(df, aes(x = model, group=value, fill=value), alpha = 0.8) +
+    ggplot(df, aes(x = model, group=support, fill=support), alpha = 0.8) +
         geom_bar() +
         scale_fill_manual(values=c("steelblue", "lightgray")) +
         xlab(NULL) +
@@ -43,23 +43,40 @@ plot_bar <- function(df, title="xx", label_legend=FALSE, label_axis=FALSE, label
         theme(title = element_text(size=22),
             axis.title=element_text(size=26),
             axis.text = element_text(size = 22),
-            legend.position=if (label_legend) 'top' else 'none',
+            legend.position = if (label_legend) "bottom" else "none",  # Control legend visibility
             axis.text.y=if (label_model) element_text(size=22) else element_blank()
         ) +
         ylab(ifelse(label_axis, 'Number of Generalizations', ''))
 }
 
-p.all <- plot_bar(df.brms, "a. Overall", label_legend=FALSE, label_axis=FALSE, label_model=TRUE)
+# Define your plots
+p.all <- plot_bar(df.brms, "a. Overall", label_legend=TRUE, label_axis=FALSE, label_model=TRUE)
 p.hier <- plot_bar(subset(df.brms, Domain_general == 'hierarchy'), "b. Hierarchy", label_legend=FALSE, label_axis=FALSE, label_model=TRUE)
 p.bwo <- plot_bar(subset(df.brms, Domain_general == 'broad word order'), "c. Broad Word Order", label_legend=FALSE, label_axis=FALSE, label_model=FALSE)
 p.nwo <- plot_bar(subset(df.brms, Domain_general == 'narrow word order'), "d. Narrow Word Order", label_legend=FALSE, label_axis=FALSE, label_model=FALSE)
 p.other <- plot_bar(subset(df.brms, Domain_general == 'other'), "e. Other", label_legend=FALSE, label_axis=FALSE, label_model=FALSE)
 
+# Step 1: Combine the plots without individual legends
+p.row <- (p.hier | p.bwo | p.nwo | p.other) +
+  plot_layout(guides = "collect") & 
+  theme(axis.title.x = element_blank())  # No legend in these plots
 
-p.fig1 <- (p.all / (p.hier | p.bwo | p.nwo | p.other)) +
-    plot_layout(guides = 'auto')
+# Step 2: Create the shared x-axis label
+xlab <- ggplot() +
+  theme_void() +
+  annotate("text", x = 0.5, y = 0.5, label = "Shared X-axis Title", 
+           size = 5, fontface = "bold", hjust = 0.5) +
+  theme(plot.margin = margin(t = 10))  # Add space before the legend
 
-width = 18
+# Step 3: Combine everything: Main plot, shared x-axis label, and shared legend
+p.fig1 <- (wrap_elements(xlab) / p.all / p.row) +
+  plot_layout(heights = c(0.1, 1, 1), guides = "collect") &
+  theme(legend.position = "bottom", legend.text = element_text(size = 20))  # Collect the legend at the bottom
+
+# Step 4: Display the final plot
+p.fig1
+
+width = 20
 height = 8
 
 ggsave(filename="output/plots/figure1-boxplot.tiff", height=height, width=width, dpi = 300,
