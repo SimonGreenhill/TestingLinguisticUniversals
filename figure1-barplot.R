@@ -1,12 +1,37 @@
 source("requirements.R")
 
-source('common.R')
 
+df_sp <- read_tsv("output/proccessed_data/df_brms_sp_posterior.tsv", show_col_types = F) %>% 
+  filter(term == "fixed_V3") %>% 
+  group_by(universal_code) %>% 
+  summarise(median_Estimate = median(Estimate), 
+         median_l_95_CI = median(`l-95% CI`), 
+         median_u_95_CI = median(`u-95% CI`)) %>%
+  ungroup() %>% 
+  mutate(support = ifelse(`median_l_95_CI` < 0 & `median_u_95_CI` < 0|
+                            `median_l_95_CI`  > 0 & `median_u_95_CI`  > 0  , yes = "yes (supported, 95% CI excludes zero)", no = "no (not supported, 95% CI does not excludes zero)")) %>% 
+  dplyr::select("space+phylogeny" = support, universal_code)
+
+df_naive <- read_tsv("output/proccessed_data/df_brms_naive.tsv", show_col_types = F) %>%  
+  filter(term == "fixed_V3") %>% 
+  dplyr::select("uncontrolled" = brms_support, universal_code)
+
+universals_meta_data <- read_tsv("universals_types.tsv", show_col_types = F) %>% 
+  dplyr::select(universal_code, Domain_general)
+
+df.brms <- df_sp %>% 
+  full_join(df_naive, by = join_by(universal_code)) %>% 
+  reshape2::melt(id.vars = "universal_code") %>% 
+  left_join(universals_meta_data, by = "universal_code") %>% 
+  rename(model = variable)
+  
 ## Construct Figure 1
 plot_bar <- function(df, title="xx", label_legend=FALSE, label_axis=FALSE, label_model=TRUE) {
     # do this reordering in here so we don't mess up the other plots
     df$model <- factor(df$model, levels=c("space+phylogeny", "uncontrolled"))
-    ggplot(df, aes(model, group=Significant, fill=Significant), alpha = 0.8) +
+    df$value <- factor(df$value, levels=c("yes (supported, 95% CI excludes zero)",
+                                          "no (not supported, 95% CI does not excludes zero)"))
+    ggplot(df, aes(x = model, group=value, fill=value), alpha = 0.8) +
         geom_bar() +
         scale_fill_manual(values=c("steelblue", "lightgray")) +
         xlab(NULL) +
@@ -37,13 +62,13 @@ p.fig1 <- (p.all / (p.hier | p.bwo | p.nwo | p.other)) +
 width = 18
 height = 8
 
-ggsave(filename="figure1-boxplot.tiff", height=height, width=width, dpi = 300,
+ggsave(filename="output/plots/figure1-boxplot.tiff", height=height, width=width, dpi = 300,
        plot = p.fig1)
-ggsave(filename="figure1-boxplot.png", height=height, width= width,
+ggsave(filename="output/plots/ffigure1-boxplot.png", height=height, width= width,
        plot = p.fig1)
 
-grDevices::cairo_pdf(file="figure1-boxplot.pdf", height=height, width= width,)
-plot(p.fig1)
-x <- dev.off()
+#grDevices::cairo_pdf(file="figure1-boxplot.pdf", height=height, width= width,)
+#plot(p.fig1)
+#x <- dev.off()
 
 
