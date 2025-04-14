@@ -79,9 +79,9 @@ p.fig1
 width = 20
 height = 8
 
-ggsave(filename="figure1-boxplot.tiff", height=height, width=width, dpi = 300,
+ggsave(filename="figure1-barplot.tiff", height=height, width=width, dpi = 300,
        plot = p.fig1)
-ggsave(filename="figure1-boxplot.png", height=height, width= width,
+ggsave(filename="figure1-barplot.png", height=height, width= width,
        plot = p.fig1)
 
 #grDevices::cairo_pdf(file="figure1-boxplot.pdf", height=height, width= width,)
