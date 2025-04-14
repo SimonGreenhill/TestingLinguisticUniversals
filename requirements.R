@@ -34,19 +34,7 @@ if(! "bayestraitr" %in% rownames(installed.packages())){
 }
 library(bayestraitr)
 
-dir <-"output"
-if(!dir.exists(dir)){
-  dir.create(dir)
-}
-
-dir <-"output/plots/"
-if(!dir.exists(dir)){
-  dir.create(dir)
-}
-
-
-
-dir <-"output/proccessed_data/"
+dir <-"summary/"
 if(!dir.exists(dir)){
   dir.create(dir)
 }
