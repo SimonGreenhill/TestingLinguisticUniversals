@@ -84,7 +84,7 @@ fns <-  setdiff(fns, odd_ones_out)
 
 df_all_family <- stack_summary_clean_tables(fns = fns, nrows =9, col_names =  c("term", "Estimate", "Est.Error",   "l-95% CI",   "u-95% CI",     "Rhat"), sep = " ")
 
-df_all_family_odd_ones <- stack_summary_clean_tables(fns = fns, nrows =9, col_names =  c("term", "Estimate", "Est.Error",   "l-95% CI",   "u-95% CI",     "Rhat"), sep = " ")
+df_all_family_odd_ones <- stack_summary_clean_tables(fns = odd_ones_out, nrows =9, col_names =  c("term", "Estimate", "Est.Error",   "l-95% CI",   "u-95% CI"), sep = " ")
 
 df_all_family <- full_join(df_all_family, df_all_family_odd_ones, by = join_by(term, Estimate, Est.Error, `l-95% CI`, `u-95% CI`, Rhat, filename, universal_code))
 
