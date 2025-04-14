@@ -28,20 +28,19 @@ load <- function(dirname, what="summary", include_single = FALSE) {
 
     if(what == "summary"){
         colnames  <- c("term", "Estimate", "Est.Error", "l-95% CI", "u-95% CI" , "Rhat", "Bulk_ESS", "Tail_ESS", "Tree")
-        o <- readr::read_tsv(files, id='Filename', show_col_types=FALSE, skip=1, col_names=colnames)
     }
     if(what == "macroarea_V3"| what == "macroarea_intercept"){
         colnames <- c("macroarea", "Estimate",	"Est.Error",	"Q2.5",	"Q97.5")
-        o <- readr::read_tsv(files, id='Filename', show_col_types=FALSE, skip=1, col_names=colnames)
     }
     if(what == "phylo"| what == "spatial"){
         colnames <- c("glottocode", "Estimate",	"Est.Error",	"Q2.5",	"Q97.5")
-        o <- readr::read_tsv(files, id='Filename', show_col_types=FALSE, skip=1, col_names=colnames)
     }
+    
+    o <- readr::read_tsv(files, id='Filename', show_col_types=FALSE, skip=1, col_names=colnames)
     o
 }
 
-results <- load(dirname = 'results/1827KA', what = 'summary')
-phylo <- load('results/1827KA/', what = 'phylo')
+#results <- load(dirname = 'results/1827KA', what = 'summary')
+#phylo <- load('results/1827KA/', what = 'phylo')
 
 
