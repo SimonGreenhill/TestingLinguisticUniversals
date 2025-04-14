@@ -1,7 +1,7 @@
 source("requirements.R")
 
 
-df_sp <- read_tsv("output/proccessed_data/df_brms_sp_posterior.tsv", show_col_types = F) %>% 
+df_sp <- read_tsv("summary/df_brms_sp_posterior.tsv", show_col_types = F) %>% 
   filter(term == "fixed_V3") %>% 
   group_by(universal_code) %>% 
   summarise(median_Estimate = median(Estimate), 
@@ -12,7 +12,7 @@ df_sp <- read_tsv("output/proccessed_data/df_brms_sp_posterior.tsv", show_col_ty
                             `median_l_95_CI`  > 0 & `median_u_95_CI`  > 0  , yes = "yes (supported, 95% CI excludes zero)", no = "no (not supported, 95% CI does not excludes zero)")) %>% 
   dplyr::select("space+phylogeny" = support, universal_code)
 
-df_naive <- read_tsv("output/proccessed_data/df_brms_naive.tsv", show_col_types = F) %>%  
+df_naive <- read_tsv("summary/df_brms_naive.tsv", show_col_types = F) %>%  
   filter(term == "fixed_V3") %>% 
   dplyr::select("uncontrolled" = brms_support, universal_code)
 
