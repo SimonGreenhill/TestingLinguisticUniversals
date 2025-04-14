@@ -5,23 +5,8 @@ df <- readr::read_tsv("results/BT_results_summary/results.txt", show_col_types=F
   dplyr::select(universal_code = code, 
                Size = `Size..review.of.original.`,
                `Implementation` = `Implementation..review.of.original..1`, 
-               Bias.3, supported)
-  
-df.brms <- read_tsv("summary/df_brms_sp_posterior.tsv", show_col_types = FALSE) %>% 
-  filter(term == "fixed_V3") %>% 
-  group_by(universal_code) %>% 
-  summarise(median_Estimate = median(Estimate), 
-            median_l_95_CI = median(`l-95% CI`), 
-            median_u_95_CI = median(`u-95% CI`)) %>%
-  ungroup() %>% 
-  mutate(brms.support = ifelse(`median_l_95_CI` < 0 & `median_u_95_CI` < 0|
-                            `median_l_95_CI`  > 0 & `median_u_95_CI`  > 0  , yes = "yes (supported, 95% CI excludes zero)", no = "no (not supported, 95% CI does not excludes zero)")) %>% 
-  dplyr::select(brms.support, universal_code)
-
-
-df <- df %>% 
-  full_join(df.brms, by = join_by(universal_code)) %>% 
-  mutate(supported_new = ifelse(supported == "NOT SIG" & brms.support == "yes (supported, 95% CI excludes zero)", "supported in BRMS but not in BT", supported))
+               Bias.3, supported, brms.support = brmsQ_Fixed_V3_SIG) %>% 
+  mutate(supported_new = ifelse(supported == "NOT SIG" & brms.support == "SIG", "supported in BRMS but not in BT", supported))
   
 df_plot_S8 <- df %>%
     mutate(Sample_size = ifelse(Size >= 75, ">=75", NA)) %>%
