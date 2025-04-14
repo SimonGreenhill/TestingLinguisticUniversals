@@ -10,6 +10,7 @@ size = point_size = 0.2
 
 # better plot
 df.bayestraits <- readr::read_tsv("results/BT_results_summary/results.txt", show_col_types=FALSE) %>%
+  dplyr::filter(bmrs_support == "yes") %>% 
   dplyr::select(code, Universal.shorter, 
                 Domain_general,  
                 median_BF,
@@ -83,7 +84,7 @@ po <- df.bayestraits %>%
   guides(color="none") +  
   ggtitle("Other")
 
-p <- ((pn + pw) / (ph + po)) + plot_layout(heights = c(2.5, 1))
+p <- ((pn + ph) / (pw + po)) + plot_layout(heights = c(2.5, 1))
 
 ggsave(filename="figure2-bayesfactors-pointrange.png",width = 22, height = 27, units = "cm", dpi = 300, plot = p)
 
