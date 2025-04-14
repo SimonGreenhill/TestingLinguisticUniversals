@@ -2,8 +2,8 @@ source("requirements.R")
 
 #this script takes the information about coef estimate, upper and lower 95% etc stored in the results files called "summary_clean". Unfortunately, due to how summary() reports information, there can be some problems with how the files are printed. Sometimes, some columns "run over" to new rows below, there can be trouble with the colnames and separators. This script relies on a function, stack_summary_clean_tables, and runs this over different sets of these files. Different accomodations are made, files that have an uncommon formatted are separated out to "odd_ones" and read in again but with slightl different settings. Then all the content is merged. The final product is a data-frame for all results for the sp models on the posteriors ("summary/df_brms_sp_posterior.tsv"), naive models ("summary/df_brms_naive.tsv") and the models with only family and macroarea as control predictors ("summary/df_brms_family_macroarea.tsv"). These resulting data-frames can then be used for the plotting etc.
 
-universals_type <- read_tsv("universals_types.tsv", show_col_types = F)
-universals_type$Universal.shorter <- stringr::str_replace_all(universals_type$Universal.shorter, ">", "⇒")
+universals_type <- read_tsv("universals_types.tsv", show_col_types = F) %>% 
+  dplyr::select(universal_code, Domain_general, Universal.shorter)
 
 #function for stacking the summary tables (do not use for ranef-tables, only summary_clean)
 stack_summary_clean_tables <- function(fns = NULL, col_names = NULL, nrows = "all", sep = NULL){
@@ -30,8 +30,9 @@ stack_summary_clean_tables <- function(fns = NULL, col_names = NULL, nrows = "al
   output
    }
 
-       
+########################################################
 #sp posteriors brms
+########################################################
 
 df_all_posteriors <- stack_summary_clean_tables(fns = list.files(path = "results", pattern = "summary_clean\\.\\d+", full.names = T, recursive = T), col_names = c("term", "Estimate" , "Est.Error", "l-95% CI",  "u-95% CI" , "Rhat" ,     "Bulk_ESS" , "Tail_ESS",  "Tree" ), sep = "\t")
 
@@ -41,7 +42,9 @@ df_all_posteriors %>%
   left_join(universals_type, by = join_by(universal_code)) %>% 
   write_tsv("summary/df_brms_sp_posterior.tsv", quote = "all", na = "") 
 
+########################################################
 #naive
+########################################################
 
 fns = list.files(path = "results", pattern = "summary_clean_uncontrolled.txt", full.names = T, recursive = T)
 odd_ones_out <- "results/1560KA/brms.single/summary_clean_uncontrolled.txt"
@@ -59,7 +62,10 @@ df_all_naive %>%
   left_join(universals_type, by = join_by(universal_code)) %>% 
   write_tsv("summary/df_brms_naive.tsv", quote = "all", na = "") 
 
-# family_id as control isntead of phylogeny
+
+########################################################
+# family_id as control instead of phylogeny
+########################################################
 fns = list.files(path = "results/sensitivity_no_tree_fam_control/", pattern = "summary_clean.txt", full.names = T, recursive = T)
 odd_ones_out <- c("results/sensitivity_no_tree_fam_control//batch03/0093KA/summary_clean.txt",
                   "results/sensitivity_no_tree_fam_control//batch07/0238bKA/summary_clean.txt",
@@ -78,7 +84,7 @@ fns <-  setdiff(fns, odd_ones_out)
 
 df_all_family <- stack_summary_clean_tables(fns = fns, nrows =9, col_names =  c("term", "Estimate", "Est.Error",   "l-95% CI",   "u-95% CI",     "Rhat"), sep = " ")
 
-df_all_family_odd_ones <- stack_summary_clean_tables(fns = fns, nrows =9, col_names =  c("term", "Estimate", "Est.Error",   "l-95% CI",   "u-95% CI",     "Rhat"), sep = " ")
+df_all_family_odd_ones <- stack_summary_clean_tables(fns = odd_ones_out, nrows =9, col_names =  c("term", "Estimate", "Est.Error",   "l-95% CI",   "u-95% CI"), sep = " ")
 
 df_all_family <- full_join(df_all_family, df_all_family_odd_ones, by = join_by(term, Estimate, Est.Error, `l-95% CI`, `u-95% CI`, Rhat, filename, universal_code))
 
