@@ -1,6 +1,6 @@
 source("requirements.R")
 
-#this script takes the information about coef estimate, upper and lower 95% etc stored in the results files called "summary_clean". Unfortunately, due to how summary() reports information, there can be some problems with how the files are printed. Sometimes, some columns "run over" to new rows below, there can be trouble with the colnames and separators. This script relies on a function, stack_summary_clean_tables, and runs this over different sets of these files. Different accomodations are made, files that have an uncommon formatted are separated out to "odd_ones" and read in again but with slightl different settings. Then all the content is merged. The final product is a data-frame for all results for the sp models on the posteriors ("output/proccessed_data/df_brms_sp_posterior.tsv"), naive models ("output/proccessed_data/df_brms_naive.tsv") and the models with only family and macroarea as control predictors ("output/proccessed_data/df_brms_family_macroarea.tsv"). These resulting data-frames can then be used for the plotting etc.
+#this script takes the information about coef estimate, upper and lower 95% etc stored in the results files called "summary_clean". Unfortunately, due to how summary() reports information, there can be some problems with how the files are printed. Sometimes, some columns "run over" to new rows below, there can be trouble with the colnames and separators. This script relies on a function, stack_summary_clean_tables, and runs this over different sets of these files. Different accomodations are made, files that have an uncommon formatted are separated out to "odd_ones" and read in again but with slightl different settings. Then all the content is merged. The final product is a data-frame for all results for the sp models on the posteriors ("summary/proccessed_data/df_brms_sp_posterior.tsv"), naive models ("summary/proccessed_data/df_brms_naive.tsv") and the models with only family and macroarea as control predictors ("summary/proccessed_data/df_brms_family_macroarea.tsv"). These resulting data-frames can then be used for the plotting etc.
 
 universals_type <- read_tsv("universals_types.tsv", show_col_types = F)
 universals_type$Universal.shorter <- stringr::str_replace_all(universals_type$Universal.shorter, ">", "⇒")
@@ -39,7 +39,7 @@ df_all_posteriors %>%
   mutate(brms_support = ifelse(`l-95% CI` < 0 & `u-95% CI` < 0|
                                  `l-95% CI`  > 0 & `u-95% CI`  > 0  , "yes (supported, 95% CI excludes zero)", "no (not supported, 95% CI does not excludes zero)")) %>% 
   left_join(universals_type, by = join_by(universal_code)) %>% 
-  write_tsv("output/proccessed_data/df_brms_sp_posterior.tsv", quote = "all", na = "") 
+  write_tsv("summary/proccessed_data/df_brms_sp_posterior.tsv", quote = "all", na = "") 
 
 #naive
 
@@ -57,7 +57,7 @@ df_all_naive %>%
   mutate(brms_support = ifelse(`l-95% CI` < 0 & `u-95% CI` < 0|
                                  `l-95% CI`  > 0 & `u-95% CI`  > 0  , "yes (supported, 95% CI excludes zero)", "no (not supported, 95% CI does not excludes zero)")) %>% 
   left_join(universals_type, by = join_by(universal_code)) %>% 
-  write_tsv("output/proccessed_data/df_brms_naive.tsv", quote = "all", na = "") 
+  write_tsv("summary/proccessed_data/df_brms_naive.tsv", quote = "all", na = "") 
 
 # family_id as control isntead of phylogeny
 fns = list.files(path = "results/sensitivity_no_tree_fam_control/", pattern = "summary_clean.txt", full.names = T, recursive = T)
@@ -88,7 +88,7 @@ df_all_family %>%
   mutate(brms_support = ifelse(`l-95% CI` < 0 & `u-95% CI` < 0|
                             `l-95% CI`  > 0 & `u-95% CI`  > 0  , "yes (supported, 95% CI excludes zero)", "no (not supported, 95% CI does not excludes zero)")) %>% 
   left_join(universals_type, by = join_by(universal_code)) %>% 
-  write_tsv("output/proccessed_data/df_brms_family_macroarea.tsv", quote = "all", na = "") 
+  write_tsv("summary/proccessed_data/df_brms_family_macroarea.tsv", quote = "all", na = "") 
 
 
 
