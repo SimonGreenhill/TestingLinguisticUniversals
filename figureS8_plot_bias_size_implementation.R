@@ -19,7 +19,7 @@ df_plot_S8 <- df %>%
     mutate(Bias = ifelse(is.na(Bias.3)  , "unclear", Bias  )) %>%
     mutate(Implementation = ifelse(Implementation == "less than OK", "imperfect", Implementation )) %>%
     mutate(Implementation = ifelse(Implementation == "OK", "imperfect", Implementation )) %>%
-    dplyr::select(universal_code, Sample_size, Bias, Implementation, supported_new)
+    dplyr::select(universal_code, Sample_size, Bias, Implementation, supported_new, supported)
 
 df_plot_S8$supported_new <- factor(df_plot_S8$supported_new, levels=c("SIG", "supported in BRMS but not in BT","NOT SIG"))
 
@@ -94,3 +94,18 @@ ggsave(filename="figures_SI8_barplot.tiff", height=height, width=width, dpi = 30
 #grDevices::cairo_pdf(file="figures_SI8_barplot.pdf", height=height, width= width,)
 #plot(p)
 #x <- dev.off()
+
+#GLM
+df_for_glm <- df_plot_S8 %>% 
+  filter(supported_new != "supported in BRMS but not in BT") %>% 
+  mutate(across(all_of(c("Sample_size", "Bias", "Implementation", "supported")), as.factor))
+
+#df_for_glm$supported <- factor(df_for_glm$supported, levels = c("SIG"   ,  "NOT SIG"))
+
+model <- glm(supported ~ Sample_size + Bias + Implementation, data = df_for_glm, family="binomial")
+
+summary(model)$coefficients %>% 
+  as.data.frame() %>% 
+  mutate(across(where(is.numeric), ~ round(.x, 2))) %>% 
+  rownames_to_column("term") %>% write_tsv("FigureS8_GLM_coef.tsv", na = "", quote = "all")
+
