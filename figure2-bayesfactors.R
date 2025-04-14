@@ -15,8 +15,7 @@ df.bayestraits <- readr::read_tsv("results/BT_results_summary/results.txt", show
                 Domain_general,  
                 median_BF,
                 o95HDI_lower, o95HDI_higher, 
-                o95HDI_SIG, 
-                supported)
+                o95HDI_SIG)
 
 pn <- df.bayestraits %>% 
   filter(Domain_general == "narrow word order") %>% 
