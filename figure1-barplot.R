@@ -49,28 +49,26 @@ plot_bar <- function(df, title="xx", label_legend=FALSE, label_axis=FALSE, label
         ylab(ifelse(label_axis, 'Number of Generalizations', ''))
 }
 
-# Define your plots
 p.all <- plot_bar(df.brms, "a. Overall", label_legend=TRUE, label_axis=FALSE, label_model=TRUE)
 p.hier <- plot_bar(subset(df.brms, Domain_general == 'hierarchy'), "b. Hierarchy", label_legend=FALSE, label_axis=FALSE, label_model=TRUE)
 p.bwo <- plot_bar(subset(df.brms, Domain_general == 'broad word order'), "c. Broad Word Order", label_legend=FALSE, label_axis=FALSE, label_model=FALSE)
 p.nwo <- plot_bar(subset(df.brms, Domain_general == 'narrow word order'), "d. Narrow Word Order", label_legend=FALSE, label_axis=FALSE, label_model=FALSE)
 p.other <- plot_bar(subset(df.brms, Domain_general == 'other'), "e. Other", label_legend=FALSE, label_axis=FALSE, label_model=FALSE)
 
-# Step 1: Combine the plots without individual legends
 p.row <- (p.hier | p.bwo | p.nwo | p.other) +
   plot_layout(guides = "collect") & 
   theme(axis.title.x = element_blank())  # No legend in these plots
 
-# Step 2: Create the shared x-axis label
+#Create the shared x-axis label
 xlab <- ggplot() +
   theme_void() +
-  annotate("text", x = 0.5, y = 0.5, label = "Shared X-axis Title", 
+  annotate("text", x = 0.5, y = 0.5, label = "Number of universals", 
            size = 5, fontface = "bold", hjust = 0.5) +
   theme(plot.margin = margin(t = 10))  # Add space before the legend
 
 # Step 3: Combine everything: Main plot, shared x-axis label, and shared legend
-p.fig1 <- (wrap_elements(xlab) / p.all / p.row) +
-  plot_layout(heights = c(0.1, 1, 1), guides = "collect") &
+p.fig1 <- (  p.all / p.row/ wrap_elements(xlab)) +
+  plot_layout(heights = c( 1, 1, 0.2), guides = "collect") &
   theme(legend.position = "bottom", legend.text = element_text(size = 20))  # Collect the legend at the bottom
 
 # Step 4: Display the final plot
