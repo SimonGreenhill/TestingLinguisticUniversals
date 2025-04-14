@@ -18,10 +18,12 @@ df.brms <- read_tsv("summary/df_brms_sp_posterior.tsv", show_col_types = FALSE) 
                             `median_l_95_CI`  > 0 & `median_u_95_CI`  > 0  , yes = "yes (supported, 95% CI excludes zero)", no = "no (not supported, 95% CI does not excludes zero)")) %>% 
   dplyr::select(brms.support, universal_code)
 
-df <- df %>% 
-  full_join(df.brms)
 
-meta <- df %>%
+df <- df %>% 
+  full_join(df.brms, by = join_by(universal_code)) %>% 
+  mutate(supported_new = ifelse(supported == "NOT SIG" & brms.support == "yes (supported, 95% CI excludes zero)", "supported in BRMS but not in BT", supported))
+  
+df_plot_S8 <- df %>%
     mutate(Sample_size = ifelse(Size >= 75, ">=75", NA)) %>%
     mutate(Sample_size = ifelse(Size < 75, "<75", Sample_size)) %>%
     mutate(Sample_size = ifelse(is.na(Size), "unclear", Sample_size)) %>%
@@ -32,30 +34,15 @@ meta <- df %>%
     mutate(Bias = ifelse(is.na(Bias.3)  , "unclear", Bias  )) %>%
     mutate(Implementation = ifelse(Implementation == "less than OK", "imperfect", Implementation )) %>%
     mutate(Implementation = ifelse(Implementation == "OK", "imperfect", Implementation )) %>%
-    dplyr::select(universal_code, Sample_size, Bias, Implementation)
+    dplyr::select(universal_code, Sample_size, Bias, Implementation, supported_new)
 
-df_plot_S8 <- df.brms %>%
-    dplyr::select(code, model, Significant) %>%
-  mutate(Significant = ifelse(Significant == "yes", "SIG in BRMS", "not SIG in BRMS")) %>%
-    left_join(meta,
-              by = "code") %>%
-  left_join(df %>%
-              dplyr::select(code, supported),
-            by = "code" ) %>%
-  mutate(Sig = ifelse(supported == "SIG", "supported_in_BT", Significant))
-
-df_plot_S8 <- df_plot_S8 %>%
-    filter(model == "space+phylogeny")
-
-df_plot_S8$Sig <- factor(df_plot_S8$Sig, levels=c("supported_in_BT", "SIG in BRMS","not SIG in BRMS"))
-
-df_plot_S8$supported <- factor(df_plot_S8$supported, levels=c("SIG", "NOT SIG"))
+df_plot_S8$supported_new <- factor(df_plot_S8$supported_new, levels=c("SIG", "supported in BRMS but not in BT","NOT SIG"))
 
 plot_bar <- function(df, label_legend=FALSE, label_axis=FALSE, label_model=TRUE, var = NULL) {
 
-        ggplot(df, aes({{var}}, group=supported, fill=supported), alpha = 0.8) +
-        geom_bar() +
-        scale_fill_manual(values=c( "#3a4c40", "lightgray")) +
+        ggplot(df, aes({{var}}, group=supported_new, fill=supported_new), alpha = 0.8) +
+        geom_bar(color= "black") +
+        scale_fill_manual(values=c( "#3a4c40", "#8ccc7c", "#cdcfcc")) +
 #        scale_fill_manual(values=c( "#2A2E87", "steelblue", "lightgray")) +
         xlab(NULL) +
         scale_y_continuous(
@@ -119,21 +106,6 @@ ggsave(filename="figures_SI8_barplot.tiff", height=height, width=width, dpi = 30
        plot = p)
 
 
-grDevices::cairo_pdf(file="figures_SI8_barplot.pdf", height=height, width= width,)
-plot(p)
-x <- dev.off()
-
-
-df_plot_S8$Significant <- factor(df_plot_S8$Significant, levels = c("SIG in BRMS"   ,  "not SIG in BRMS"))
-
-model <- glm(Significant ~ Sample_size + Bias + Implementation, data = df_plot_S8, family="binomial")
-summary(model)
-
-
-df_plot_S8$supported <- factor(df_plot_S8$supported, levels = c("SIG"   ,  "NOT SIG"))
-
-model <- glm(supported ~ Sample_size + Bias + Implementation, data = df_plot_S8, family="binomial")
-summary(model)
-
-df_plot_S8$Sig <- factor(df_plot_S8$Sig, levels = c("not SIG in BRMS"   ,"SIG in BRMS",  "supported_in_BT"))
-#model <- glm(Sig ~ Sample_size + Bias + Implementation, data = df_plot_S8)
+#grDevices::cairo_pdf(file="figures_SI8_barplot.pdf", height=height, width= width,)
+#plot(p)
+#x <- dev.off()
