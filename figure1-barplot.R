@@ -74,7 +74,7 @@ p.fig1 <- (  p.all / p.row/ wrap_elements(xlab)) +
 # Step 4: Display the final plot
 p.fig1
 
-width = 20
+width = 18
 height = 8
 
 ggsave(filename="figure1-barplot.tiff", height=height, width=width, dpi = 300,
