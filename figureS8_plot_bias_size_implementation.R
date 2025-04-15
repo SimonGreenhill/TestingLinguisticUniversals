@@ -6,7 +6,9 @@ df <- readr::read_tsv("results/BT_results_summary/results.txt", show_col_types=F
                Size = `Size..review.of.original.`,
                `Implementation` = `Implementation..review.of.original..1`, 
                Bias.3, supported, brms.support = brmsQ_Fixed_V3_SIG) %>% 
-  mutate(supported_new = ifelse(supported == "NOT SIG" & brms.support == "SIG", "supported in BRMS but not in BT", supported))
+  mutate(supported_new = ifelse(supported == "NOT SIG" & brms.support == "SIG", "supported in sp BRMS, but not in BT", supported)) %>% 
+  mutate(supported_new = ifelse(supported_new == "NOT SIG", "not supported", supported_new)) %>% 
+  mutate(supported_new = ifelse(supported_new == "SIG", "supported in sp BRMS and BT", supported_new)) 
   
 df_plot_S8 <- df %>%
     mutate(Sample_size = ifelse(Size >= 75, ">=75", NA)) %>%
@@ -21,7 +23,7 @@ df_plot_S8 <- df %>%
     mutate(Implementation = ifelse(Implementation == "OK", "imperfect", Implementation )) %>%
     dplyr::select(universal_code, Sample_size, Bias, Implementation, supported_new, supported)
 
-df_plot_S8$supported_new <- factor(df_plot_S8$supported_new, levels=c("SIG", "supported in BRMS but not in BT","NOT SIG"))
+df_plot_S8$supported_new <- factor(df_plot_S8$supported_new, levels=c("supported in sp BRMS and BT", "supported in sp BRMS, but not in BT", "not supported"))
 
 plot_bar <- function(df, label_legend=FALSE, label_axis=FALSE, label_model=TRUE, var = NULL) {
 
@@ -39,8 +41,9 @@ plot_bar <- function(df, label_legend=FALSE, label_axis=FALSE, label_model=TRUE,
               axis.title.y = element_blank(),
               axis.text.x = element_text(size = 18),
               axis.title.x = element_blank(),
+              legend.title = element_blank(),
               axis.text.y = element_text(size=22),
-              legend.position=if (label_legend) 'top' else 'none',
+              legend.position=if (label_legend) 'right' else 'none',
          )
 }
 
@@ -61,7 +64,7 @@ p.size_small <- plot_bar(subset(df_plot_S8, Sample_size == '<75'), label_legend=
 
 p.size_large <- plot_bar(subset(df_plot_S8, Sample_size == '>=75'),  label_legend=FALSE, label_axis= TRUE, label_model=FALSE, var = Sample_size)
 
-p.size_unclear <- plot_bar(subset(df_plot_S8, Sample_size == 'unclear'),  label_legend=FALSE, label_axis= TRUE, label_model=FALSE, var = Sample_size)
+p.size_unclear <- plot_bar(subset(df_plot_S8, Sample_size == 'unclear'),  label_legend=TRUE, label_axis= TRUE, label_model=FALSE, var = Sample_size)
 
 ##
 
@@ -78,8 +81,11 @@ p.implementation <- (p.implementation_imperfect  /p.implementation_perfect/ plot
 p.size <- (p.size_small/p.size_large/p.size_unclear)
 
 ##
-p <- ( p.bias |p.size |p.implementation)
+p <- ( p.bias |p.size |p.implementation)  +
+  plot_layout(guides = "collect") & 
+  theme(axis.title.x = element_blank())  # No legend in these plots
 
+p
 
 width = 20
 height = 8
