@@ -138,8 +138,8 @@ ggplot(aes(all, fill=supported_new), alpha = 0.8) +
         axis.title.x = element_blank(),
         legend.title = element_blank(),
         axis.ticks = element_blank(),
-        legend.position='none',
+        legend.position='bottom'
   )
 
 
-ggsave("Figure_results_all.tiff", width = 5, height = 3)
+ggsave("Figure_results_all.png", width = 9, height = 3)
