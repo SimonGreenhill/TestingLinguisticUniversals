@@ -47,6 +47,8 @@ plot_bar <- function(df, label_legend=FALSE, label_axis=FALSE, label_model=TRUE,
          )
 }
 
+
+
 p.bias_no_bias <- plot_bar(subset(df_plot_S8, Bias == 'no bias'),  label_legend=FALSE,
          label_axis= TRUE, label_model=FALSE, var = Bias) +
     ggtitle("a. Bias")
@@ -115,3 +117,29 @@ summary(model)$coefficients %>%
   mutate(across(where(is.numeric), ~ round(.x, 2))) %>% 
   rownames_to_column("term") %>% write_tsv("FigureS8_GLM_coef.tsv", na = "", quote = "all")
 
+####################ALL
+
+df_plot_S8 %>% 
+  mutate(all = "all") %>% 
+ggplot(aes(all, fill=supported_new), alpha = 0.8) +
+  geom_bar(color= "black") +
+  scale_fill_manual(values=c( "#ae39ed", "#edb439", "#cdcfcc")) +
+  #        scale_fill_manual(values=c( "#2A2E87", "steelblue", "lightgray")) +
+  xlab(NULL) +
+  scale_y_continuous(
+    #    limits=c(0, length(levels(df$Universal.shorter))),
+    breaks=c(0, 20, 40, 60, 80, 100)) +
+  coord_flip() +
+  theme_classic() +
+  theme(title = element_text(size=22),
+        axis.title = element_blank(),
+        axis.text.y = element_blank(),
+        axis.text.x = element_text(size = 18),
+        axis.title.x = element_blank(),
+        legend.title = element_blank(),
+        axis.ticks = element_blank(),
+        legend.position='none',
+  )
+
+
+ggsave("Figure_results_all.tiff", width = 5, height = 3)
