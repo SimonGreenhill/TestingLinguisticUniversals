@@ -123,12 +123,12 @@ df_plot_S8 %>%
   mutate(all = "all") %>% 
 ggplot(aes(all, fill=supported_new), alpha = 0.8) +
   geom_bar(color= "black") +
-  scale_fill_manual(values=c( "#ae39ed", "#edb439", "#cdcfcc")) +
+  scale_fill_manual(values=c( "#ae39ed", "#e9aff0", "#cdcfcc")) +
   #        scale_fill_manual(values=c( "#2A2E87", "steelblue", "lightgray")) +
   xlab(NULL) +
   scale_y_continuous(
     #    limits=c(0, length(levels(df$Universal.shorter))),
-    breaks=c(0, 20, 40, 60, 80, 100)) +
+    breaks=c(0, 50, 100, 150, 191)) +
   coord_flip() +
   theme_classic() +
   theme(title = element_text(size=22),
@@ -142,4 +142,4 @@ ggplot(aes(all, fill=supported_new), alpha = 0.8) +
   )
 
 
-ggsave("Figure_results_all.png", width = 9, height = 3)
+ggsave("Figure_results_all.png", width = 7, height = 3)
