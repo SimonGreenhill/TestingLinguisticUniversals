@@ -34,10 +34,11 @@ if(! "bayestraitr" %in% rownames(installed.packages())){
 }
 library(bayestraitr)
 
-dir <-"output"
+dir <-"summary/"
 if(!dir.exists(dir)){
   dir.create(dir)
 }
+<<<<<<< HEAD
 
 dir <-"output/plots/"
 if(!dir.exists(dir)){
@@ -50,3 +51,18 @@ dir <-"output/proccessed_data/"
 if(!dir.exists(dir)){
   dir.create(dir)
 }
+||||||| 11dc1fc30
+
+dir <-"output/plots/"
+if(!dir.exists(dir)){
+  dir.create(dir)
+}
+
+
+
+dir <-"output/proccessed_data/"
+if(!dir.exists(dir)){
+  dir.create(dir)
+}
+=======
+>>>>>>> 337f2604dfbd0c2137c42c456e1e0995a78c6b02
