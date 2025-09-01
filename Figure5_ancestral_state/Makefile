@@ -1,6 +1,3 @@
-# need glottolog to label clades
-GLOTTOLOG=~/src/glottolog-cldf/cldf/cldf-metadata.json
-
 # Domain: hierarchy
 # # A tibble: 1 × 3
 #   code   Universal.shorter   BT_EDGE_BF
@@ -28,13 +25,17 @@ RDS=1053KA.rds 1152KA.rds 0344KA.rds 1431mKA.rds
 PDF=$(subst .rds,.pdf,$(RDS))
 PLOT_RDS=$(subst .rds,.plot,$(RDS))
 
-all: $(RDS) $(PLOT_RDS) panel.pdf
+all: glottolog-cldf $(RDS) $(PLOT_RDS) panel.pdf
+
+# shallow clone glottolog -> needed to label clades
+glottolog-cldf:
+	git clone --depth=1 https://github.com/glottolog/glottolog-cldf && cd $@ && git checkout
 
 %.rds:
-	./asr.R ../results/brms/$(basename $@)/pruned_tree.tree ../results/brms/$(basename $@)/BT_data.txt $@
+	./asr.R ../results/$(basename $@)/pruned_tree.tree ../results/$(basename $@)/BT_data.txt $@
 
-%.plot: %.rds
-	./plot_asr.R $(GLOTTOLOG) $< $(subst .plot,.pdf,$@) $@
+%.plot: %.rds glottolog-cldf
+	./plot_asr.R glottolog-cldf/cldf/cldf-metadata.json $< $(subst .plot,.pdf,$@) $@
 
 panel.pdf: $(PLOT_RDS)
 	./plot_panel.R $^
