@@ -62,39 +62,39 @@ df_all_naive %>%
   left_join(universals_type, by = join_by(universal_code)) %>% 
   write_tsv("summary/df_brms_naive.tsv", quote = "all", na = "") 
 
-
-########################################################
-# family_id as control instead of phylogeny
-########################################################
-fns = list.files(path = "results/sensitivity_no_tree_fam_control/", pattern = "summary_clean.txt", full.names = T, recursive = T)
-odd_ones_out <- c("results/sensitivity_no_tree_fam_control//batch03/0093KA/summary_clean.txt",
-                  "results/sensitivity_no_tree_fam_control//batch07/0238bKA/summary_clean.txt",
-                  "results/sensitivity_no_tree_fam_control//batch08/0239bKA/summary_clean.txt",
-                  "results/sensitivity_no_tree_fam_control//batch09/0357KA/summary_clean.txt",
-                  "results/sensitivity_no_tree_fam_control//batch10/0504aKA/summary_clean.txt",
-                  "results/sensitivity_no_tree_fam_control//batch11/0569KA/summary_clean.txt",
-                  "results/sensitivity_no_tree_fam_control//batch11/0572KA/summary_clean.txt",
-                  "results/sensitivity_no_tree_fam_control//batch14/1163KA/summary_clean.txt",
-                  "results/sensitivity_no_tree_fam_control//batch15/1334cKA/summary_clean.txt",
-                  "results/sensitivity_no_tree_fam_control//batch15/1427KA/summary_clean.txt",
-                  "results/sensitivity_no_tree_fam_control//batch17/1550KA/summary_clean.txt",
-                  "results/sensitivity_no_tree_fam_control//batch18/1611KA/summary_clean.txt"
-                  )
-fns <-  setdiff(fns, odd_ones_out)
-
-df_all_family <- stack_summary_clean_tables(fns = fns, nrows =9, col_names =  c("term", "Estimate", "Est.Error",   "l-95% CI",   "u-95% CI",     "Rhat"), sep = " ")
-
-df_all_family_odd_ones <- stack_summary_clean_tables(fns = odd_ones_out, nrows =9, col_names =  c("term", "Estimate", "Est.Error",   "l-95% CI",   "u-95% CI"), sep = " ")
-
-df_all_family <- full_join(df_all_family, df_all_family_odd_ones, by = join_by(term, Estimate, Est.Error, `l-95% CI`, `u-95% CI`, Rhat, filename, universal_code))
-
-df_all_family$universal_code <- stringr::str_match(df_all_family$filename, "results/sensitivity_no_tree_fam_control//batch\\d+/(.*?)/summary_clean\\.txt")[, 2]
-
-df_all_family %>% 
-  mutate(brms_support = ifelse(`l-95% CI` < 0 & `u-95% CI` < 0|
-                            `l-95% CI`  > 0 & `u-95% CI`  > 0  , "yes (supported, 95% CI excludes zero)", "no (not supported, 95% CI does not excludes zero)")) %>% 
-  left_join(universals_type, by = join_by(universal_code)) %>% 
-  write_tsv("summary/df_brms_family_macroarea.tsv", quote = "all", na = "") 
+# 
+# ########################################################
+# # family_id as control instead of phylogeny
+# ########################################################
+# fns = list.files(path = "results/sensitivity_no_tree_fam_control/", pattern = "summary_clean.txt", full.names = T, recursive = T)
+# odd_ones_out <- c("results/sensitivity_no_tree_fam_control//batch03/0093KA/summary_clean.txt",
+#                   "results/sensitivity_no_tree_fam_control//batch07/0238bKA/summary_clean.txt",
+#                   "results/sensitivity_no_tree_fam_control//batch08/0239bKA/summary_clean.txt",
+#                   "results/sensitivity_no_tree_fam_control//batch09/0357KA/summary_clean.txt",
+#                   "results/sensitivity_no_tree_fam_control//batch10/0504aKA/summary_clean.txt",
+#                   "results/sensitivity_no_tree_fam_control//batch11/0569KA/summary_clean.txt",
+#                   "results/sensitivity_no_tree_fam_control//batch11/0572KA/summary_clean.txt",
+#                   "results/sensitivity_no_tree_fam_control//batch14/1163KA/summary_clean.txt",
+#                   "results/sensitivity_no_tree_fam_control//batch15/1334cKA/summary_clean.txt",
+#                   "results/sensitivity_no_tree_fam_control//batch15/1427KA/summary_clean.txt",
+#                   "results/sensitivity_no_tree_fam_control//batch17/1550KA/summary_clean.txt",
+#                   "results/sensitivity_no_tree_fam_control//batch18/1611KA/summary_clean.txt"
+#                   )
+# fns <-  setdiff(fns, odd_ones_out)
+# 
+# df_all_family <- stack_summary_clean_tables(fns = fns, nrows =9, col_names =  c("term", "Estimate", "Est.Error",   "l-95% CI",   "u-95% CI",     "Rhat"), sep = " ")
+# 
+# df_all_family_odd_ones <- stack_summary_clean_tables(fns = odd_ones_out, nrows =9, col_names =  c("term", "Estimate", "Est.Error",   "l-95% CI",   "u-95% CI"), sep = " ")
+# 
+# df_all_family <- full_join(df_all_family, df_all_family_odd_ones, by = join_by(term, Estimate, Est.Error, `l-95% CI`, `u-95% CI`, Rhat, filename, universal_code))
+# 
+# df_all_family$universal_code <- stringr::str_match(df_all_family$filename, "results/sensitivity_no_tree_fam_control//batch\\d+/(.*?)/summary_clean\\.txt")[, 2]
+# 
+# df_all_family %>% 
+#   mutate(brms_support = ifelse(`l-95% CI` < 0 & `u-95% CI` < 0|
+#                             `l-95% CI`  > 0 & `u-95% CI`  > 0  , "yes (supported, 95% CI excludes zero)", "no (not supported, 95% CI does not excludes zero)")) %>% 
+#   left_join(universals_type, by = join_by(universal_code)) %>% 
+#   write_tsv("summary/df_brms_family_macroarea.tsv", quote = "all", na = "") 
 
 
 
