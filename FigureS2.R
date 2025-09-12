@@ -67,13 +67,13 @@ basemap <- ggplot() +
   ylim(-60,95) #cutting out antarctica (not obligatory) 
 
 
-basemap +
+p <- basemap +
   geom_jitter(data = df_summed, mapping = aes(x = Longitude, y = Latitude, fill = n, color = n), 
               shape = 21, alpha = 0.7, size = 0.9) +
   viridis::scale_fill_viridis(direction = -1) +
   viridis::scale_color_viridis(direction = -1)
 
-ggsave("output/plots/FigureS2_map_coverage.png",  height = 7, width = 9, units = "in", dpi = 400)
-ggsave("output/plots/FigureS2_map_coverage.pdf",  height = 7, width = 9, units = "in", dpi = 400)
-ggsave("output/plots/FigureS2_map_coverage.tiff",  height = 7, width = 9, units = "in", dpi = 400)
+ggsave("output/plots/FigureS2_map_coverage.png",  height = 7, width = 9, units = "in", dpi = 400, plot = p)
+ggsave("output/plots/FigureS2_map_coverage.pdf",  height = 7, width = 9, units = "in", dpi = 400, plot = p)
+ggsave("output/plots/FigureS2_map_coverage.tiff",  height = 7, width = 9, units = "in", dpi = 400, plot = p)
 
