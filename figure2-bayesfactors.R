@@ -86,5 +86,6 @@ po <- df.bayestraits %>%
 p <- ((pn + ph) / (pw + po)) + plot_layout(heights = c(2.5, 1))
 
 ggsave(filename="figure2-bayesfactors-pointrange.png",width = 22, height = 27, units = "cm", dpi = 300, plot = p)
-
+ggsave(filename="figure2-bayesfactors-pointrange.pdf",width = 22, height = 27, units = "cm", dpi = 300, plot = p)
+ggsave(filename="figure2-bayesfactors-pointrange.tiff",width = 22, height = 27, units = "cm", dpi = 300, plot = p)
 
