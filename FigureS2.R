@@ -29,7 +29,6 @@ df_summed <- df %>%
   group_by(Glottocode) %>% 
   summarise(n = n()) %>% 
   left_join(glottolog_df, by = "Glottocode") %>% 
-  dplyr::mutate(Longitude = if_else(Longitude <= -25, Longitude + 360, Longitude)) %>% 
   dplyr::filter(!is.na(Longitude))
 
 #fetching datasets
@@ -65,7 +64,7 @@ basemap <- ggplot() +
     legend.title = element_blank(),
     axis.ticks = element_blank())   +
   coord_map(projection = "vandergrinten") + #a non-rectangular world map projection that is a decen compromise between area and distances accuracy
-  ylim(-55,90) #cutting out antarctica (not obligatory) 
+  ylim(-60,95) #cutting out antarctica (not obligatory) 
 
 
 basemap +
@@ -74,5 +73,7 @@ basemap +
   viridis::scale_fill_viridis(direction = -1) +
   viridis::scale_color_viridis(direction = -1)
 
-ggsave("output/plots/FigureS2_map_coverage.png",  height = 5, width = 7)
+ggsave("output/plots/FigureS2_map_coverage.png",  height = 7, width = 9, units = "in", dpi = 400)
+ggsave("output/plots/FigureS2_map_coverage.pdf",  height = 7, width = 9, units = "in", dpi = 400)
+ggsave("output/plots/FigureS2_map_coverage.tiff",  height = 7, width = 9, units = "in", dpi = 400)
 
