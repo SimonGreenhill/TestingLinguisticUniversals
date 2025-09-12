@@ -7,9 +7,9 @@ source('varcov.spatial_function.R')
 
 addTaskCallback(function(...) {set.seed(123);TRUE})
 
-glottolog_langs <- read.csv("Glottolog_Languages.csv.gz")
-datfra <- read.table(file = "BT_data.txt")
-tree <- read.nexus("pruned_tree.tree")
+glottolog_langs <- read.csv("Glottolog_Languages.csv")
+datfra <- read.table(file = "0001_or_2aKA/BT_data.txt")
+tree <- read.nexus("0001_or_2aKA/pruned_tree.tree")
 
 datfra$ID <- datfra$V1
 datfra$ID2 <- datfra$ID
@@ -41,6 +41,24 @@ datfra$Longitude[duplicate_rowid] <- jitter(datfra$Longitude[duplicate_rowid], f
 spatial_covar_mat = varcov.spatial(datfra[,c("Longitude", "Latitude")], cov.pars = phi, kappa = kappa)$varcov
 dimnames(spatial_covar_mat) = list(datfra$ID2, datfra$ID2)
 spatial_covar_mat <- spatial_covar_mat / max(spatial_covar_mat)
+
+long_lat  = glottolog_langs %>% 
+  filter(glottocode %in%   rownames(spatial_covar_mat)) %>% 
+  column_to_rownames("glottocode") %>% 
+  dplyr::select(longitude, latitude) %>% 
+    as.matrix()
+  
+dists = fields::rdist.earth(x1 = long_lat , x2 = long_lat , miles = F)
+
+dists = dists %>% 
+  reshape2::melt() %>% 
+  dplyr::rename(geo_dist = value)
+
+spatial_covar_mat %>% 
+  reshape2::melt() %>% 
+  full_join(dists) %>% 
+  ggplot() +
+  geom_point(aes(x = geo_dist, y = value))
 
 prior <- c(set_prior("student_t(3, 0, 2.5)", class = "b"),
            set_prior("exponential(1)", class = "sd"))
