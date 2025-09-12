@@ -24,8 +24,6 @@ df_BT_n_summed <- df_BT_n %>%
   group_by(Universal) %>% 
   summarise(BT_n = n())
 
-
-
 ##counting ns in brms_spatfam
 
 universals_type <- read_tsv("universals_types.tsv", show_col_types = F)
@@ -34,16 +32,14 @@ fns <- list.dirs(path = "2023_08_24_no_tree_fam_control_bfcluster", full.names =
 
 fns <- fns[basename(fns) %in% universals_type$universal_code]
 
-glottolog_langs <- read_tsv("output/processed_data/glottolog_4.3_languages.tsv", show_col_types = F)
-
-
+glottolog_langs <- read_tsv("2023_08_24_no_tree_fam_control_bfcluster/batch03/0075KA/Glottolog_v4.8.tsv", show_col_types = F)
 
 df_fam_n <- data.frame(Glottocode = as.character(), 
                  Universal = as.character())
 
 for(fn in fns){
 
-#fn <- fns[1]
+#fn <- fns[105]
     datfra <- read.table(file = paste0(fn, "/BT_data.txt")) %>% 
       dplyr::select(Glottocode = V1)
   
