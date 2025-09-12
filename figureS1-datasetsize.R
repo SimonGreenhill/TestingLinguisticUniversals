@@ -17,13 +17,14 @@ df.others <- df.others %>%
 dplyr::select(Universal = code, Universal.shorter, old_lit_size = `Size..review.of.original.`) 
 
 # remove the 23 universals where we do not have recorded size
-df.others <- df.others %>% filter(!is.na(size))
+df.others <- df.others %>% filter(!is.na(old_lit_size))
 
 if(!file.exists("lgs_per_universal_counts.csv")){
   source("count_samples_sizes.R")
 }
 
-df.bt <- read_csv("lgs_per_universal_counts.csv", show_col_types = F)
+df.bt <- read_csv("lgs_per_universal_counts.csv", show_col_types = F) %>% 
+  dplyr::filter(Universal %in% df.others$Universal )
 
 p <- ggplot() +
   geom_histogram(data = df.others[c('Universal', 'old_lit_size')], aes(x=old_lit_size),fill = "steelblue", color = "steelblue", alpha = 0.7, bins = 30) +
