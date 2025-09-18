@@ -1,31 +1,33 @@
 source("requirements.R")
 
+if (!dir.exists('summary')) dir.create('summary')
+
 #this script takes the information about coef estimate, upper and lower 95% etc stored in the results files called "summary_clean". Unfortunately, due to how summary() reports information, there can be some problems with how the files are printed. Sometimes, some columns "run over" to new rows below, there can be trouble with the colnames and separators. This script relies on a function, stack_summary_clean_tables, and runs this over different sets of these files. Different accomodations are made, files that have an uncommon formatted are separated out to "odd_ones" and read in again but with slightl different settings. Then all the content is merged. The final product is a data-frame for all results for the sp models on the posteriors ("summary/df_brms_sp_posterior.tsv"), naive models ("summary/df_brms_naive.tsv") and the models with only family and macroarea as control predictors ("summary/df_brms_family_macroarea.tsv"). These resulting data-frames can then be used for the plotting etc.
 
-universals_type <- read_tsv("universals_types.tsv", show_col_types = F) %>% 
+universals_type <- read_tsv("universals_types.tsv", show_col_types = F) %>%
   dplyr::select(universal_code, Domain_general, Universal.shorter)
 
 #function for stacking the summary tables (do not use for ranef-tables, only summary_clean)
 stack_summary_clean_tables <- function(fns = NULL, col_names = NULL, nrows = "all", sep = NULL){
-  
+
   if(nrows == "all"){
- output <-  fns %>% 
+ output <-  fns %>%
     map_df(
-      function(x) data.table::fread(x, sep = sep, skip = 1, 
+      function(x) data.table::fread(x, sep = sep, skip = 1,
                                     col.names = col_names
       ) %>% #the colnames in the summary_clean-files aren't right, the first column should have the name "term", but it's missing so everything is off by one. Hard-coding the colnames like this and skipping the first row fixes it.
-        dplyr::mutate(filename = x)) 
+        dplyr::mutate(filename = x))
   }
 
   if(nrows != "all"){
-    output<-  fns %>% 
+    output<-  fns %>%
       map_df(
         function(x) data.table::fread(x, sep = sep, skip = 1, nrows= nrows,
                                       col.names = col_names
         ) %>% #the colnames in the summary_clean-files aren't right, the first column should have the name "term", but it's missing so everything is off by one. Hard-coding the colnames like this and skipping the first row fixes it.
-        dplyr::mutate(filename = x)) 
+        dplyr::mutate(filename = x))
   }
-  
+
   output$universal_code <- stringr::str_match(output$filename, "results/(.*?)/brms")[, 2]
   output
    }
@@ -36,11 +38,14 @@ stack_summary_clean_tables <- function(fns = NULL, col_names = NULL, nrows = "al
 
 df_all_posteriors <- stack_summary_clean_tables(fns = list.files(path = "results", pattern = "summary_clean\\.\\d+", full.names = T, recursive = T), col_names = c("term", "Estimate" , "Est.Error", "l-95% CI",  "u-95% CI" , "Rhat" ,     "Bulk_ESS" , "Tail_ESS",  "Tree" ), sep = "\t")
 
-df_all_posteriors %>% 
-  mutate(brms_support = ifelse(`l-95% CI` < 0 & `u-95% CI` < 0|
-                                 `l-95% CI`  > 0 & `u-95% CI`  > 0  , "yes (supported, 95% CI excludes zero)", "no (not supported, 95% CI does not excludes zero)")) %>% 
-  left_join(universals_type, by = join_by(universal_code)) %>% 
-  write_tsv("summary/df_brms_sp_posterior.tsv", quote = "all", na = "") 
+df_all_posteriors %>%
+    mutate(crosszero = `l-95% CI` <= 0 & `u-95% CI` >= 0) %>%
+    mutate(support = ifelse(
+        !crosszero,
+        yes = "yes (supported, 95% CI excludes zero)",
+        no = "no (not supported, 95% CI does not exclude zero)")) %>%
+  left_join(universals_type, by = join_by(universal_code)) %>%
+  write_tsv("summary/df_brms_sp_posterior.tsv", quote = "all", na = "")
 
 ########################################################
 #naive
@@ -56,11 +61,14 @@ odd_one_out_df <- stack_summary_clean_tables(fns = odd_ones_out, nrows = 2, col_
 
 df_all_naive <- full_join(df_all_naive, odd_one_out_df, by = join_by(term, Estimate, Est.Error, `l-95% CI`, `u-95% CI`, Rhat, filename, universal_code))
 
-df_all_naive %>% 
-  mutate(brms_support = ifelse(`l-95% CI` < 0 & `u-95% CI` < 0|
-                                 `l-95% CI`  > 0 & `u-95% CI`  > 0  , "yes (supported, 95% CI excludes zero)", "no (not supported, 95% CI does not excludes zero)")) %>% 
-  left_join(universals_type, by = join_by(universal_code)) %>% 
-  write_tsv("summary/df_brms_naive.tsv", quote = "all", na = "") 
+df_all_naive %>%
+    mutate(crosszero = `l-95% CI` <= 0 & `u-95% CI` >= 0) %>%
+    mutate(brms_support = ifelse(
+        !crosszero,
+        yes = "yes (supported, 95% CI excludes zero)",
+        no = "no (not supported, 95% CI does not exclude zero)")) %>%
+  left_join(universals_type, by = join_by(universal_code)) %>%
+  write_tsv("summary/df_brms_naive.tsv", quote = "all", na = "")
 
 
 ########################################################
@@ -90,11 +98,11 @@ df_all_family <- full_join(df_all_family, df_all_family_odd_ones, by = join_by(t
 
 df_all_family$universal_code <- stringr::str_match(df_all_family$filename, "results/sensitivity_no_tree_fam_control//batch\\d+/(.*?)/summary_clean\\.txt")[, 2]
 
-df_all_family %>% 
+df_all_family %>%
   mutate(brms_support = ifelse(`l-95% CI` < 0 & `u-95% CI` < 0|
-                            `l-95% CI`  > 0 & `u-95% CI`  > 0  , "yes (supported, 95% CI excludes zero)", "no (not supported, 95% CI does not excludes zero)")) %>% 
-  left_join(universals_type, by = join_by(universal_code)) %>% 
-  write_tsv("summary/df_brms_family_macroarea.tsv", quote = "all", na = "") 
+                            `l-95% CI`  > 0 & `u-95% CI`  > 0  , "yes (supported, 95% CI excludes zero)", "no (not supported, 95% CI does not excludes zero)")) %>%
+  left_join(universals_type, by = join_by(universal_code)) %>%
+  write_tsv("summary/df_brms_family_macroarea.tsv", quote = "all", na = "")
 
 
 
