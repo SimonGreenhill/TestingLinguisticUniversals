@@ -74,4 +74,4 @@ joined <- df_BT_n_summed %>%
   full_join(df_fam_n_summed, by = "Universal")
 
 joined %>% 
-  write_csv("lgs_per_universal_counts.csv", na = "")
+  write_csv("summary/lgs_per_universal_counts.csv", na = "")
