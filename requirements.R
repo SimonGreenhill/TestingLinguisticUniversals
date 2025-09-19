@@ -38,4 +38,3 @@ dir <-"summary/"
 if(!dir.exists(dir)){
   dir.create(dir)
 }
-
