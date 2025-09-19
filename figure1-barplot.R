@@ -1,6 +1,5 @@
 source("requirements.R")
 
-
 df_sp <- read_tsv("summary/df_brms_sp_posterior.tsv", show_col_types = F) %>% 
   filter(term == "fixed_V3") %>% 
   group_by(universal_code) %>% 
@@ -77,8 +76,6 @@ p.fig1
 width = 18
 height = 8
 
-ggsave(filename="figure1-barplot.tiff", height=height, width=width, dpi = 300,
-       plot = p.fig1)
 ggsave(filename="figure1-barplot.png", height=height, width= width,
        plot = p.fig1)
 

@@ -95,10 +95,6 @@ height = 8
 ggsave(filename="figures_SI8_barplot.png", height=height, width=width, dpi = 300,
        plot = p)
 
-ggsave(filename="figures_SI8_barplot.tiff", height=height, width=width, dpi = 300,
-       plot = p)
-
-
 #grDevices::cairo_pdf(file="figures_SI8_barplot.pdf", height=height, width= width,)
 #plot(p)
 #x <- dev.off()

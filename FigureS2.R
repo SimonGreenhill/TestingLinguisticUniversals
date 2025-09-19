@@ -75,5 +75,4 @@ p <- basemap +
 
 ggsave("output/plots/FigureS2_map_coverage.png",  height = 7, width = 9, units = "in", dpi = 400, plot = p)
 ggsave("output/plots/FigureS2_map_coverage.pdf",  height = 7, width = 9, units = "in", dpi = 400, plot = p)
-ggsave("output/plots/FigureS2_map_coverage.tiff",  height = 7, width = 9, units = "in", dpi = 400, plot = p)
 
