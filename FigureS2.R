@@ -1,6 +1,6 @@
 source("requirements.R")
 
-glottolog_df <- read_tsv("output/processed_data/glottolog_4.3_languages.tsv", show_col_types = F) %>% 
+glottolog_df <- read_tsv("summary/glottolog_4.8_languages.tsv", show_col_types = F) %>% 
   dplyr::select(Glottocode, Longitude, Latitude) %>% 
   mutate(Longitude = if_else(Longitude <= -25, Longitude + 360, Longitude)) #shifting the longlat to match the shifted centering of the map
 
