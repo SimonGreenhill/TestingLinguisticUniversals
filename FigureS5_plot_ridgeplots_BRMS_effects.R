@@ -122,5 +122,5 @@ po <- df %>%
 
 p <- ((pn + pw) / (ph + po)) + plot_layout(heights = c(2.5, 1))
   
-ggsave(plot = p, filename = "joyplots_barplot_universals.png", width = 20, height = 25, units = "cm", dpi = 300)
+ggsave(plot = p, filename = "figureS5.png", width = 20, height = 25, units = "cm", dpi = 300)
 

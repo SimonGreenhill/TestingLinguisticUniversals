@@ -106,7 +106,7 @@ p <- ((pn + pw) / (ph + po)) + plot_layout(heights = c(2.5, 1))
 width = 10
 height = 12
 
-ggsave(filename="Figure4.png", height=height, width= width,
+ggsave(filename="figureS4.png", height=height, width= width,
        plot = p)
 
 #########FIG 6
@@ -187,5 +187,5 @@ p <- ((pn + pw) / (ph + po)) + plot_layout(heights = c(2.5, 1))
 width = 10
 height = 12
 
-ggsave(filename="Figure6.png", height=height, width= width,
+ggsave(filename="figureS6.png", height=height, width= width,
        plot = p)

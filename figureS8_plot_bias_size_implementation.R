@@ -111,7 +111,8 @@ model <- glm(supported ~ Sample_size + Bias + Implementation, data = df_for_glm,
 summary(model)$coefficients %>% 
   as.data.frame() %>% 
   mutate(across(where(is.numeric), ~ round(.x, 2))) %>% 
-  rownames_to_column("term") %>% write_tsv("FigureS8_GLM_coef.tsv", na = "", quote = "all")
+  rownames_to_column("term") %>% 
+  write_tsv("summary/FigureS8_GLM_coef.tsv", na = "", quote = "all")
 
 ####################ALL
 
@@ -138,4 +139,4 @@ ggplot(aes(all, fill=supported_new), alpha = 0.8) +
   )
 
 
-ggsave("Figure_results_all.png", width = 7, height = 3)
+ggsave("figureS8_results_all.png", width = 7, height = 3)
