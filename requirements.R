@@ -23,6 +23,7 @@ pacman::p_load(
   tidyr,
   patchwork,
   data.table, #faster reading in of files
+  showtext,
   tidyverse,
   devtools
 )
