@@ -73,6 +73,6 @@ p <- basemap +
   viridis::scale_fill_viridis(direction = -1) +
   viridis::scale_color_viridis(direction = -1)
 
-ggsave("output/plots/FigureS2_map_coverage.png",  height = 7, width = 9, units = "in", dpi = 400, plot = p)
-ggsave("output/plots/FigureS2_map_coverage.pdf",  height = 7, width = 9, units = "in", dpi = 400, plot = p)
+ggsave("figureS2_map_coverage.png",  height = 7, width = 9, units = "in", dpi = 400, plot = p)
+ggsave("figureS2_map_coverage.pdf",  height = 7, width = 9, units = "in", dpi = 400, plot = p)
 

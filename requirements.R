@@ -39,12 +39,3 @@ if(!dir.exists(dir)){
   dir.create(dir)
 }
 
-dir <-"output/plots/"
-if(!dir.exists(dir)){
-  dir.create(dir)
-}
-
-dir <-"output/proccessed_data/"
-if(!dir.exists(dir)){
-  dir.create(dir)
-}
