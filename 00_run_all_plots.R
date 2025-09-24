@@ -3,6 +3,7 @@ source("00_brms_results_summary_tables.R")
 source("count_samples_sizes.R")
 source("figure1-barplot.R")
 source("figure2-bayesfactors.R")
+source("figure4-harmonic.R")
 
 #supplementary figures
 source("figureS1-datasetsize.R")
