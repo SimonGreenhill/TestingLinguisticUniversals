@@ -4,12 +4,39 @@ library(tidyr)
 library(readr)
 library(patchwork)
 library(ggridges)
+library(bayestraitr)
 
-source('common.R')
+
+
+
+read.bayestraits <- function(file.name, ...) {
+  if (!file.exists(file.name)) stop(sprintf("file %s does not exist", file.name))
+  conn <- file(file.name, "r")
+  on.exit(close(conn))
+  start <- 0
+  repeat {
+    line <- readLines(conn, 1)
+    if (startsWith(line, 'Iteration\t')) { break }
+    start <- start + 1
+    
+    if (start > 200) { stop("unable to find starting block")}  # safety valve
+  }
+  readr::read_delim(
+    file.name, delim="\t",
+    skip=start,
+    na=c("--", ""),
+    trim_ws=TRUE,
+    name_repair="minimal",  # this ignores the warnings for the trailing empty column
+    show_col_types=FALSE,
+    lazy = FALSE,
+    ...)
+}
 
 theme_set(theme_classic(base_size=18))
 
-BAYESTRAITS_DIR <- file.path('../results/bayestraits')
+fns <- list.files("results/", full.names=TRUE, recursive = T)
+
+fns <- fns[str_detect(fns, stringr::fixed("bayestraits/dep/BT_data.txt.Log.txt.gz"))]
 
 RATES <- list(
   'q12' = 'not harmonic',           # 00 -> 01
@@ -34,11 +61,10 @@ RATE_PAIRS <- list(
 
 
 results <- NULL
-for (dirname in list.files(BAYESTRAITS_DIR, include.dirs=TRUE, full.names=TRUE)) {
-    if (dir.exists(dirname)) {
-        filename <- file.path(dirname, 'dep', "BT_data.txt.Log.txt.gz")
-        bt <- read.bayestraits(filename)
-        bt$code <- basename(dirname)
+for (fn in fns) {
+    if (file.exists(fn)) {
+        bt <- read.bayestraits(fn)
+        bt$code <- stringr::str_extract(fn, "(?<=results//)[^/]+(?=/bayestraits)")
         results <- rbind(results, bt)
     }
 }
