@@ -224,8 +224,8 @@ x <- dev.off()
 # significant tendencies?
 
 # add in Domain_general to tendencies
-tendencies <- df.brms %>%
-    select(code, Domain_general) %>%
+tendencies <- df_categories %>% 
+  select(code = universal_code, Domain_general) %>% 
     unique() %>%
     right_join(tendencies, join_by(code==code))
 
