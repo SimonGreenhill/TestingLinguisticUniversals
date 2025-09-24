@@ -5,6 +5,7 @@ library(readr)
 library(patchwork)
 library(ggridges)
 library(bayestraitr)
+library(stringr)
 
 
 
@@ -76,7 +77,6 @@ results.long <- results %>%
 
 results.long$harmonic <- unlist(RATES[results.long$rate])
 
-
 p <-ggplot(results.long, aes(x=value, y=code, fill=harmonic)) +
     geom_density_ridges(alpha = 0.6, bandwidth = 0.017) +
     xlim(0, 1) +
@@ -106,19 +106,17 @@ for (r in RATE_PAIRS) {
     tendencies <- rbind(tendencies, df)
 }
 
-# convert to proportions
-tendencies.proportions <- tendencies %>%
-    group_by(code, harmonic, type) %>%
-    summarise(n=n()) %>%
-    mutate(freq = n / sum(n))
-
 df_categories <- read_tsv("universals_types.tsv")
 
-# merge in category information
-tendencies.proportions <- tendencies.proportions %>%
+# convert to proportions
+tendencies.proportions <- tendencies %>% 
+    group_by(code, harmonic, type) %>%
+    summarise(n=n()) %>%
+    mutate(freq = n / sum(n)) %>% 
     left_join(
       df_categories %>% select(code = universal_code, Universal.shorter, Domain_general),
-        by="code")
+        by="code") # merge in category information
+
 
 plot_bar <- function(df, title="xx") {
     # figure out ordering (sort by proportion of times the harmonic rate was larger)
@@ -164,7 +162,7 @@ tendencies.proportions$Domain_general <- factor(
 )
 
 p <- ggplot(subset(tendencies.proportions, harmonic), aes(freq, Domain_general, fill=stat(x))) +
-    geom_density_ridges_gradient(scale=1.2, rel_min_height=0.01) +
+    geom_density_ridges_gradient(scale=1.2, rel_min_height=0.01, bandwidth = 0.0704) +
     geom_vline(xintercept=0.5, color="#333333") +
     scale_fill_viridis_c(direction = -1, option="B", guide = "none") +
     xlim(0, 1) +
@@ -181,13 +179,10 @@ ggsave('figure4-harmonic_3.png', width = 11, height = 9, plot = p)
 #)
 
 tendencies.proportions.domains <- tendencies %>%
-  left_join(
-    df_categories %>% select(code = universal_code, Universal.shorter, Domain_general),
-    by="code") %>% 
   group_by(Domain_general, harmonic) %>%
-    summarise(n=n()) %>%
-    mutate(freq = n / sum(n))
-
+    summarise(n=n(), .groups = "keep") %>%
+    mutate(freq = n / sum(n)) %>% 
+  ungroup()
 
 better_names <- data.frame(
     Domain_general = c('hierarchy', 'narrow word order', 'broad word order', 'other'),
@@ -198,7 +193,6 @@ better_names <- data.frame(
 tendencies.proportions.domains <- tendencies.proportions.domains %>% left_join(better_names, by = join_by(Domain_general))
 
 tendencies.proportions.domains$Domain <- factor(tendencies.proportions.domains$Domain, levels=rev(better_names$Domain))
-
 
 p <- ggplot(tendencies.proportions.domains, mapping = aes(x = Domain, y = freq, fill = harmonic)) +
     geom_bar(alpha = 0.8, position="stack", stat="identity") +
