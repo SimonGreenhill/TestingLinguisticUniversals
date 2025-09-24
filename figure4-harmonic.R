@@ -77,14 +77,14 @@ results.long <- results %>%
 results.long$harmonic <- unlist(RATES[results.long$rate])
 
 
-ggplot(results.long, aes(x=value, y=code, fill=harmonic)) +
+p <-ggplot(results.long, aes(x=value, y=code, fill=harmonic)) +
     geom_density_ridges(alpha = 0.6, bandwidth = 0.017) +
     xlim(0, 1) +
     theme(legend.position="top") +
     ylab(NULL) +
     scale_fill_discrete(type = c("deeppink2","darkmagenta", "cornflowerblue"), name="")
 
-ggsave('figure4-harmonic_1.png', width=6, height=20)
+ggsave('figure4-harmonic_1.png', width=6, height=20, plot = p)
 
 # figure out if proportion of rates is higher for harmonic changes
 is_tendency <- function(i, df, qDisharmonic, qHarmonic) {
@@ -112,10 +112,12 @@ tendencies.proportions <- tendencies %>%
     summarise(n=n()) %>%
     mutate(freq = n / sum(n))
 
+df_categories <- read_tsv("universals_types.tsv")
+
 # merge in category information
 tendencies.proportions <- tendencies.proportions %>%
     left_join(
-        df.bayestraits %>% select(code, Universal.shorter, Domain_general),
+      df_categories %>% select(code = universal_code, Universal.shorter, Domain_general),
         by="code")
 
 plot_bar <- function(df, title="xx") {
@@ -152,7 +154,7 @@ p.fig <- ((p.nwo + p.bwo) / (p.hier + p.other)) +
     plot_layout(heights = c(1.5, 1), guides="collect") &
     theme(legend.position="top")
 
-ggsave('figure4-harmonic_2.png', width=12, height=18)
+ggsave('figure4-harmonic_2.png', width=12, height=18, plot = p.fig)
 
 
 # plot overall patterns
@@ -161,7 +163,7 @@ tendencies.proportions$Domain_general <- factor(
     levels=rev(c("broad word order", "narrow word order", "hierarchy", "other"))
 )
 
-ggplot(subset(tendencies.proportions, harmonic), aes(freq, Domain_general, fill=stat(x))) +
+p <- ggplot(subset(tendencies.proportions, harmonic), aes(freq, Domain_general, fill=stat(x))) +
     geom_density_ridges_gradient(scale=1.2, rel_min_height=0.01) +
     geom_vline(xintercept=0.5, color="#333333") +
     scale_fill_viridis_c(direction = -1, option="B", guide = "none") +
@@ -169,7 +171,7 @@ ggplot(subset(tendencies.proportions, harmonic), aes(freq, Domain_general, fill=
     xlab("Proportion of Harmonic Rates > Disharmonic Rates") +
     ylab(NULL)
 
-ggsave('figure4-harmonic_3.png', width = 11, height = 9)
+ggsave('figure4-harmonic_3.png', width = 11, height = 9, plot = p)
 
 ## add an 'overall' bar
 #tendencies.proportions.overall <- rbind(
@@ -179,8 +181,10 @@ ggsave('figure4-harmonic_3.png', width = 11, height = 9)
 #)
 
 tendencies.proportions.domains <- tendencies %>%
-    left_join(df.bayestraits %>% select(code, Universal.shorter, Domain_general), by="code") %>%
-    group_by(Domain_general, harmonic) %>%
+  left_join(
+    df_categories %>% select(code = universal_code, Universal.shorter, Domain_general),
+    by="code") %>% 
+  group_by(Domain_general, harmonic) %>%
     summarise(n=n()) %>%
     mutate(freq = n / sum(n))
 
@@ -196,7 +200,7 @@ tendencies.proportions.domains <- tendencies.proportions.domains %>% left_join(b
 tendencies.proportions.domains$Domain <- factor(tendencies.proportions.domains$Domain, levels=rev(better_names$Domain))
 
 
-ggplot(tendencies.proportions.domains, mapping = aes(x = Domain, y = freq, fill = harmonic)) +
+p <- ggplot(tendencies.proportions.domains, mapping = aes(x = Domain, y = freq, fill = harmonic)) +
     geom_bar(alpha = 0.8, position="stack", stat="identity") +
     geom_hline(yintercept=0.5, color='#333333') +
     scale_fill_discrete(type = c("tomato","steelblue"), name="", labels=c(
@@ -210,7 +214,11 @@ ggplot(tendencies.proportions.domains, mapping = aes(x = Domain, y = freq, fill 
         legend.position = "bottom") +
     coord_flip()
 
-ggsave('figure4-harmonic_4.png', width = 8, height = 4)
+ggsave('figure4-harmonic_4.png', width = 8, height = 4, plot = p)
+
+grDevices::cairo_pdf(file="figure4-harmonic_4.pdf", height = 4, width = 8)
+plot(p)
+x <- dev.off()
 
 
 # significant tendencies?
