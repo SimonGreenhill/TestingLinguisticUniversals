@@ -93,7 +93,6 @@ is_tendency <- function(i, df, qDisharmonic, qHarmonic) {
 
 tendencies <- NULL
 for (r in RATE_PAIRS) {
-    print(r)
     df <- data.frame(
         vDisharmonic = r[[1]],
         vHarmonic = r[[2]],
@@ -178,11 +177,15 @@ ggsave('figure4-harmonic_3.png', width = 11, height = 9, plot = p)
 #        mutate(Domain_general = 'overall')
 #)
 
-tendencies.proportions.domains <- tendencies %>%
+tendencies.proportions.domains <- tendencies %>% 
+  left_join(
+    df_categories %>% select(code = universal_code, Domain_general),
+    by="code") %>%  # merge in category information
   group_by(Domain_general, harmonic) %>%
-    summarise(n=n(), .groups = "keep") %>%
+    summarise(n=n()) %>%
     mutate(freq = n / sum(n)) %>% 
   ungroup()
+
 
 better_names <- data.frame(
     Domain_general = c('hierarchy', 'narrow word order', 'broad word order', 'other'),
@@ -207,6 +210,8 @@ p <- ggplot(tendencies.proportions.domains, mapping = aes(x = Domain, y = freq, 
         axis.title.y = element_blank(),
         legend.position = "bottom") +
     coord_flip()
+
+p
 
 ggsave('figure4-harmonic_4.png', width = 8, height = 4, plot = p)
 
