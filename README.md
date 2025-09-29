@@ -40,6 +40,10 @@ Each of these directories contains 4 files:
 * res_(dep|indep).txt.Schedule.txt.gz - log file from the `BayesTraits` analysis.  Compressed with GZip.
 * res_(dep|indep).txt.Stones.txt -  log file from the `BayesTraits` analysis
 
+### BRMS Analysis with no controls:
+
+* brms.single/
+
 
 ### BRMS Analysis with family level control:
 
@@ -49,11 +53,6 @@ Each of these directories contains 4 files:
 
 * brms_spphylo.single/      - single analysis on summary tree
 * brms.posterior/           - BRMS analysis on full posterior distribution
-
-
-
-* brms.single/
-
 
 
 
