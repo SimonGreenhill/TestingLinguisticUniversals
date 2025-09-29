@@ -1,11 +1,6 @@
 #!/usr/bin/Rscript
 
-wd <- getwd()
-
-setwd("../../")
-source("requirements_for_uncontrolled_brms.R")
-
-setwd(wd)
+source('varcov.spatial_function.R')
 
 addTaskCallback(function(...) {
   set.seed(123)

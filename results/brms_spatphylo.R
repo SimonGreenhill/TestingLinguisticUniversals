@@ -31,7 +31,7 @@ phylo_covar_mat <- phylo_covar_mat / max(phylo_covar_mat)
 kappa = 1 # smoothness parameter as reccomended by Dinnage et al. (2020)
 phi = c(1, 1) # Sigma parameter. First value is not used.
 
-#cheching for duplicated locations and jittering them 
+#cheching for duplicated locations and jittering them
 #otherwise the distance matrix cannot be created
 duplicate_coords <- datfra[duplicated(datfra[,c("Longitude", "Latitude")]) | duplicated(datfra[,c("Longitude", "Latitude")], fromLast = TRUE), "ID"]
 duplicate_rowid <- datfra$ID %in% duplicate_coords
@@ -47,11 +47,11 @@ prior <- c(set_prior("student_t(3, 0, 2.5)", class = "b"),
 # http://srmart.in/is-the-lkj1-prior-uniform-yes/
 
 # https://stats.stackexchange.com/questions/13166/rs-lmer-cheat-sheet
-mod <- brm(formula= V2 ~ V3 + (1|gr(V1, cov = phylo_covar_mat)) + 
-                          (1|gr(ID2, cov=spatial_covar_mat)) + (1 + V3 |macroarea), 
-           data = list(datfra), prior=prior, family = "bernoulli", 
-           control = list(adapt_delta = 0.99), iter = 3000, 
-           save_pars = save_pars(all = TRUE), cores=4,  
+mod <- brm(formula= V2 ~ V3 + (1|gr(V1, cov = phylo_covar_mat)) +
+                          (1|gr(ID2, cov=spatial_covar_mat)) + (1 + V3 |macroarea),
+           data = list(datfra), prior=prior, family = "bernoulli",
+           control = list(adapt_delta = 0.99), iter = 3000,
+           save_pars = save_pars(all = TRUE), cores=4,
            data2 = list(phylo_covar_mat = phylo_covar_mat, spatial_covar_mat = spatial_covar_mat))
 summary(mod)
 
