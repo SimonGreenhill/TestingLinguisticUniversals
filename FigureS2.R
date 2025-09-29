@@ -4,26 +4,11 @@ glottolog_df <- read_tsv("summary/glottolog_4.8_languages.tsv", show_col_types =
   dplyr::select(Glottocode, Longitude, Latitude) %>%
   mutate(Longitude = if_else(Longitude <= -25, Longitude + 360, Longitude)) #shifting the longlat to match the shifted centering of the map
 
-fns <- list.files(path = "results/", pattern = "BT_data.txt", recursive = T, full.names = T)
 
-fns <- fns[str_detect(string = fns, pattern = "bayestraits", negate = T)]
+fns <- list.files(path = "results/", pattern = "BT_data.txt$", recursive = TRUE, full.names = TRUE)
 
-df <- data.frame(Glottocode = as.character(),
-                Universal = as.character())
-
-for(fn in fns){
-#  fn <- fns[1]
-
-  df_spec <- read_tsv(file = fn, show_col_types = F, col_names = c("Glottocode", "Var1", "Var2")) %>%
-    dplyr::select(Glottocode) %>%
-    mutate(Universal = fn %>% str_replace("/BT_data.txt", "") %>%
-             str_replace("results//", "")
-             )
-
-df <- df %>% full_join(df_spec, by = join_by(Glottocode, Universal))
-
-}
-
+df <- read_tsv(fns, show_col_types = FALSE, col_names = c("Glottocode", "Var1", "Var2"), id="Filename")
+df <- df |> mutate(Universal = basename(dirname(Filename)))
 
 df_summed <- df %>%
   group_by(Glottocode) %>%
