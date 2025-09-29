@@ -23,6 +23,7 @@ pacman::p_load(
   tidyr,
   patchwork,
   data.table, #faster reading in of files
+  showtext,
   tidyverse,
   devtools
 )
@@ -34,3 +35,7 @@ if(! "bayestraitr" %in% rownames(installed.packages())){
 }
 library(bayestraitr)
 
+dir <-"summary/"
+if(!dir.exists(dir)){
+  dir.create(dir)
+}
