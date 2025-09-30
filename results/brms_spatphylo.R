@@ -7,7 +7,7 @@ source('varcov.spatial_function.R')
 
 addTaskCallback(function(...) {set.seed(123);TRUE})
 
-glottolog_langs <- read.csv("Glottolog_Languages.csv.gz")
+glottolog_langs <- read.csv("Glottolog_Languages.csv")
 datfra <- read.table(file = "BT_data.txt")
 tree <- read.nexus("pruned_tree.tree")
 
@@ -21,7 +21,6 @@ datfra <- datfra[!is.na(datfra$Longitude),]
 datfra <- datfra[!is.na(datfra$Latitude),]
 
 #prune tree
-
 droptips <- setdiff(tree$tip.label, datfra$V1)
 tree_pruned <- drop.tip(tree, droptips)
 
@@ -31,7 +30,7 @@ phylo_covar_mat <- phylo_covar_mat / max(phylo_covar_mat)
 kappa = 1 # smoothness parameter as reccomended by Dinnage et al. (2020)
 phi = c(1, 1) # Sigma parameter. First value is not used.
 
-#cheching for duplicated locations and jittering them
+#checking for duplicated locations and jittering them
 #otherwise the distance matrix cannot be created
 duplicate_coords <- datfra[duplicated(datfra[,c("Longitude", "Latitude")]) | duplicated(datfra[,c("Longitude", "Latitude")], fromLast = TRUE), "ID"]
 duplicate_rowid <- datfra$ID %in% duplicate_coords
@@ -83,10 +82,10 @@ sink()
 ranef_1 <- ranef(mod)
 # https://www.andrewheiss.com/blog/2021/12/01/multilevel-models-panel-data-guide/
 
-write.table(ranef_1$ID2[, , "Intercept"], file = "ranef_spatial.txt", sep = '\t', quote = F)
-write.table(ranef_1$V1[, , "Intercept"], file = "ranef_phylo.txt", sep = '\t', quote = F)
-write.table(ranef_1$macroarea[, , "Intercept"], file = "ranef_macroarea_intercept.txt", sep = '\t', quote = F)
-write.table(ranef_1$macroarea[, , "V3"], file = "ranef_macroarea_V3.txt", sep = '\t', quote = F)
+write.table(ranef_1$ID2[, , "Intercept"], file = "ranef_spatial.txt", sep = '\t', quote = FALSE)
+write.table(ranef_1$V1[, , "Intercept"], file = "ranef_phylo.txt", sep = '\t', quote = FALSE)
+write.table(ranef_1$macroarea[, , "Intercept"], file = "ranef_macroarea_intercept.txt", sep = '\t', quote = FALSE)
+write.table(ranef_1$macroarea[, , "V3"], file = "ranef_macroarea_V3.txt", sep = '\t', quote = FALSE)
 
 # all in all
 

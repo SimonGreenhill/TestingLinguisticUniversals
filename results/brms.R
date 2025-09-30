@@ -7,7 +7,7 @@ addTaskCallback(function(...) {
   TRUE
 })
 
-glottolog_langs <- read.csv("Glottolog_Languages.csv.gz")
+glottolog_langs <- read.csv("Glottolog_Languages.csv")
 datfra <- read.table(file = "BT_data.txt")
 tree <- read.nexus("pruned_tree.tree")
 
