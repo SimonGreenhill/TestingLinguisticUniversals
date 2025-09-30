@@ -60,12 +60,16 @@ Each of these directories contains 4 files:
 # Running BRMS Analyses
 
 To save space in the github repository duplicate files have been removed. 
-To rerun the analyses, you will need to copy the directory e.g. `2012KA/brms.single`
+To rerun the analyses, you will need to copy the directory you want e.g. `2012KA`
 and place the following files inside it as well:
 
 * varcov.spatial_function.R
 * Glottolog_Languages.csv
 * BT_data.txt
 
-and then run either `brms.R`, `brms_spatphylo.R` or `brms_spatfam.R`
+and then run either `brms.R`, `brms_spatphylo.R` or `brms_spatfam.R`.
+
+To make this easier, you can use the python script `make_analysis_dir.py`:
+
+> python make_analysis_dir.py results/2012KA /somewhere/else/2012KA
 
