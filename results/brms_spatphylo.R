@@ -1,8 +1,6 @@
 #!/usr/bin/Rscript
-
 library(brms)
 library(ape)
-#library(coda)
 source('varcov.spatial_function.R')
 
 addTaskCallback(function(...) {set.seed(123);TRUE})
@@ -55,13 +53,6 @@ mod <- brm(formula= V2 ~ V3 + (1|gr(V1, cov = phylo_covar_mat)) +
 summary(mod)
 
 # storing results
-
-# convergence
-# https://www.rensvandeschoot.com/tutorials/wambs-checklist-in-r-using-brms/
-#modelposterior <- as.mcmc(mod) # with the as.mcmc() command we can use all the CODA package convergence statistics and plotting options
-#gelman.diag(modelposterior[, 1:5])
-#gelman.diag(modelposterior[, 1:5])$mpsrf # should be close to 1
-
 sink("summary.txt")
 print(summary(mod))
 #print("   ###    ")
