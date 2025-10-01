@@ -1,4 +1,4 @@
-#!/usr/bin/Rscript
+#!/usr/bin/env Rscript
 library(brms)
 library(ape)
 source('varcov.spatial_function.R')

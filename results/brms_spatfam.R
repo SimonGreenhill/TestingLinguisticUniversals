@@ -1,4 +1,4 @@
-#!/usr/bin/Rscript
+#!/usr/bin/env Rscript
 library(brms)
 source('varcov.spatial_function.R')
 
@@ -6,7 +6,6 @@ addTaskCallback(function(...) {set.seed(123);TRUE})
 
 glottolog_langs <- read.csv("Glottolog_Languages.csv")
 datfra <- read.table(file = "BT_data.txt")
-tree <- read.nexus("pruned_tree.tree")
 
 datfra$ID <- datfra$V1
 datfra$ID2 <- datfra$ID
@@ -14,16 +13,22 @@ datfra$Longitude <- glottolog_langs$longitude[match(datfra$ID, glottolog_langs$g
 datfra$Latitude <- glottolog_langs$latitude[match(datfra$ID, glottolog_langs$glottocode)]
 datfra$macroarea <- glottolog_langs$macroarea[match(datfra$ID, glottolog_langs$glottocode)]
 
-## TODO FIX
-datfra$family <- glottolog_w_fams$Family_name[match(datfra$ID, glottolog_w_fams$Language_ID)]
+datfra$family <- glottolog_langs$Family_name[match(datfra$ID, glottolog_langs$glottocode)]
 
 datfra <- datfra[!is.na(datfra$Longitude),]
 datfra <- datfra[!is.na(datfra$Latitude),]
 
 # remove isolates
+old <- nrow(datfra)
 datfra <- datfra[!is.na(datfra$family),]
 datfra <- datfra[!datfra$family == "",]
 datfra <- datfra[!datfra$family == "Isolate",]  # should not be any of these, but just in case.
+nrow(datfra)
+cat("Removed", old-nrow(datfra), '/', old, 'isolates, leaving ', nrow(datfra), "\n")
+
+# check we don't have isolate-as-family problem
+stopifnot('isolate' %in% tolower(datfra$family) == FALSE)
+
 
 # remove small families (less than 5 members)
 fams <- as.vector(sort(table(datfra$family)))
@@ -31,10 +36,13 @@ names(fams) <- names(sort(table(datfra$family)))
 too_small <- fams[fams < 5]
 datfra <- datfra[!datfra$family %in% names(too_small),]
 
+cat("Removing these families for being too small:\n")
+cat(names(too_small))
+
 kappa = 1 # smoothness parameter as reccomended by Dinnage et al. (2020)
 phi = c(1, 1) # Sigma parameter. First value is not used.
 
-#checking for duplicated locations and jittering them 
+#checking for duplicated locations and jittering them
 #otherwise the distance matrix cannot be created
 duplicate_coords <- datfra[duplicated(datfra[,c("Longitude", "Latitude")]) | duplicated(datfra[,c("Longitude", "Latitude")], fromLast = TRUE), "ID"]
 duplicate_rowid <- datfra$ID %in% duplicate_coords
@@ -50,11 +58,11 @@ prior <- c(set_prior("student_t(3, 0, 2.5)", class = "b"),
 # http://srmart.in/is-the-lkj1-prior-uniform-yes/
 
 # https://stats.stackexchange.com/questions/13166/rs-lmer-cheat-sheet
-mod <- brm(formula= V2 ~ V3 + (1|gr(V1, cov = spatial_covar_mat)) + 
-             (1 + V3 | family) + (1 + V3 | macroarea), 
-           data = list(datfra), prior=prior, family = "bernoulli", 
-           control = list(adapt_delta = 0.99), iter = 3000, 
-           save_pars = save_pars(all = TRUE), cores=4,  
+mod <- brm(formula= V2 ~ V3 + (1|gr(V1, cov = spatial_covar_mat)) +
+             (1 + V3 | family) + (1 + V3 | macroarea),
+           data = list(datfra), prior=prior, family = "bernoulli",
+           control = list(adapt_delta = 0.99), iter = 3000,
+           save_pars = save_pars(all = TRUE), cores=4,
            data2 = list(spatial_covar_mat = spatial_covar_mat))
 summary(mod)
 
