@@ -1,13 +1,11 @@
 #!/usr/bin/env Rscript
 library(brms)
-library(ape)
 source('varcov.spatial_function.R')
 
 addTaskCallback(function(...) {set.seed(123);TRUE})
 
 glottolog_langs <- read.csv("Glottolog_Languages.csv")
 datfra <- read.table(file = "BT_data.txt")
-tree <- read.nexus("pruned_tree.tree")
 
 datfra$ID <- datfra$V1
 datfra$ID2 <- datfra$ID
@@ -15,15 +13,31 @@ datfra$Longitude <- glottolog_langs$longitude[match(datfra$ID, glottolog_langs$g
 datfra$Latitude <- glottolog_langs$latitude[match(datfra$ID, glottolog_langs$glottocode)]
 datfra$macroarea <- glottolog_langs$macroarea[match(datfra$ID, glottolog_langs$glottocode)]
 
+datfra$family <- glottolog_langs$Family_name[match(datfra$ID, glottolog_langs$glottocode)]
+
 datfra <- datfra[!is.na(datfra$Longitude),]
 datfra <- datfra[!is.na(datfra$Latitude),]
 
-#prune tree
-droptips <- setdiff(tree$tip.label, datfra$V1)
-tree_pruned <- drop.tip(tree, droptips)
+# remove isolates
+old <- nrow(datfra)
+datfra <- datfra[!is.na(datfra$family),]
+datfra <- datfra[!datfra$family == "",]
+datfra <- datfra[!datfra$family == "Isolate",]  # should not be any of these, but just in case.
+nrow(datfra)
+cat("Removed", old-nrow(datfra), '/', old, 'isolates, leaving ', nrow(datfra), "\n")
 
-phylo_covar_mat <- ape::vcv(tree_pruned)
-phylo_covar_mat <- phylo_covar_mat / max(phylo_covar_mat)
+# check we don't have isolate-as-family problem
+stopifnot('isolate' %in% tolower(datfra$family) == FALSE)
+
+
+# remove small families (less than 5 members)
+fams <- as.vector(sort(table(datfra$family)))
+names(fams) <- names(sort(table(datfra$family)))
+too_small <- fams[fams < 5]
+datfra <- datfra[!datfra$family %in% names(too_small),]
+
+cat("Removing these families for being too small:\n")
+cat(names(too_small))
 
 kappa = 1 # smoothness parameter as reccomended by Dinnage et al. (2020)
 phi = c(1, 1) # Sigma parameter. First value is not used.
@@ -44,12 +58,12 @@ prior <- c(set_prior("student_t(3, 0, 2.5)", class = "b"),
 # http://srmart.in/is-the-lkj1-prior-uniform-yes/
 
 # https://stats.stackexchange.com/questions/13166/rs-lmer-cheat-sheet
-mod <- brm(formula= V2 ~ V3 + (1|gr(V1, cov = phylo_covar_mat)) +
-                          (1|gr(ID2, cov=spatial_covar_mat)) + (1 + V3 |macroarea),
+mod <- brm(formula= V2 ~ V3 + (1|gr(V1, cov = spatial_covar_mat)) +
+             (1 + V3 | family) + (1 + V3 | macroarea),
            data = list(datfra), prior=prior, family = "bernoulli",
            control = list(adapt_delta = 0.99), iter = 3000,
            save_pars = save_pars(all = TRUE), cores=4,
-           data2 = list(phylo_covar_mat = phylo_covar_mat, spatial_covar_mat = spatial_covar_mat))
+           data2 = list(spatial_covar_mat = spatial_covar_mat))
 summary(mod)
 
 # storing results
@@ -60,11 +74,14 @@ print(summary(mod))
 sink()
 
 sum_clean <- as.data.frame(summary(mod)$fixed)
-sum_clean <- rbind(sum_clean, summary(mod)$random$ID2)
 sum_clean <- rbind(sum_clean, summary(mod)$random$V1)
+sum_clean <- rbind(sum_clean, summary(mod)$random$family)
 sum_clean <- rbind(sum_clean, summary(mod)$random$macroarea)
 
-row.names(sum_clean) <- c("fixed_intercept","fixed_V3","random_sd_Int_spatial","random_sd_Int_phylo","random_sd_Int_macro","random_sd_Int_V3_macro","random_cor_Int_V3_macro")
+row.names(sum_clean) <- c("fixed_intercept","fixed_V3","random_sd_Int_V1",
+                          "random_sd_Int_family","random_sd_Int_V3_family",
+                          "random_cor_Int_V3_family", "random_sd_Int_macro","random_sd_Int_V3_macro",
+                          "random_cor_Int_V3_macro")
 
 sink("summary_clean.txt")
 print(sum_clean)

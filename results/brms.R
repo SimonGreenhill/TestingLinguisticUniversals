@@ -1,18 +1,13 @@
-#!/usr/bin/Rscript
-
-wd <- getwd()
-
-setwd("../../")
-source("requirements_for_uncontrolled_brms.R")
-
-setwd(wd)
+#!/usr/bin/env Rscript
+library(brms)
+source('varcov.spatial_function.R')
 
 addTaskCallback(function(...) {
   set.seed(123)
   TRUE
 })
 
-glottolog_langs <- read.csv("Glottolog_Languages.csv.gz")
+glottolog_langs <- read.csv("Glottolog_Languages.csv")
 datfra <- read.table(file = "BT_data.txt")
 tree <- read.nexus("pruned_tree.tree")
 
@@ -61,13 +56,6 @@ mod <- brm(
 summary(mod)
 
 # storing results
-
-# convergence
-# https://www.rensvandeschoot.com/tutorials/wambs-checklist-in-r-using-brms/
-#modelposterior <- as.mcmc(mod) # with the as.mcmc() command we can use all the CODA package convergence statistics and plotting options
-#gelman.diag(modelposterior[, 1:5])
-#gelman.diag(modelposterior[, 1:5])$mpsrf # should be close to 1
-
 sink("summary_uncontrolled.txt")
 print(summary(mod))
 #print("   ###    ")
