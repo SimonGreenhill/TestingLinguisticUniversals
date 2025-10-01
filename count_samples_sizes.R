@@ -15,7 +15,7 @@ df_BT_n <- df_BT %>%
 
 # calculate family level analysis, these have different data sizes:
 #  i.e. the same as above, without any isolates or familes of size N
-glottolog_langs <- readr::read_delim('summary/glottolog_4.8_languages.tsv', show_col_types = FALSE)
+glottolog_langs <- readr::read_csv('results/Glottolog_Languages.csv', show_col_types = FALSE)
 
 fns <- Sys.glob("results/*/brms.family/BT_data.txt")
 df_fam <- read_tsv(fns, show_col_types = FALSE, col_names = c("Glottocode", "Var1", "Var2"), id="Filename")
