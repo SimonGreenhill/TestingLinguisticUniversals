@@ -1,31 +1,31 @@
  Family: bernoulli 
   Links: mu = logit 
 Formula: V2 ~ V3 + (1 | gr(V1, cov = spatial_covar_mat)) + (1 + V3 | family) + (1 + V3 | macroarea) 
-   Data: list(datfra) (Number of observations: 1561) 
+   Data: list(datfra) (Number of observations: 1404) 
   Draws: 4 chains, each with iter = 3000; warmup = 1500; thin = 1;
          total post-warmup draws = 6000
 
-Group-Level Effects: 
-~family (Number of levels: 40) 
+Multilevel Hyperparameters:
+~family (Number of levels: 38) 
                   Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sd(Intercept)         4.19      1.04     2.48     6.49 1.00     1843     3415
-sd(V3)                0.60      0.51     0.02     1.86 1.00     3203     3271
-cor(Intercept,V3)    -0.28      0.56    -0.98     0.90 1.00     5443     4602
+sd(Intercept)         4.17      1.12     2.41     6.79 1.00     2411     4408
+sd(V3)                0.63      0.55     0.02     2.01 1.00     4123     4504
+cor(Intercept,V3)    -0.17      0.56    -0.97     0.91 1.00     8054     4439
 
 ~macroarea (Number of levels: 6) 
                   Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sd(Intercept)         1.38      0.84     0.09     3.34 1.00     1526     1468
-sd(V3)                0.47      0.43     0.01     1.57 1.00     3509     2919
-cor(Intercept,V3)    -0.05      0.57    -0.95     0.94 1.00     6660     4435
+sd(Intercept)         2.37      1.16     0.39     4.98 1.00     2393     2111
+sd(V3)                0.54      0.50     0.02     1.91 1.00     5127     3845
+cor(Intercept,V3)     0.03      0.57    -0.95     0.95 1.00     9308     4407
 
-~V1 (Number of levels: 1561) 
+~V1 (Number of levels: 1404) 
               Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-sd(Intercept)     3.96      0.74     2.76     5.70 1.00     1419     3045
+sd(Intercept)     4.31      0.86     2.91     6.18 1.00     1610     3205
 
-Population-Level Effects: 
+Regression Coefficients:
           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept    -6.04      1.51    -9.30    -3.34 1.00     1857     3475
-V3           -0.32      0.67    -1.61     1.03 1.00     4161     3915
+Intercept    -5.97      1.90    -9.98    -2.32 1.00     2836     3986
+V3           -0.07      0.77    -1.56     1.50 1.00     5236     4180
 
 Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
