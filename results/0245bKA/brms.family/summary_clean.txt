@@ -1,20 +1,20 @@
-                            Estimate Est.Error    l-95% CI  u-95% CI     Rhat
-fixed_intercept          -0.00908433 0.4193256 -0.87234074 0.8189447 1.001255
-fixed_V3                  0.24880769 0.4434495 -0.63499919 1.1639961 1.001525
-random_sd_Int_V1          1.22100624 0.3068994  0.67128303 1.8670556 1.001921
-random_sd_Int_family      1.10549075 0.3319739  0.52777722 1.8197966 1.002839
-random_sd_Int_V3_family   0.53783858 0.4604167  0.01570045 1.6621269 1.001172
-random_cor_Int_V3_family -0.18181109 0.5615513 -0.97391146 0.8972797 1.000772
-random_sd_Int_macro       0.70505201 0.3796660  0.10813806 1.6198666 1.003250
-random_sd_Int_V3_macro    0.47584385 0.4089648  0.01571184 1.4786803 1.000678
-random_cor_Int_V3_macro  -0.30642670 0.5315399 -0.98099636 0.8717375 1.000578
+                            Estimate Est.Error    l-95% CI  u-95% CI      Rhat
+fixed_intercept          -0.01550102 0.4339161 -0.88650126 0.8468326 1.0018501
+fixed_V3                  0.27628319 0.4915377 -0.67079813 1.3170509 0.9997335
+random_sd_Int_V1          1.35050202 0.3468307  0.73990684 2.1241942 1.0013348
+random_sd_Int_family      1.29837329 0.3593034  0.68855293 2.1171360 1.0021811
+random_sd_Int_V3_family   0.69576260 0.5452206  0.03258924 2.0378239 1.0008958
+random_cor_Int_V3_family -0.32009110 0.5380549 -0.98343961 0.8491771 1.0000309
+random_sd_Int_macro       0.57829687 0.4075883  0.03010979 1.5601691 1.0016842
+random_sd_Int_V3_macro    0.45840594 0.4312182  0.01616664 1.6081569 1.0002929
+random_cor_Int_V3_macro  -0.18438402 0.5655415 -0.97191484 0.8954477 1.0015136
                           Bulk_ESS Tail_ESS
-fixed_intercept          2611.3320 3383.898
-fixed_V3                 3711.2558 3400.150
-random_sd_Int_V1          748.2939 1528.021
-random_sd_Int_family     1520.0440 2085.312
-random_sd_Int_V3_family  2046.3365 2503.985
-random_cor_Int_V3_family 4727.3858 3347.760
-random_sd_Int_macro      1635.3498 1443.467
-random_sd_Int_V3_macro   2791.9717 2835.858
-random_cor_Int_V3_macro  5099.5869 3692.899
+fixed_intercept          4269.8637 3554.075
+fixed_V3                 5795.8685 3620.086
+random_sd_Int_V1          796.2279 1655.656
+random_sd_Int_family     2493.2278 3745.038
+random_sd_Int_V3_family  2331.1286 3776.849
+random_cor_Int_V3_family 4480.8060 3926.901
+random_sd_Int_macro      2180.5080 3267.911
+random_sd_Int_V3_macro   3837.3247 3445.769
+random_cor_Int_V3_macro  6956.7852 4536.861
