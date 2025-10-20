@@ -1,8 +1,8 @@
-setwd("~/Documents/Gray lab/Grambank/Greenberg/2025_10_17_family_cat_analyses_from_Simon")
 
 ########### Read in brms results with family controls
 
-sum_filesQ <- list.files(pattern = "summary_clean.txt", full.names = TRUE, recursive = TRUE)
+sum_filesQ <- list.files(pattern = "summary_clean.txt", path = "results",full.names = TRUE, recursive = TRUE)
+sum_filesQ <- sum_filesQ[grepl("brms.family", sum_filesQ)]
 sum_filesQ2 <- lapply(sum_filesQ, read.csv)
 sums <- data.frame(sum_filesQ)
 
@@ -117,9 +117,7 @@ write.table(sums, file = "0processig_output-with_NAs.text", sep = "\t", quote = 
 
 # adding relevant columns to main data file
 
-setwd("/Users/annemarieverkerk/Documents/Gray lab/Grambank/Greenberg/paper Nature HumBeh author guidance/final_results_file")
-
-dat_tab <- read.csv(file = "results.txt", sep = '\t')
+dat_tab <- read.csv(file = "SI Data 1/results.txt", sep = '\t')
 
 dat_tab$FAM_Estimate <- sums$Fixed_V3_Estimate[match(dat_tab$code, sums$KA_code)]
 dat_tab$FAM_low_95_CI <- sums$Fixed_V3_low_95_CI[match(dat_tab$code, sums$KA_code)]
@@ -128,7 +126,7 @@ dat_tab$FAM_SIG <- sums$cor_sig[match(dat_tab$code, sums$KA_code)]
 
 table(dat_tab$FAM_SIG, dat_tab$SPAPHY_SIG)
 
-write.table(dat_tab, file = "results.txt", quote = F, sep = "\t", row.names = F)
+write.table(dat_tab, file = "SI Data 1/results.txt", quote = F, sep = "\t", row.names = F)
 
 library(DescTools)
 cor.test(dat_tab$SPAPHY_median_Estimate, as.numeric(dat_tab$FAM_Estimate), alternative = "t", method = "spearman")
