@@ -1,5 +1,7 @@
 library(tidyverse)
 
+glottolog_langs <- readr::read_csv('results/Glottolog_Languages.csv', show_col_types = FALSE)
+
 # load the sizes of our BayesTraits analyses:
 fns <- Sys.glob("results/*/BT_data.txt")
 
@@ -8,101 +10,78 @@ df_BT <- read_tsv(fns, show_col_types = FALSE, col_names = c("Glottocode", "Var1
 df_BT <- df_BT |> mutate(Universal = basename(dirname(Filename)))
 
 # summarise language count for each universal analysis
-df_BT_n <- df_BT %>%
-    group_by(Universal) %>%
-    summarise(BT_n = n())
-
+df_BT_n <- df_BT |>
+  left_join(glottolog_langs, by = c("Glottocode" = "glottocode")) |> 
+  dplyr::filter(!is.na(longitude)) |> #removing languages with missing longitude or latitude data, just as in brms_spatphylo.R
+  dplyr::filter(!is.na(longitude)) |>
+    group_by(Universal, Filename) |>
+    summarise(uncontrolled_spatfphylo_n = n(), .groups = "drop")
 
 # calculate family level analysis, these have different data sizes:
 #  i.e. the same as above, without any isolates or familes of size N
-glottolog_langs <- readr::read_csv('results/Glottolog_Languages.csv', show_col_types = FALSE)
+#fam n
+df_spatfam_n <- data.frame(Universal = unique(basename(dirname(df_BT$Filename))),
+                       Filename = unique(df_BT$Filename),
+                       spatfam_n = as.numeric(NA))
 
-fns <- Sys.glob("results/*/brms.family/BT_data.txt")
-df_fam <- read_tsv(fns, show_col_types = FALSE, col_names = c("Glottocode", "Var1", "Var2"), id="Filename")
-# extract universal
-df_fam <- df_fam |> mutate(Universal = basename(dirname(dirname(Filename))))
+for (universal in unique(df_BT$Filename)) {
 
+datfra <- read.table(file = universal)
+  
+datfra$ID <- datfra$V1
+datfra$ID2 <- datfra$ID
+datfra$Longitude <- glottolog_langs$longitude[match(datfra$ID, glottolog_langs$glottocode)]
+datfra$Latitude <- glottolog_langs$latitude[match(datfra$ID, glottolog_langs$glottocode)]
+datfra$macroarea <- glottolog_langs$macroarea[match(datfra$ID, glottolog_langs$glottocode)]
 
-# can't just get nrow here as there is preprocessing code in the brms_family code
-# to remove isolates and languages with no location data.
-df_fam_n <- data.frame(Universal = as.character(), fam_n=as.numeric())
+datfra$family <- glottolog_langs$Family_name[match(datfra$ID, glottolog_langs$glottocode)]
 
+datfra <- datfra[!is.na(datfra$Longitude),]
+datfra <- datfra[!is.na(datfra$Latitude),]
 
-for (universal in unique(df_fam$Universal)) {
-    f <- df_fam |>
-        # select the rows for this feature
-        filter(Universal == universal) |>
-        # merge in required info from glottolog
-        left_join(
-            glottolog |> select(Language_ID, Family_ID, Longitude, Latitude, Macroarea),
-            join_by(Glottocode==Language_ID)
-        )
-    # now remove the isolates,
-    f <- f |> filter(!is.na(Family_ID)) |>
-        # and things without locations
-        filter(!is.na(Longitude) | !is.na(Latitude))
+# remove isolates
+old <- nrow(datfra)
+datfra <- datfra[!is.na(datfra$family),]
+datfra <- datfra[!datfra$family == "",]
+datfra <- datfra[!datfra$family == "Isolate",]  # should not be any of these, but just in case.
 
+# check we don't have isolate-as-family problem
+stopifnot('isolate' %in% tolower(datfra$family) == FALSE)
+stopifnot('Isolate' %in% tolower(datfra$family) == FALSE)
+stopifnot('' %in% tolower(datfra$family) == FALSE)
 
-    fams <- as.vector(sort(table(f$Family_ID)))
-    names(fams) <- names(sort(table(f$Family_ID)))
-    too_small <- fams[fams < 5]
+# remove small families (less than 5 members)
+fams <- as.vector(sort(table(datfra$family)))
+names(fams) <- names(sort(table(datfra$family)))
+too_small <- fams[fams < 5]
+datfra <- datfra[!datfra$family %in% names(too_small),]
 
-    f <- f |> filter(Family_ID %in% names(too_small) == FALSE) # no small families allowed
-
-    df_fam_n <- rbind(df_fam_n, data.frame(Universal = universal, fam_n=nrow(f)))
+df_spatfam_n[df_spatfam_n$Filename == universal, "spatfam_n"] <- nrow(datfra)
 
 }
 
+joined <- df_BT_n |>
+  full_join(df_spatfam_n, by = join_by(Universal, Filename))
 
-
-# summarise language count for each universal analysis
-df_fam_n <- df_fam %>%
-    group_by(Universal) %>%
-    summarise(fam_n = n())
-
-
-
-for(fn in fns){
-
-#fn <- fns[105]
-    datfra <- read.table(file = paste0(fn, "/BT_data.txt")) %>%
-      dplyr::select(Glottocode = V1)
-
-  datfra$Longitude <- glottolog_langs$Longitude[match(datfra$Glottocode, glottolog_langs$Glottocode)]
-  datfra$Latitude <- glottolog_langs$Latitude[match(datfra$Glottocode, glottolog_langs$Glottocode)]
-  datfra$macroarea <- glottolog_langs$Macroarea[match(datfra$Glottocode, glottolog_langs$Glottocode)]
-  datfra$Family_ID <- glottolog_langs$Family_ID[match(datfra$Glottocode, glottolog_langs$Glottocode)]
-### 1074
-  datfra <- datfra[!is.na(datfra$Longitude),]
-  nrow(datfra)
-  datfra <- datfra[!is.na(datfra$Latitude),]
-  nrow(datfra)
-  datfra <- datfra[!is.na(datfra$Family_ID),]
-  nrow(datfra)  # 1036
-  datfra <- datfra[!datfra$Family_ID == "",] # no isolates allowed
-  datfra <- datfra[!is.na(datfra$Family_ID),] # no isolates allowed
-    nrow(datfra)
-    ### 1036
-  fams <- as.vector(sort(table(datfra$Family_ID)))
-  names(fams) <- names(sort(table(datfra$Family_ID)))
-  too_small <- fams[fams < 5]
-  length(too_small) # 106
-
-  datfra <- datfra[!datfra$Family_ID %in% names(too_small),] # no small families allowed
-    # 872
-  df_spec <- data.frame(Glottocode =  datfra$Glottocode,
-                        Universal = '1667bKA')
-
-  df_fam_n  <- df_fam_n %>% full_join(df_spec, by = join_by(Glottocode, Universal))
-}
-
-df_fam_n_summed <- df_fam_n %>%
-  group_by(Universal) %>%
-  summarise(fam_n = n())
-
-
-joined <- df_BT_n_summed %>%
-  full_join(df_fam_n_summed, by = "Universal")
-
-joined %>%
+joined |>
   write_csv("summary/lgs_per_universal_counts.csv", na = "")
+
+
+df <- read_tsv("SI Data 1/results.txt", show_col_types = F)
+colnames_order <- colnames(df)
+df <- df |>
+  dplyr::select(-main_n, -fam_n)
+
+joined |>
+  dplyr::rename(main_n = uncontrolled_spatfphylo_n, fam_n = spatfam_n) |>
+  dplyr::select(code = Universal, main_n, fam_n) |>
+  full_join(df, by = "code") |>
+  dplyr::select(all_of(colnames_order)) |>
+  write.table(file = "SI Data 1/results.txt", quote = FALSE, 
+              sep = "\t", row.names = F)
+
+
+
+  
+
+

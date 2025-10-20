@@ -25,7 +25,8 @@ pacman::p_load(
   data.table, #faster reading in of files
   showtext,
   tidyverse,
-  devtools
+  devtools,
+DescTools #0processing.R
 )
 
 #the package bayestraitr needs to be installed via GitHub. Specific commit ref is given for version control

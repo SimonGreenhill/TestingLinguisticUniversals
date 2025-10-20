@@ -1,15 +1,19 @@
 source("requirements.R")
 
-universals_type <- read_tsv("universals_types.tsv", show_col_types = F)
-
-df <- read_tsv("results/BT_results_summary/results.txt", show_col_types = F) %>% 
+df <- read_tsv("SI Data 1/results.txt", show_col_types = F) %>% 
   dplyr::select(code, Universal.shorter, Domain_general, 
-                "brmsQ_Fixed_V3_Estimate"         ,      "brmsQ_Fixed_V3_low_95_CI"  ,           
-                "brmsQ_Fixed_V3_upp_95_CI"     ,         "brmsQ_Fixed_V3_SIG"     ,              
-                "uncon_Fixed_V3_Estimate"     ,          "uncon_Fixed_V3_low_95_CI"  ,           
-                "uncon_Fixed_V3_upp_95_CI"    ,          "uncon_Fixed_V3_SIG"       ,        
-                "FAM_Fixed_V3_Estimate"        ,         "FAM_Fixed_V3_low_95_CI"   ,     
-                "FAM_Fixed_V3_upp_95_CI"       ,         "FAM_Fixed_V3_SIG"     ) %>% 
+                "brmsQ_Fixed_V3_Estimate"  =   "SPAPHY_median_Estimate"    ,      
+                 "brmsQ_Fixed_V3_low_95_CI" = "SPAPHY_median_low_95_CI" ,           
+                 "brmsQ_Fixed_V3_upp_95_CI" = "SPAPHY_median_upp_95_CI"  ,         
+                  "brmsQ_Fixed_V3_SIG"  ="SPAPHY_SIG",              
+                "uncon_Fixed_V3_Estimate"  =    "UNCON_Estimate" ,          
+              "uncon_Fixed_V3_low_95_CI" =   "UNCON_low_95_CI",           
+             "uncon_Fixed_V3_upp_95_CI" =     "UNCON_upp_95_CI" ,          
+              "uncon_Fixed_V3_SIG"    =   "UNCON_SIG"    ,        
+                "FAM_Fixed_V3_Estimate"     =   "FAM_Estimate" ,         
+               "FAM_Fixed_V3_low_95_CI"  =  "FAM_low_95_CI" ,     
+          "FAM_Fixed_V3_upp_95_CI"   =       "FAM_upp_95_CI"    ,         
+             "FAM_Fixed_V3_SIG"=       "FAM_SIG"   ) %>% 
   reshape2::melt(id.vars = c("code", "Universal.shorter", "Domain_general")) %>% 
   mutate(model = ifelse(str_detect(variable, "brmsQ"), "sp + macroarea", NA)) %>% 
   mutate(model = ifelse(str_detect(variable, "FAM"), "spatial + macroarea + family", model)) %>% 
@@ -21,8 +25,10 @@ df <- read_tsv("results/BT_results_summary/results.txt", show_col_types = F) %>%
   pivot_wider(names_from = "statistic", id_cols = c("code", "Universal.shorter", "Domain_general", "model")) %>% 
   mutate("Estimate" = as.numeric(Estimate), 
          "low_95" = as.numeric(low_95),
-         "upp_95" = as.numeric(upp_95))
-  
+         "upp_95" = as.numeric(upp_95)) %>% 
+  dplyr::mutate(SIG = ifelse(SIG == "no", "NOT SIG", SIG)) %>% 
+  dplyr::mutate(SIG = ifelse(SIG == "yes", "SIG", SIG)) 
+
 point_size = 0.15
 base_size = 10
 
@@ -100,14 +106,16 @@ po <- df %>%
   facet_grid(~model) +
   ggtitle("Other")
 
-p <- ((pn + pw) / (ph + po)) + plot_layout(heights = c(2.5, 1))
+p_S4 <- ((pn + pw) / (ph + po)) + plot_layout(heights = c(2.5, 1))
 
 
 width = 10
 height = 12
 
 ggsave(filename="figureS4.png", height=height, width= width,
-       plot = p)
+       plot = p_S4)
+ggsave("figureS4.pdf", device = "pdf",height=height, width= width, plot = p_S4)
+
 
 #########FIG 6
 pn <- df %>% 
@@ -182,10 +190,11 @@ po <- df %>%
   facet_grid(~model) +
   ggtitle("Other")
 
-p <- ((pn + pw) / (ph + po)) + plot_layout(heights = c(2.5, 1))
+p_S6 <- ((pn + pw) / (ph + po)) + plot_layout(heights = c(2.5, 1))
 
 width = 10
 height = 12
 
 ggsave(filename="figureS6.png", height=height, width= width,
-       plot = p)
+       plot = p_S6)
+ggsave("figureS6.pdf", device = "pdf",height=height, width= width, plot = p_S6)
