@@ -126,7 +126,9 @@ dat_tab$FAM_SIG <- sums$cor_sig[match(dat_tab$code, sums$KA_code)]
 
 table(dat_tab$FAM_SIG, dat_tab$SPAPHY_SIG)
 
-write.table(dat_tab, file = "SI Data 1/results.txt", quote = F, sep = "\t", row.names = F)
+write.table(dat_tab, file = "SI Data 1/results.txt", quote = FALSE, 
+            sep = "\t", row.names = F)
+
 
 library(DescTools)
 cor.test(dat_tab$SPAPHY_median_Estimate, as.numeric(dat_tab$FAM_Estimate), alternative = "t", method = "spearman")
