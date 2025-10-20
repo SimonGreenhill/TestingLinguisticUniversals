@@ -106,14 +106,16 @@ po <- df %>%
   facet_grid(~model) +
   ggtitle("Other")
 
-p <- ((pn + pw) / (ph + po)) + plot_layout(heights = c(2.5, 1))
+p_S4 <- ((pn + pw) / (ph + po)) + plot_layout(heights = c(2.5, 1))
 
 
 width = 10
 height = 12
 
 ggsave(filename="figureS4.png", height=height, width= width,
-       plot = p)
+       plot = p_S4)
+ggsave("figureS4.pdf", device = "pdf",height=height, width= width, plot = p_S4)
+
 
 #########FIG 6
 pn <- df %>% 
@@ -188,10 +190,11 @@ po <- df %>%
   facet_grid(~model) +
   ggtitle("Other")
 
-p <- ((pn + pw) / (ph + po)) + plot_layout(heights = c(2.5, 1))
+p_S6 <- ((pn + pw) / (ph + po)) + plot_layout(heights = c(2.5, 1))
 
 width = 10
 height = 12
 
 ggsave(filename="figureS6.png", height=height, width= width,
-       plot = p)
+       plot = p_S6)
+ggsave("figureS6.pdf", device = "pdf",height=height, width= width, plot = p_S6)
