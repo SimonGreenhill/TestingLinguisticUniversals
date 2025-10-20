@@ -65,3 +65,23 @@ joined <- df_BT_n |>
 
 joined |>
   write_csv("summary/lgs_per_universal_counts.csv", na = "")
+
+
+df <- read_tsv("SI Data 1/results.txt", show_col_types = F)
+colnames_order <- colnames(df)
+df <- df |>
+  dplyr::select(-main_n, -fam_n)
+
+joined |>
+  dplyr::rename(main_n = uncontrolled_spatfphylo_n, fam_n = spatfam_n) |>
+  dplyr::select(code = Universal, main_n, fam_n) |>
+  full_join(df, by = "code") |>
+  dplyr::select(all_of(colnames_order)) |>
+  write.table(file = "SI Data 1/results.txt", quote = FALSE, 
+              sep = "\t", row.names = F)
+
+
+
+  
+
+
