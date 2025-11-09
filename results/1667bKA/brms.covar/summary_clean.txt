@@ -1,0 +1,16 @@
+                          Estimate Est.Error    l-95% CI  u-95% CI      Rhat
+fixed_intercept         -1.1275281 1.2660161 -3.67394735 1.3163347 1.0002513
+fixed_V3                 0.3911998 0.6863484 -1.03822804 1.7210543 1.0004803
+random_sd_Int_spatial    1.8074849 0.3961227  1.13795529 2.6789089 1.0021687
+random_sd_Int_phylo      3.6436490 0.8404310  2.26357191 5.5751425 1.0032762
+random_sd_Int_macro      0.9010743 0.5922976  0.06282425 2.3300258 1.0019553
+random_sd_Int_V3_macro   1.0450525 0.6743734  0.07835137 2.6525293 1.0012152
+random_cor_Int_V3_macro  0.2003872 0.5296574 -0.86038324 0.9647457 0.9996968
+                         Bulk_ESS Tail_ESS
+fixed_intercept         2843.8873 3788.948
+fixed_V3                3874.3898 3261.673
+random_sd_Int_spatial    874.3254 1543.657
+random_sd_Int_phylo     1278.0264 2352.394
+random_sd_Int_macro     2212.1980 1919.314
+random_sd_Int_V3_macro  2580.0526 1787.388
+random_cor_Int_V3_macro 3303.4910 3894.806
