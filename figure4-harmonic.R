@@ -58,37 +58,37 @@ RATE_PAIRS <- list(
 df_categories <- read_tsv("universals_types.tsv", show_col_types=FALSE)
 
 # we only want the BayesTraits results for the brms significant
+btres <- read_tsv('results/BT_results_summary/results.txt', show_col_types=FALSE)
 
+significant <- btres |> filter(supported=='SIG') |> pull(code)
+
+
+print("DEBUG DEBUG DEBUG")
+significant <- read_csv('~/Desktop/fig4-old.csv', show_col_types=FALSE) |> pull('OLD')
+
+pp <- function(code, bt) {
+    for (q in c("q12", "q13", "q21", "q24", "q31", "q34", "q42", "q43")) {
+        cat(sprintf("%s\t%s\t%d\t%0.3f\t%0.3f\n", code, q, nrow(bt), median(bt[[q]]), sd(bt[[q]])))
+    }
+}
 
 
 results <- NULL
 for (f in Sys.glob("results/*/bayestraits/dep/BT_data.txt.Log.txt.gz")) {
-    bt <- read.bayestraits(f)
-    bt$code <- basename(dirname(dirname(dirname(f))))
-    results <- rbind(results, bt)
+    code <- basename(dirname(dirname(dirname(f))))
+    # only load supported BayesTraits results
+    if (code %in% significant) {
+        bt <- read.bayestraits(f)
+        bt$code <- code
+        results <- rbind(results, bt)
+        pp(code, bt)
+    } else {
+        cat(sprintf("Ignoring %s - not significant\n", code))
+    }
 }
-
 
 
 is_tendency <- function(df, qDisharmonic, qHarmonic) { df[[qHarmonic]] > df[[qDisharmonic]] }
-
-tendencies <- NULL
-for (r in RATE_PAIRS) {
-    df <- data.frame(
-        vDisharmonic = r[[1]],
-        vHarmonic = r[[2]],
-        qDisharmonic = results[[r[[1]]]],
-        qHarmonic = results[[r[[2]]]],
-        code = results$code,
-        harmonic     = is_tendency(results, qDisharmonic = r[[1]], qHarmonic = r[[2]]),
-        type = r[[3]]
-    )
-    tendencies <- rbind(tendencies, df)
-}
-
-
-
-
 
 tendencies <- do.call(rbind, lapply(RATE_PAIRS, function(r) {
     data.frame(
@@ -103,7 +103,6 @@ tendencies <- do.call(rbind, lapply(RATE_PAIRS, function(r) {
 }))
 
 
-
 # convert to proportions and merge in category information
 tendencies.proportions <- tendencies |>
     group_by(code, harmonic, type) |>
@@ -112,6 +111,7 @@ tendencies.proportions <- tendencies |>
     left_join(
       df_categories |> select(code = universal_code, Universal.shorter, Domain_general),
       by="code")
+
 
 
 plot_bar <- function(df, title="xx") {
